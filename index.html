@@ -8,7 +8,6 @@
 
    <style>
 
-
 /* =====================================================
    COLORS
 ===================================================== */
@@ -25,7 +24,6 @@
   --border: #eadde0;
   --shadow: 0 10px 30px rgba(70, 20, 30, .10);
 }
-
 
 /* =====================================================
    RESET
@@ -281,7 +279,30 @@ section {
 .welcome-content {
   max-width: 900px;
   margin: auto;
-  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 50px;
+  text-align: left;
+}
+
+.welcome-text {
+  flex: 1;
+}
+
+.welcome-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-logo img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
 }
 
 .welcome-content p {
