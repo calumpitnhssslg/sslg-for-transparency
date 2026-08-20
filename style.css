@@ -1,6 +1,6 @@
 /* =========================================================
-   CALUMPIT NHS SSLG
-   MAIN WEBSITE STYLE
+   CALUMPIT NHS SSLG WEBSITE
+   COMPLETE STYLE SHEET
    ========================================================= */
 
 
@@ -14,26 +14,114 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
-
 
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: #3a0711;
     background: #f8f3f3;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 
 /* =========================
-   MOVING MAROON BACKGROUND
+   PAGE COLOR THEMES
+   ========================= */
+
+/* HOME — MAROON + GOLD */
+
+body.home {
+    --glow1: rgba(231, 189, 104, 0.35);
+    --glow2: rgba(139, 30, 50, 0.50);
+    --glow3: rgba(110, 20, 40, 0.35);
+
+    --hero1: #9b2845;
+    --hero2: #c49a45;
+
+    --accent: #e7bd68;
+}
+
+
+/* ABOUT — BURGUNDY + ROSE */
+
+body.about {
+    --glow1: rgba(190, 75, 105, 0.38);
+    --glow2: rgba(110, 20, 45, 0.50);
+    --glow3: rgba(150, 45, 75, 0.35);
+
+    --hero1: #a83f68;
+    --hero2: #702040;
+
+    --accent: #e09aaa;
+}
+
+
+/* OFFICERS — MAROON + PLUM */
+
+body.officers {
+    --glow1: rgba(125, 75, 150, 0.35);
+    --glow2: rgba(95, 20, 65, 0.50);
+    --glow3: rgba(135, 45, 105, 0.30);
+
+    --hero1: #75468e;
+    --hero2: #842d68;
+
+    --accent: #d1a4e5;
+}
+
+
+/* PROJECTS — CRIMSON + MAROON */
+
+body.projects {
+    --glow1: rgba(210, 50, 65, 0.38);
+    --glow2: rgba(120, 15, 30, 0.55);
+    --glow3: rgba(170, 35, 45, 0.35);
+
+    --hero1: #c52f43;
+    --hero2: #8f1728;
+
+    --accent: #f08080;
+}
+
+
+/* ANNOUNCEMENTS — MAROON + COPPER */
+
+body.announcements {
+    --glow1: rgba(205, 110, 50, 0.38);
+    --glow2: rgba(120, 25, 30, 0.50);
+    --glow3: rgba(180, 65, 40, 0.35);
+
+    --hero1: #b85c35;
+    --hero2: #9a302d;
+
+    --accent: #e5a66b;
+}
+
+
+/* TRANSPARENCY — MAROON + BRONZE */
+
+body.transparency {
+    --glow1: rgba(190, 145, 60, 0.38);
+    --glow2: rgba(100, 20, 30, 0.55);
+    --glow3: rgba(150, 90, 40, 0.35);
+
+    --hero1: #a98235;
+    --hero2: #7d202c;
+
+    --accent: #e0bd72;
+}
+
+
+/* =========================
+   MOVING BACKGROUND
    ========================= */
 
 body::before {
     content: "";
+
     position: fixed;
 
     top: -50%;
@@ -42,56 +130,71 @@ body::before {
     width: 200%;
     height: 200%;
 
-    z-index: -2;
+    z-index: -5;
+
+    pointer-events: none;
 
     background:
         radial-gradient(
             circle at 20% 20%,
-            rgba(139, 30, 50, 0.45),
+            var(--glow1),
             transparent 25%
         ),
+
         radial-gradient(
             circle at 80% 30%,
-            rgba(110, 20, 40, 0.40),
+            var(--glow2),
             transparent 28%
         ),
+
         radial-gradient(
             circle at 30% 80%,
-            rgba(150, 35, 55, 0.35),
+            var(--glow3),
             transparent 25%
         ),
+
         radial-gradient(
             circle at 80% 80%,
-            rgba(100, 15, 35, 0.40),
+            var(--glow1),
             transparent 30%
         );
 
-    animation: backgroundMove 20s ease-in-out infinite;
+    animation:
+        backgroundMove 18s ease-in-out infinite;
 }
 
 
 @keyframes backgroundMove {
 
     0% {
-        transform: translate(0%, 0%) scale(1);
+        transform:
+            translate(0%, 0%)
+            scale(1);
     }
 
     25% {
-        transform: translate(5%, -4%) scale(1.05);
+        transform:
+            translate(5%, -4%)
+            scale(1.05);
     }
 
     50% {
-        transform: translate(-4%, 5%) scale(1.08);
+        transform:
+            translate(-4%, 5%)
+            scale(1.08);
     }
 
     75% {
-        transform: translate(-5%, -3%) scale(1.04);
+        transform:
+            translate(-5%, -3%)
+            scale(1.04);
     }
 
     100% {
-        transform: translate(0%, 0%) scale(1);
+        transform:
+            translate(0%, 0%)
+            scale(1);
     }
-
 }
 
 
@@ -100,71 +203,92 @@ body::before {
    ========================= */
 
 .navbar {
+
     width: 100%;
 
-    padding: 22px 7%;
+    padding:
+        22px 7%;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
-    background: rgba(55, 5, 15, 0.97);
+    background:
+        rgba(55, 5, 15, 0.97);
 
     position: sticky;
+
     top: 0;
 
     z-index: 1000;
 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    box-shadow:
+        0 4px 20px
+        rgba(0, 0, 0, 0.18);
 }
 
 
 .brand a {
+
     text-decoration: none;
 
     display: flex;
+
     flex-direction: column;
 }
 
 
 .brand strong {
-    color: #ffffff;
+
+    color: white;
 
     font-size: 21px;
+
     letter-spacing: 1px;
 }
 
 
 .brand span {
-    color: #e7bd68;
+
+    color: var(--accent);
 
     font-size: 9px;
+
     letter-spacing: 1.5px;
 }
 
 
 nav {
+
     display: flex;
+
     align-items: center;
+
     gap: 25px;
 }
 
 
 nav a {
-    color: #ffffff;
+
+    color: white;
 
     text-decoration: none;
 
     font-size: 13px;
+
     font-weight: 600;
 
-    transition: 0.3s;
+    transition:
+        color 0.3s ease;
 }
 
 
 nav a:hover,
 nav a.active {
-    color: #e7bd68;
+
+    color: var(--accent);
 }
 
 
@@ -173,6 +297,7 @@ nav a.active {
    ========================= */
 
 .hero {
+
     min-height: 620px;
 
     position: relative;
@@ -180,70 +305,85 @@ nav a.active {
     overflow: hidden;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     gap: 60px;
 
-    padding: 100px 9%;
+    padding:
+        100px 9%;
 
     color: white;
 
     background:
+
         radial-gradient(
             circle at 15% 30%,
-            #8b1e32,
+            var(--hero1),
             transparent 30%
         ),
+
         radial-gradient(
             circle at 85% 70%,
-            #7a182b,
+            var(--hero2),
             transparent 30%
         ),
+
         linear-gradient(
             120deg,
             #35070f,
             #5a0f1b
         );
 
-    background-size: 200% 200%;
+    background-size:
+        200% 200%;
 
-    animation: heroMove 15s ease-in-out infinite;
+    animation:
+        heroMove 15s
+        ease-in-out infinite;
 }
 
 
 @keyframes heroMove {
 
     0% {
-        background-position: 0% 50%;
+        background-position:
+            0% 50%;
     }
 
     25% {
-        background-position: 100% 30%;
+        background-position:
+            100% 30%;
     }
 
     50% {
-        background-position: 100% 80%;
+        background-position:
+            100% 80%;
     }
 
     75% {
-        background-position: 20% 100%;
+        background-position:
+            20% 100%;
     }
 
     100% {
-        background-position: 0% 50%;
+        background-position:
+            0% 50%;
     }
-
 }
 
 
 .hero-content {
+
     max-width: 720px;
 }
 
 
 .eyebrow {
-    color: #e7bd68;
+
+    color: var(--accent);
 
     font-size: 12px;
 
@@ -256,12 +396,15 @@ nav a.active {
 
 
 .eyebrow.dark {
+
     color: #7b162b;
 }
 
 
 .hero h1 {
-    font-size: clamp(45px, 6vw, 82px);
+
+    font-size:
+        clamp(45px, 6vw, 82px);
 
     line-height: 1.03;
 
@@ -272,21 +415,24 @@ nav a.active {
 
 
 .hero-text {
+
     max-width: 620px;
 
     font-size: 18px;
 
-    color: rgba(255, 255, 255, 0.86);
+    color:
+        rgba(255,255,255,0.86);
 
     margin-bottom: 30px;
 }
 
 
 /* =========================
-   HERO EMBLEM
+   HOME LOGO / EMBLEM
    ========================= */
 
 .hero-emblem {
+
     text-align: center;
 
     min-width: 220px;
@@ -294,20 +440,26 @@ nav a.active {
 
 
 .emblem {
+
     width: 190px;
+
     height: 190px;
 
     border-radius: 50%;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     margin: auto;
 
-    border: 3px solid #e7bd68;
+    border:
+        3px solid var(--accent);
 
-    color: #e7bd68;
+    color:
+        var(--accent);
 
     font-size: 42px;
 
@@ -315,21 +467,162 @@ nav a.active {
 
     letter-spacing: 3px;
 
-    background: rgba(255, 255, 255, 0.04);
+    background:
+        rgba(255,255,255,0.05);
+
+    position: relative;
 
     box-shadow:
-        0 0 30px rgba(231, 189, 104, 0.18);
+
+        0 0 10px
+        rgba(231,189,104,0.7),
+
+        0 0 25px
+        rgba(231,189,104,0.5),
+
+        0 0 55px
+        rgba(231,189,104,0.35);
+
+    animation:
+        logoGlow 3s
+        ease-in-out infinite;
 }
 
 
-.hero-emblem p {
-    margin-top: 18px;
+.emblem::before {
 
-    color: #e7bd68;
+    content: "";
 
-    font-size: 10px;
+    position: absolute;
 
-    letter-spacing: 2px;
+    width: 220px;
+
+    height: 220px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(231,189,104,0.35);
+
+    box-shadow:
+        0 0 25px
+        rgba(231,189,104,0.25);
+
+    animation:
+        logoRing 5s
+        linear infinite;
+}
+
+
+.emblem::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+
+    height: 250px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(231,189,104,0.15);
+
+    animation:
+        logoRingReverse 8s
+        linear infinite;
+}
+
+
+@keyframes logoGlow {
+
+    0% {
+
+        transform:
+            scale(1);
+
+        box-shadow:
+
+            0 0 10px
+            rgba(231,189,104,0.6),
+
+            0 0 25px
+            rgba(231,189,104,0.4),
+
+            0 0 45px
+            rgba(231,189,104,0.25);
+    }
+
+
+    50% {
+
+        transform:
+            scale(1.04);
+
+        box-shadow:
+
+            0 0 15px
+            rgba(231,189,104,0.9),
+
+            0 0 40px
+            rgba(231,189,104,0.65),
+
+            0 0 75px
+            rgba(231,189,104,0.4);
+    }
+
+
+    100% {
+
+        transform:
+            scale(1);
+
+        box-shadow:
+
+            0 0 10px
+            rgba(231,189,104,0.6),
+
+            0 0 25px
+            rgba(231,189,104,0.4),
+
+            0 0 45px
+            rgba(231,189,104,0.25);
+    }
+}
+
+
+@keyframes logoRing {
+
+    from {
+
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+
+        transform:
+            rotate(360deg);
+    }
+}
+
+
+@keyframes logoRingReverse {
+
+    from {
+
+        transform:
+            rotate(360deg);
+    }
+
+    to {
+
+        transform:
+            rotate(0deg);
+    }
 }
 
 
@@ -338,6 +631,7 @@ nav a.active {
    ========================= */
 
 .hero-buttons {
+
     display: flex;
 
     gap: 15px;
@@ -347,13 +641,17 @@ nav a.active {
 
 
 .button {
+
     display: inline-block;
 
-    padding: 14px 25px;
+    padding:
+        14px 25px;
 
-    background: #e7bd68;
+    background:
+        var(--accent);
 
-    color: #3a0711;
+    color:
+        #3a0711;
 
     text-decoration: none;
 
@@ -361,49 +659,64 @@ nav a.active {
 
     border-radius: 4px;
 
-    transition: 0.3s;
+    transition:
+        0.3s;
 }
 
 
 .button:hover {
-    transform: translateY(-3px);
+
+    transform:
+        translateY(-3px);
 
     box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.2);
+        0 8px 20px
+        rgba(0,0,0,0.2);
 }
 
 
 .button.secondary {
-    background: transparent;
+
+    background:
+        transparent;
 
     color: white;
 
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border:
+        1px solid
+        rgba(255,255,255,0.5);
 }
 
 
 .button.secondary:hover {
+
     background: white;
 
-    color: #3a0711;
+    color:
+        #3a0711;
 }
 
 
 /* =========================
-   WELCOME SECTION
+   WELCOME
    ========================= */
 
 .welcome {
-    padding: 120px 10%;
 
-    background: rgba(255, 255, 255, 0.96);
+    padding:
+        120px 10%;
+
+    background:
+        rgba(255,255,255,0.96);
 
     text-align: center;
 }
 
 
 .section-label {
-    color: #7b162b;
+
+    color:
+        #7b162b;
 
     font-size: 11px;
 
@@ -416,21 +729,24 @@ nav a.active {
 
 
 .welcome h2 {
+
     max-width: 800px;
 
-    margin: auto;
+    margin:
+        auto auto 30px;
 
-    font-size: clamp(36px, 5vw, 65px);
+    font-size:
+        clamp(36px,5vw,65px);
 
     line-height: 1.1;
 
-    color: #3a0711;
-
-    margin-bottom: 30px;
+    color:
+        #3a0711;
 }
 
 
 .welcome > p {
+
     max-width: 760px;
 
     margin: auto;
@@ -446,54 +762,57 @@ nav a.active {
    ========================= */
 
 .quick-access {
-    padding: 110px 8%;
+
+    padding:
+        110px 8%;
 
     background:
-        linear-gradient(
-            rgba(248, 243, 243, 0.96),
-            rgba(248, 243, 243, 0.96)
-        );
+        rgba(248,243,243,0.96);
 }
 
 
 .section-heading {
+
     margin-bottom: 50px;
 }
 
 
 .section-heading h2 {
-    font-size: clamp(35px, 5vw, 60px);
+
+    font-size:
+        clamp(35px,5vw,60px);
 
     line-height: 1.1;
 
-    color: #3a0711;
+    color:
+        #3a0711;
 }
 
 
-/* =========================
-   CARDS
-   ========================= */
-
 .quick-grid {
+
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(3,1fr);
 
     gap: 25px;
 }
 
 
 .quick-card {
+
     display: block;
 
     padding: 35px;
 
     min-height: 260px;
 
-    background: rgba(255, 255, 255, 0.96);
+    background:
+        rgba(255,255,255,0.96);
 
-    border: 1px solid #eadbdd;
+    border:
+        1px solid #eadbdd;
 
     border-radius: 8px;
 
@@ -509,16 +828,21 @@ nav a.active {
 
 
 .quick-card:hover {
-    transform: translateY(-8px);
 
-    border-color: #b98a35;
+    transform:
+        translateY(-8px);
+
+    border-color:
+        var(--accent);
 
     box-shadow:
-        0 15px 35px rgba(58, 7, 17, 0.12);
+        0 15px 35px
+        rgba(58,7,17,0.12);
 }
 
 
 .card-icon {
+
     font-size: 34px;
 
     margin-bottom: 20px;
@@ -526,7 +850,9 @@ nav a.active {
 
 
 .quick-card h3 {
-    color: #3a0711;
+
+    color:
+        #3a0711;
 
     font-size: 24px;
 
@@ -535,18 +861,22 @@ nav a.active {
 
 
 .quick-card p {
-    color: #666;
+
+    color:
+        #666;
 
     font-size: 15px;
 }
 
 
 .quick-card span {
+
     display: inline-block;
 
     margin-top: 20px;
 
-    color: #7b162b;
+    color:
+        #7b162b;
 
     font-weight: 700;
 
@@ -555,9 +885,12 @@ nav a.active {
 
 
 .position {
-    color: #9b6f1e !important;
 
-    font-size: 10px !important;
+    color:
+        var(--accent) !important;
+
+    font-size:
+        10px !important;
 
     font-weight: 800;
 
@@ -568,11 +901,13 @@ nav a.active {
 
 
 .card-link {
+
     display: inline-block;
 
     margin-top: 20px;
 
-    color: #7b162b;
+    color:
+        #7b162b;
 
     font-weight: 700;
 
@@ -581,53 +916,64 @@ nav a.active {
 
 
 /* =========================
-   FINAL SECTION
+   LOWER SECTION
    ========================= */
 
 .portal-section {
-    padding: 120px 10%;
+
+    padding:
+        120px 10%;
 
     text-align: center;
 
     color: white;
 
     background:
+
         radial-gradient(
             circle at 30% 40%,
-            #8b1e32,
+            var(--hero1),
             transparent 35%
         ),
+
         radial-gradient(
             circle at 70% 60%,
-            #741527,
+            var(--hero2),
             transparent 35%
         ),
+
         #3a0711;
 
-    background-size: 180% 180%;
+    background-size:
+        180% 180%;
 
-    animation: finalMove 18s ease-in-out infinite;
+    animation:
+        finalMove 18s
+        ease-in-out infinite;
 }
 
 
 @keyframes finalMove {
 
     0% {
-        background-position: 0% 50%;
+        background-position:
+            0% 50%;
     }
 
     50% {
-        background-position: 100% 50%;
+        background-position:
+            100% 50%;
     }
 
     100% {
-        background-position: 0% 50%;
+        background-position:
+            0% 50%;
     }
-
 }
 
 
 .portal-content {
+
     max-width: 800px;
 
     margin: auto;
@@ -635,7 +981,9 @@ nav a.active {
 
 
 .portal-content h2 {
-    font-size: clamp(38px, 5vw, 65px);
+
+    font-size:
+        clamp(38px,5vw,65px);
 
     line-height: 1.1;
 
@@ -644,7 +992,9 @@ nav a.active {
 
 
 .portal-content p:not(.eyebrow) {
-    color: rgba(255, 255, 255, 0.8);
+
+    color:
+        rgba(255,255,255,0.8);
 
     font-size: 17px;
 }
@@ -655,14 +1005,18 @@ nav a.active {
    ========================= */
 
 footer {
-    background: #26040b;
+
+    background:
+        #26040b;
 
     color: white;
 }
 
 
 .footer-main {
-    padding: 70px 8%;
+
+    padding:
+        70px 8%;
 
     display: flex;
 
@@ -673,7 +1027,9 @@ footer {
 
 
 .footer-main h3 {
-    color: #e7bd68;
+
+    color:
+        var(--accent);
 
     margin-bottom: 15px;
 
@@ -682,13 +1038,16 @@ footer {
 
 
 .footer-main p {
-    color: rgba(255, 255, 255, 0.65);
+
+    color:
+        rgba(255,255,255,0.65);
 
     font-size: 14px;
 }
 
 
 .footer-links {
+
     display: flex;
 
     flex-direction: column;
@@ -698,7 +1057,9 @@ footer {
 
 
 .footer-links h4 {
-    color: #e7bd68;
+
+    color:
+        var(--accent);
 
     margin-bottom: 10px;
 
@@ -709,7 +1070,9 @@ footer {
 
 
 .footer-links a {
-    color: rgba(255, 255, 255, 0.75);
+
+    color:
+        rgba(255,255,255,0.75);
 
     text-decoration: none;
 
@@ -720,23 +1083,31 @@ footer {
 
 
 .footer-links a:hover {
-    color: #e7bd68;
+
+    color:
+        var(--accent);
 }
 
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
 
-    padding: 20px 8%;
+    border-top:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    padding:
+        20px 8%;
 
     text-align: center;
 }
 
 
 .footer-bottom p {
+
     font-size: 12px;
 
-    color: rgba(255, 255, 255, 0.5);
+    color:
+        rgba(255,255,255,0.5);
 }
 
 
@@ -747,6 +1118,7 @@ footer {
 @media (max-width: 900px) {
 
     .navbar {
+
         flex-direction: column;
 
         gap: 20px;
@@ -756,6 +1128,7 @@ footer {
 
 
     nav {
+
         flex-wrap: wrap;
 
         justify-content: center;
@@ -765,17 +1138,20 @@ footer {
 
 
     .hero {
+
         flex-direction: column;
 
         text-align: center;
 
-        padding: 80px 7%;
+        padding:
+            80px 7%;
 
         min-height: 600px;
     }
 
 
     .hero-text {
+
         margin-left: auto;
 
         margin-right: auto;
@@ -783,61 +1159,71 @@ footer {
 
 
     .hero-buttons {
+
         justify-content: center;
     }
 
 
     .hero-emblem {
+
         margin-top: 20px;
     }
 
 
     .quick-grid {
+
         grid-template-columns:
-            repeat(2, 1fr);
+            repeat(2,1fr);
     }
 
 
     .footer-main {
+
         flex-direction: column;
     }
-
 }
 
 
 @media (max-width: 600px) {
 
     .brand {
+
         text-align: center;
     }
 
 
     .brand strong {
+
         font-size: 18px;
     }
 
 
     .brand span {
+
         font-size: 7px;
     }
 
 
     nav {
+
         gap: 10px;
     }
 
 
     nav a {
+
         font-size: 11px;
     }
 
 
     .hero h1 {
+
         font-size: 44px;
     }
 
 
     .quick-grid {
+
         grid-template-columns: 1fr;
     }
 
@@ -845,11 +1231,14 @@ footer {
     .welcome,
     .quick-access,
     .portal-section {
-        padding: 80px 7%;
+
+        padding:
+            80px 7%;
     }
 
 
     .emblem {
+
         width: 150px;
 
         height: 150px;
