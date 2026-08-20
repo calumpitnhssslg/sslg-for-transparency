@@ -5,7 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SSLG | Calumpit National High School</title>
+.hero-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
 
+.hero-logo {
+  width: 280px;
+  height: 280px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
 <style>
 
 /* =====================================================
@@ -943,13 +955,23 @@ footer p {
       OFFICIAL SSLG WEBSITE
     </span>
 
-<h1>
-  <span>SSLG</span><br>
-  Supreme<br>
-  Secondary<br>
-  Learner<br>
-  Government
-</h1>
+<div class="hero-title-row">
+
+  <h1>
+    <span>SSLG</span><br>
+    Supreme<br>
+    Secondary<br>
+    Learner<br>
+    Government
+  </h1>
+
+  <img
+    src="images/sslg-logo.png"
+    alt="SSLG Logo"
+    class="hero-logo"
+  >
+
+</div>
      
     <p>
       The Supreme Secondary Learner Government
