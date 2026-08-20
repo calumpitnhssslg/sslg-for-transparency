@@ -1,1458 +1,2063 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>SSLG Transparency Portal</title>
+<title>SSLG | Calumpit National High School</title>
 
-  <style>
-    /* =========================
-       BASIC SETTINGS
-    ========================== */
+<style>
+
+/* =====================================================
+   COLORS
+===================================================== */
 
 :root {
-  --primary: #800000;
-  --primary-dark: #5c0000;
-  --secondary: #f8eaea;
-  --accent: #d4a017;
-  --background: #faf7f7;
+  --maroon: #7a1f2b;
+  --dark-maroon: #4d111a;
+  --light-maroon: #f7e9eb;
+  --gold: #c9a227;
+  --cream: #fffaf4;
   --white: #ffffff;
-  --text: #241919;
-  --muted: #6f6262;
-  --border: #eadede;
+  --dark: #241719;
+  --gray: #6f6264;
+  --border: #eadde0;
+  --shadow: 0 10px 30px rgba(70, 20, 30, .10);
 }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--background);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    /* =========================
-       NAVIGATION
-    ========================== */
-
-    header {
-      background: linear-gradient(
-        135deg,
-        var(--primary-dark),
-        var(--primary)
-      );
-
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    }
-
-    .navbar {
-      max-width: 1200px;
-      margin: auto;
-      padding: 15px 20px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand {
-      font-weight: 900;
-      font-size: 18px;
-    }
-
-    .brand span {
-      display: block;
-      font-size: 12px;
-      opacity: 0.8;
-      font-weight: normal;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: white;
-      font-size: 14px;
-      font-weight: 600;
-      opacity: 0.95;
-    }
-
-    .nav-links a:hover {
-      opacity: 0.7;
-    }
-
-    /* =========================
-       HERO
-    ========================== */
-
-    .hero {
-      background: white;
-      padding: 90px 20px;
-    }
-
-    .hero-container {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .badge {
-      display: inline-block;
-      background: var(--secondary);
-      color: var(--primary);
-      padding: 8px 14px;
-      border-radius: 50px;
-      font-weight: 800;
-      font-size: 13px;
-    }
-
-    .hero h1 {
-      font-size: clamp(38px, 7vw, 76px);
-      line-height: 1.02;
-      margin: 20px 0;
-      max-width: 900px;
-    }
-
-    .hero p {
-      max-width: 780px;
-      color: var(--muted);
-      font-size: 18px;
-    }
-
-    .hero-buttons {
-      margin-top: 25px;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 12px 18px;
-      border-radius: 10px;
-      background: var(--primary);
-      color: white;
-      font-weight: 700;
-      border: none;
-      cursor: pointer;
-    }
-
-    .button:hover {
-      background: var(--primary-dark);
-    }
-
-    .button-outline {
-      background: transparent;
-      border: 2px solid var(--primary);
-      color: var(--primary);
-    }
-
-    /* =========================
-       GENERAL SECTIONS
-    ========================== */
-
-    section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 65px 20px;
-    }
-
-    .section-heading {
-      margin-bottom: 30px;
-    }
-
-    .section-heading h2 {
-      font-size: 34px;
-      margin-bottom: 5px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-    }
-
-    /* =========================
-       DASHBOARD CARDS
-    ========================== */
-
-    .stats {
-      display: grid;
-      grid-template-columns:
-        repeat(auto-fit, minmax(210px, 1fr));
-
-      gap: 18px;
-    }
-
-    .stat-card {
-      background: white;
-      padding: 25px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-    }
-
-    .stat-icon {
-      font-size: 30px;
-    }
-
-    .stat-number {
-      color: var(--primary);
-      font-size: 34px;
-      font-weight: 900;
-      margin-top: 8px;
-    }
-
-    .stat-card p {
-      color: var(--muted);
-    }
-
-    /* =========================
-       CARDS
-    ========================== */
-
-    .cards {
-      display: grid;
-      grid-template-columns:
-        repeat(auto-fit, minmax(250px, 1fr));
-
-      gap: 20px;
-    }
-
-    .card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .card-icon {
-      font-size: 35px;
-      margin-bottom: 10px;
-    }
-
-    .card h3 {
-      margin-bottom: 8px;
-    }
-
-    .card p {
-      color: var(--muted);
-    }
-
-    /* =========================
-       POSTS
-    ========================== */
-
-    .post-tools {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 25px;
-      flex-wrap: wrap;
-    }
-
-    .search-box {
-      flex: 1;
-      min-width: 220px;
-      padding: 13px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      font-size: 15px;
-    }
-
-    .post-date {
-      color: var(--primary);
-      font-weight: 800;
-      font-size: 13px;
-    }
-
-    .post-title {
-      margin: 8px 0;
-    }
-
-    /* =========================
-       STATUS
-    ========================== */
-
-    .status {
-      display: inline-block;
-      padding: 5px 10px;
-      border-radius: 50px;
-      font-size: 12px;
-      font-weight: 800;
-      margin-top: 10px;
-    }
-
-    .completed {
-      background: #e1f7ea;
-      color: var(--success);
-    }
-
-    .ongoing {
-      background: #fff3d6;
-      color: #9a6900;
-    }
-
-    .planned {
-      background: #e5efff;
-      color: var(--primary);
-    }
-
-    /* =========================
-       FINANCIAL TABLE
-    ========================== */
-
-    .table-container {
-      overflow-x: auto;
-      background: white;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 700px;
-    }
-
-    th,
-    td {
-      padding: 15px;
-      text-align: left;
-      border-bottom: 1px solid var(--border);
-    }
-
-    th {
-      background: var(--secondary);
-      color: var(--primary-dark);
-    }
-
-    .income {
-      color: var(--success);
-      font-weight: bold;
-    }
-
-    .expense {
-      color: var(--danger);
-      font-weight: bold;
-    }
-
-    /* =========================
-       DOCUMENTS
-    ========================== */
-
-    .document-link {
-      margin-top: 15px;
-      display: inline-block;
-      color: var(--primary);
-      font-weight: 800;
-    }
-
-    /* =========================
-       OFFICERS
-    ========================== */
-
-    .officer {
-      text-align: center;
-    }
-
-    .officer-photo {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background: var(--secondary);
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      margin: auto auto 15px;
-      font-size: 38px;
-    }
-
-    .position {
-      color: var(--primary);
-      font-weight: 800;
-      font-size: 13px;
-    }
-
-    /* =========================
-       GALLERY
-    ========================== */
-
-    .gallery {
-      display: grid;
-      grid-template-columns:
-        repeat(auto-fit, minmax(220px, 1fr));
-
-      gap: 18px;
-    }
-
-    .gallery-item {
-      background: white;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-    }
-
-    .gallery-placeholder {
-      height: 180px;
-      background: var(--secondary);
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      font-size: 50px;
-    }
-
-    .gallery-caption {
-      padding: 15px;
-    }
-
-    /* =========================
-       NOTICE
-    ========================== */
-
-    .notice {
-      background: #fff7dc;
-      border-left: 5px solid var(--accent);
-      padding: 18px;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-
-    /* =========================
-       CONTACT
-    ========================== */
-
-    .contact-box {
-      background: linear-gradient(
-        135deg,
-        var(--primary-dark),
-        var(--primary)
-      );
-
-      color: white;
-      border-radius: var(--radius);
-      padding: 35px;
-    }
-
-    .contact-box p {
-      opacity: 0.9;
-      margin: 8px 0;
-    }
-
-    /* =========================
-       FOOTER
-    ========================== */
-
-    footer {
-      background: #0b203b;
-      color: #dce8f5;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    footer p {
-      margin: 5px;
-    }
-
-    /* =========================
-       MOBILE
-    ========================== */
-
-    @media(max-width: 800px) {
-
-      header {
-        position: static;
-      }
-
-      .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        gap: 10px;
-      }
-
-      .nav-links a {
-        font-size: 13px;
-      }
-
-      .hero {
-        padding: 60px 20px;
-      }
-
-      .hero h1 {
-        font-size: 44px;
-      }
-
-      section {
-        padding: 45px 20px;
-      }
-    }
-  </style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--dark);
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* =====================================================
+   TOP BAR
+===================================================== */
+
+.topbar {
+  background: var(--dark-maroon);
+  color: white;
+  text-align: center;
+  padding: 8px;
+  font-size: 13px;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+header {
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 4px 18px rgba(0,0,0,.08);
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: auto;
+  padding: 16px 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--maroon);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 900;
+}
+
+.brand-text strong {
+  display: block;
+  color: var(--maroon);
+  font-size: 16px;
+}
+
+.brand-text span {
+  display: block;
+  font-size: 11px;
+  color: var(--gray);
+}
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--dark);
+}
+
+.nav-links a:hover {
+  color: var(--maroon);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+  min-height: 650px;
+
+  background:
+    linear-gradient(
+      rgba(77,17,26,.84),
+      rgba(77,17,26,.84)
+    ),
+    url("school-banner.jpg");
+
+  background-size: cover;
+  background-position: center;
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  padding: 90px 22px;
+}
+
+.hero-label {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.3);
+
+  padding: 8px 15px;
+  border-radius: 50px;
+
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.hero h1 {
+  max-width: 900px;
+
+  font-size: clamp(40px, 7vw, 76px);
+  line-height: 1.02;
+
+  margin: 20px 0;
+}
+
+.hero h1 span {
+  color: #f1d46b;
+}
+
+.hero p {
+  max-width: 760px;
+  font-size: 18px;
+  opacity: .92;
+}
+
+.hero-buttons {
+  margin-top: 28px;
+
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-block;
+
+  padding: 13px 20px;
+
+  border-radius: 8px;
+
+  background: var(--gold);
+  color: #3d2d00;
+
+  font-weight: 800;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-white {
+  background: white;
+  color: var(--maroon);
+}
+
+
+/* =====================================================
+   GENERAL
+===================================================== */
+
+section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 80px 22px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-title small {
+  color: var(--gold);
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.section-title h2 {
+  color: var(--maroon);
+  font-size: 38px;
+  margin: 5px 0;
+}
+
+.section-title p {
+  max-width: 700px;
+  margin: auto;
+  color: var(--gray);
+}
+
+
+/* =====================================================
+   WELCOME
+===================================================== */
+
+.welcome {
+  background: white;
+}
+
+.welcome-content {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.welcome-content p {
+  margin-bottom: 15px;
+  color: var(--gray);
+}
+
+.motto {
+  margin-top: 30px;
+
+  color: var(--maroon);
+  font-size: 25px;
+  font-weight: 900;
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(190px, 1fr));
+
+  gap: 18px;
+}
+
+.stat {
+  background: white;
+  border: 1px solid var(--border);
+
+  padding: 28px;
+  border-radius: 15px;
+
+  text-align: center;
+
+  box-shadow: var(--shadow);
+}
+
+.stat-number {
+  color: var(--maroon);
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.stat p {
+  color: var(--gray);
+}
+
+
+/* =====================================================
+   OFFICERS
+===================================================== */
+
+.officers {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 20px;
+}
+
+.officer {
+  background: white;
+
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  padding: 25px;
+
+  text-align: center;
+
+  box-shadow: var(--shadow);
+}
+
+.officer-photo {
+  width: 130px;
+  height: 130px;
+
+  margin: auto auto 18px;
+
+  border-radius: 50%;
+
+  background: var(--light-maroon);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  font-size: 45px;
+}
+
+.officer-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.officer-position {
+  color: var(--gold);
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.officer h3 {
+  color: var(--maroon);
+  margin: 5px 0;
+}
+
+.officer p {
+  color: var(--gray);
+  font-size: 14px;
+}
+
+
+/* =====================================================
+   ANNOUNCEMENTS
+===================================================== */
+
+.posts {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 22px;
+}
+
+.post {
+  background: white;
+
+  border-radius: 16px;
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+
+  box-shadow: var(--shadow);
+}
+
+.post-image {
+  height: 190px;
+
+  background: var(--light-maroon);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 50px;
+
+  overflow: hidden;
+}
+
+.post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-content {
+  padding: 22px;
+}
+
+.post-date {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.post h3 {
+  color: var(--maroon);
+  margin: 7px 0;
+}
+
+.post p {
+  color: var(--gray);
+}
+
+.read-more {
+  display: inline-block;
+
+  margin-top: 15px;
+
+  color: var(--maroon);
+  font-weight: 900;
+}
+
+
+/* =====================================================
+   PROJECTS
+===================================================== */
+
+.projects {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 20px;
+}
+
+.project {
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 16px;
+
+  border: 1px solid var(--border);
+
+  box-shadow: var(--shadow);
+}
+
+.project-icon {
+  font-size: 40px;
+}
+
+.project h3 {
+  color: var(--maroon);
+  margin: 10px 0;
+}
+
+.project p {
+  color: var(--gray);
+}
+
+.status {
+  display: inline-block;
+
+  margin-top: 15px;
+
+  padding: 5px 11px;
+
+  border-radius: 50px;
+
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.completed {
+  background: #e5f6eb;
+  color: #15753e;
+}
+
+.ongoing {
+  background: #fff3d2;
+  color: #856300;
+}
+
+.upcoming {
+  background: var(--light-maroon);
+  color: var(--maroon);
+}
+
+
+/* =====================================================
+   REPORTS
+===================================================== */
+
+.reports {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 20px;
+}
+
+.report {
+  background: var(--maroon);
+  color: white;
+
+  padding: 30px;
+
+  border-radius: 16px;
+}
+
+.report h3 {
+  margin-bottom: 8px;
+}
+
+.report p {
+  opacity: .85;
+}
+
+.report-button {
+  display: inline-block;
+
+  margin-top: 20px;
+
+  background: var(--gold);
+  color: #382b00;
+
+  padding: 10px 16px;
+
+  border-radius: 7px;
+
+  font-weight: 900;
+}
+
+
+/* =====================================================
+   TRANSPARENCY
+===================================================== */
+
+.transparency {
+  background: white;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 700px;
+
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 14px;
+
+  border-bottom: 1px solid var(--border);
+
+  text-align: left;
+}
+
+th {
+  background: var(--maroon);
+  color: white;
+}
+
+.income {
+  color: #16834b;
+  font-weight: bold;
+}
+
+.expense {
+  color: #b83232;
+  font-weight: bold;
+}
+
+.notice {
+  margin-top: 20px;
+
+  padding: 18px;
+
+  background: #fff7dc;
+
+  border-left: 5px solid var(--gold);
+
+  border-radius: 8px;
+}
+
+
+/* =====================================================
+   GALLERY
+===================================================== */
+
+.gallery {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(230px, 1fr));
+
+  gap: 18px;
+}
+
+.gallery-item {
+  background: white;
+
+  border-radius: 15px;
+
+  overflow: hidden;
+
+  box-shadow: var(--shadow);
+
+  border: 1px solid var(--border);
+}
+
+.gallery-photo {
+  height: 200px;
+
+  background: var(--light-maroon);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 45px;
+
+  overflow: hidden;
+}
+
+.gallery-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-caption {
+  padding: 15px;
+}
+
+.gallery-caption h3 {
+  color: var(--maroon);
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact {
+  background:
+    linear-gradient(
+      135deg,
+      var(--dark-maroon),
+      var(--maroon)
+    );
+
+  color: white;
+
+  max-width: none;
+}
+
+.contact-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.contact-inner h2 {
+  font-size: 38px;
+}
+
+.contact-inner p {
+  opacity: .9;
+}
+
+.contact-button {
+  display: inline-block;
+
+  margin-top: 20px;
+
+  padding: 12px 20px;
+
+  background: var(--gold);
+
+  color: #352900;
+
+  border-radius: 8px;
+
+  font-weight: 900;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+  background: #2c0a10;
+
+  color: #e8d9dc;
+
+  text-align: center;
+
+  padding: 35px 20px;
+}
+
+footer strong {
+  color: white;
+}
+
+footer p {
+  margin: 5px;
+  font-size: 13px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width: 800px) {
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .hero {
+    min-height: 550px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+  }
+
+  section {
+    padding: 60px 20px;
+  }
+
+  .section-title h2 {
+    font-size: 30px;
+  }
+
+}
+
+</style>
 </head>
+
 
 <body>
 
-<!-- =========================
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="topbar">
+
+  SUPREME SECONDARY LEARNER GOVERNMENT
+  • CALUMPIT NATIONAL HIGH SCHOOL
+  • SCHOOL YEAR 2026–2027
+
+</div>
+
+
+
+<!-- =====================================================
      NAVIGATION
-========================== -->
+===================================================== -->
 
 <header>
 
-  <div class="navbar">
+<div class="navbar">
 
-    <div class="brand">
-      SSLG TRANSPARENCY
-      <span>School Year 2026–2027</span>
-    </div>
 
-    <nav class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#posts">Posts</a>
-      <a href="#projects">Projects</a>
-      <a href="#finance">Finance</a>
-      <a href="#reports">Reports</a>
-      <a href="#officers">Officers</a>
-      <a href="#gallery">Gallery</a>
-    </nav>
+<div class="brand">
+
+  <!--
+  IF YOU HAVE A LOGO:
+  Replace the "SSLG" text below with an image.
+  Example:
+
+  <img src="logo.png" class="logo">
+  -->
+
+  <div class="logo">
+    SSLG
+  </div>
+
+
+  <div class="brand-text">
+
+    <strong>
+      Calumpit National High School
+    </strong>
+
+    <span>
+      Supreme Secondary Learner Government
+    </span>
 
   </div>
+
+</div>
+
+
+
+<nav class="nav-links">
+
+  <a href="#home">
+    Home
+  </a>
+
+  <a href="#officers">
+    Officers
+  </a>
+
+  <a href="#figures">
+    In Figures
+  </a>
+
+  <a href="#posts">
+    Updates
+  </a>
+
+  <a href="#projects">
+    Projects
+  </a>
+
+  <a href="#reports">
+    Reports
+  </a>
+
+  <a href="#transparency">
+    Transparency
+  </a>
+
+  <a href="#gallery">
+    Gallery
+  </a>
+
+</nav>
+
+
+</div>
 
 </header>
 
 
-<!-- =========================
-     HOME
-========================== -->
+
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <main id="home">
 
-  <div class="hero">
 
-    <div class="hero-container">
+<div class="hero">
 
-      <span class="badge">
-        OFFICIAL SSLG TRANSPARENCY PORTAL
-      </span>
 
-      <h1>
-        Supreme Secondary Learner Government
-      </h1>
+<div class="hero-content">
 
-      <p>
-        Welcome to the SSLG Transparency Portal of
-        Calumpit National High School.
-        This website provides accessible information
-        about student-led activities, projects,
-        accomplishments, financial records,
-        and official reports.
-      </p>
 
-      <div class="hero-buttons">
+<span class="hero-label">
 
-        <a class="button" href="#posts">
-          Latest Updates
-        </a>
+  OFFICIAL SSLG WEBSITE
 
-        <a class="button button-outline" href="#reports">
-          View Reports
-        </a>
+</span>
 
-      </div>
 
-    </div>
+
+<h1>
+
+  Welcome to the
+
+  <span>
+    SSLG
+  </span>
+
+  of Calumpit National High School
+
+</h1>
+
+
+
+<p>
+
+  The Supreme Secondary Learner Government
+  proudly serves as a voice for learners,
+  a platform for leadership, and a force
+  for positive change in our school community.
+
+</p>
+
+
+
+<div class="hero-buttons">
+
+  <a
+    href="#posts"
+    class="button"
+  >
+    Explore Our Updates
+  </a>
+
+
+  <a
+    href="#officers"
+    class="button button-white"
+  >
+    Meet Our Officers
+  </a>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     WELCOME
+===================================================== -->
+
+<section class="welcome">
+
+
+<div class="section-title">
+
+  <small>
+    WELCOME
+  </small>
+
+  <h2>
+    Mabuhay ang Batang Lider!
+  </h2>
+
+</div>
+
+
+
+<div class="welcome-content">
+
+
+<p>
+
+  Welcome to the official website of the
+  Supreme Secondary Learner Government
+  of Calumpit National High School.
+
+</p>
+
+
+<p>
+
+  As the student-led governing body of the school,
+  the SSLG strives to represent learners,
+  promote student participation, and create
+  meaningful programs that contribute to the
+  development of the school community.
+
+</p>
+
+
+<p>
+
+  Through service, leadership, collaboration,
+  and responsibility, we aim to empower every
+  learner to become an active and responsible
+  member of the school community.
+
+</p>
+
+
+
+<div class="motto">
+
+  LEAD • SERVE • INSPIRE
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     IN FIGURES
+===================================================== -->
+
+<section id="figures">
+
+
+<div class="section-title">
+
+  <small>
+    SSLG IN FIGURES
+  </small>
+
+  <h2>
+    Our Legacy of Service & Change
+  </h2>
+
+  <p>
+
+    Replace these numbers with your
+    verified SSLG accomplishments.
+
+  </p>
+
+</div>
+
+
+
+<div class="stats">
+
+
+<div class="stat">
+
+  <div class="stat-number">
+    00
+  </div>
+
+  <h3>
+    Projects
+  </h3>
+
+  <p>
+    Projects implemented
+  </p>
+
+</div>
+
+
+
+<div class="stat">
+
+  <div class="stat-number">
+    00
+  </div>
+
+  <h3>
+    Activities
+  </h3>
+
+  <p>
+    Student activities conducted
+  </p>
+
+</div>
+
+
+
+<div class="stat">
+
+  <div class="stat-number">
+    00
+  </div>
+
+  <h3>
+    Learners Reached
+  </h3>
+
+  <p>
+    Students benefited
+  </p>
+
+</div>
+
+
+
+<div class="stat">
+
+  <div class="stat-number">
+    00
+  </div>
+
+  <h3>
+    Partnerships
+  </h3>
+
+  <p>
+    Collaborations established
+  </p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     OFFICERS
+===================================================== -->
+
+<section id="officers">
+
+
+<div class="section-title">
+
+  <small>
+    OUR LEADERS
+  </small>
+
+  <h2>
+    SSLG Officers
+  </h2>
+
+  <p>
+
+    Meet the student leaders serving
+    the Calumpit National High School
+    community.
+
+  </p>
+
+</div>
+
+
+
+<div class="officers">
+
+
+<!-- OFFICER 1 -->
+
+<div class="officer">
+
+  <div class="officer-photo">
+
+    👤
+
+    <!--
+    Replace with:
+
+    <img src="president.jpg"
+    alt="SSLG President">
+
+    -->
 
   </div>
 
 
-  <!-- DASHBOARD -->
+  <div class="officer-position">
+    PRESIDENT
+  </div>
 
-  <section>
+  <h3>
+    Officer Name
+  </h3>
 
-    <div class="stats">
+  <p>
+    Replace with official name.
+  </p>
 
-      <div class="stat-card">
-        <div class="stat-icon">📢</div>
+</div>
 
-        <div class="stat-number">
-          03
-        </div>
 
-        <h3>Updates</h3>
 
-        <p>
-          Published announcements and updates.
-        </p>
-      </div>
+<!-- OFFICER 2 -->
 
+<div class="officer">
 
-      <div class="stat-card">
-        <div class="stat-icon">📌</div>
+  <div class="officer-photo">
+    👤
+  </div>
 
-        <div class="stat-number">
-          03
-        </div>
+  <div class="officer-position">
+    VICE PRESIDENT
+  </div>
 
-        <h3>Projects</h3>
+  <h3>
+    Officer Name
+  </h3>
 
-        <p>
-          SSLG projects and accomplishments.
-        </p>
-      </div>
+  <p>
+    Replace with official name.
+  </p>
 
+</div>
 
-      <div class="stat-card">
-        <div class="stat-icon">📄</div>
 
-        <div class="stat-number">
-          02
-        </div>
 
-        <h3>Reports</h3>
+<!-- OFFICER 3 -->
 
-        <p>
-          Available official documents.
-        </p>
-      </div>
+<div class="officer">
 
+  <div class="officer-photo">
+    👤
+  </div>
 
-      <div class="stat-card">
-        <div class="stat-icon">💰</div>
+  <div class="officer-position">
+    SECRETARY
+  </div>
 
-        <div class="stat-number">
-          ₱0.00
-        </div>
+  <h3>
+    Officer Name
+  </h3>
 
-        <h3>Balance</h3>
+  <p>
+    Replace with official name.
+  </p>
 
-        <p>
-          Replace with verified information.
-        </p>
-      </div>
+</div>
 
-    </div>
 
-  </section>
 
+<!-- OFFICER 4 -->
 
-  <!-- POSTS -->
+<div class="officer">
 
-  <section id="posts">
+  <div class="officer-photo">
+    👤
+  </div>
 
-    <div class="section-heading">
+  <div class="officer-position">
+    TREASURER
+  </div>
 
-      <h2>
-        📢 Announcements & Posts
-      </h2>
+  <h3>
+    Officer Name
+  </h3>
 
-      <p>
-        Latest SSLG announcements,
-        activities, and transparency updates.
-      </p>
+  <p>
+    Replace with official name.
+  </p>
 
-    </div>
+</div>
 
 
-    <div class="post-tools">
 
-      <input
-        id="postSearch"
-        class="search-box"
-        type="text"
-        placeholder="Search announcements..."
-        onkeyup="searchPosts()"
-      >
+<!-- OFFICER 5 -->
 
-    </div>
+<div class="officer">
 
+  <div class="officer-photo">
+    👤
+  </div>
 
-    <div class="cards" id="postList">
+  <div class="officer-position">
+    AUDITOR
+  </div>
 
+  <h3>
+    Officer Name
+  </h3>
 
-      <!-- POST 1 -->
+  <p>
+    Replace with official name.
+  </p>
 
-      <article class="card post">
+</div>
 
-        <span class="post-date">
-          August 20, 2026
-        </span>
 
-        <h3 class="post-title">
-          Welcome to the SSLG Transparency Portal
-        </h3>
 
-        <p>
-          Welcome to the official online transparency
-          portal of the SSLG. This platform will provide
-          students and the school community with
-          accessible information about SSLG activities,
-          projects, and reports.
-        </p>
+<!-- OFFICER 6 -->
 
-      </article>
+<div class="officer">
 
+  <div class="officer-photo">
+    👤
+  </div>
 
-      <!-- POST 2 -->
+  <div class="officer-position">
+    PUBLIC INFORMATION OFFICER
+  </div>
 
-      <article class="card post">
+  <h3>
+    Officer Name
+  </h3>
 
-        <span class="post-date">
-          MM/DD/2026
-        </span>
+  <p>
+    Replace with official name.
+  </p>
 
-        <h3 class="post-title">
-          Sample Activity Update
-        </h3>
+</div>
 
-        <p>
-          Replace this text with an official announcement
-          about an SSLG activity or project.
-        </p>
 
-      </article>
+</div>
 
+</section>
 
-      <!-- POST 3 -->
 
-      <article class="card post">
 
-        <span class="post-date">
-          MM/DD/2026
-        </span>
+<!-- =====================================================
+     ANNOUNCEMENTS
+===================================================== -->
 
-        <h3 class="post-title">
-          Transparency Notice
-        </h3>
+<section id="posts">
 
-        <p>
-          Use this area for important notices,
-          reports, meetings, or student activities.
-        </p>
 
-      </article>
+<div class="section-title">
 
-    </div>
+  <small>
+    STAY UPDATED
+  </small>
 
-  </section>
+  <h2>
+    Announcements & Updates
+  </h2>
 
+  <p>
+    Follow the latest SSLG activities,
+    announcements, and accomplishments.
+  </p>
 
-  <!-- PROJECTS -->
+</div>
 
-  <section id="projects">
 
-    <div class="section-heading">
 
-      <h2>
-        📌 Projects & Accomplishments
-      </h2>
+<div class="posts">
 
-      <p>
-        Track planned, ongoing, and completed SSLG projects.
-      </p>
 
-    </div>
+<!-- POST 1 -->
 
+<article class="post">
 
-    <div class="cards">
 
+<div class="post-image">
 
-      <div class="card">
+  📰
 
-        <div class="card-icon">
-          📚
-        </div>
+</div>
 
-        <h3>
-          Project 01
-        </h3>
 
-        <p>
-          Add the project's objective,
-          beneficiaries, date, and accomplishment.
-        </p>
+<div class="post-content">
 
-        <span class="status completed">
-          COMPLETED
-        </span>
+  <span class="post-date">
+    AUGUST 2026
+  </span>
 
-      </div>
+  <h3>
+    Welcome to the SSLG Website
+  </h3>
 
+  <p>
 
-      <div class="card">
+    Welcome to the official SSLG online
+    transparency and information portal.
 
-        <div class="card-icon">
-          🌱
-        </div>
+  </p>
 
-        <h3>
-          Project 02
-        </h3>
+  <a
+    href="#"
+    class="read-more"
+  >
+    Read More →
+  </a>
 
-        <p>
-          Add the project's verified information
-          and current progress.
-        </p>
+</div>
 
-        <span class="status ongoing">
-          ONGOING
-        </span>
+</article>
 
-      </div>
 
 
-      <div class="card">
+<!-- POST 2 -->
 
-        <div class="card-icon">
-          🤝
-        </div>
+<article class="post">
 
-        <h3>
-          Project 03
-        </h3>
 
-        <p>
-          Add an upcoming SSLG project
-          and its objectives.
-        </p>
+<div class="post-image">
+  📢
+</div>
 
-        <span class="status planned">
-          PLANNED
-        </span>
 
-      </div>
+<div class="post-content">
 
+  <span class="post-date">
+    MM/DD/2026
+  </span>
 
-    </div>
+  <h3>
+    Activity Announcement
+  </h3>
 
-  </section>
+  <p>
 
+    Replace this with your latest
+    official announcement.
 
-  <!-- FINANCE -->
+  </p>
 
-  <section id="finance">
+  <a
+    href="#"
+    class="read-more"
+  >
+    Read More →
+  </a>
 
-    <div class="section-heading">
+</div>
 
-      <h2>
-        💰 Financial Transparency
-      </h2>
+</article>
 
-      <p>
-        Financial records should be verified
-        and approved before publication.
-      </p>
 
-    </div>
 
+<!-- POST 3 -->
 
-    <div class="table-container">
+<article class="post">
 
-      <table>
 
-        <thead>
+<div class="post-image">
+  📌
+</div>
 
-          <tr>
 
-            <th>
-              Date
-            </th>
+<div class="post-content">
 
-            <th>
-              Activity / Description
-            </th>
+  <span class="post-date">
+    MM/DD/2026
+  </span>
 
-            <th>
-              Income
-            </th>
+  <h3>
+    SSLG Project Update
+  </h3>
 
-            <th>
-              Expense
-            </th>
+  <p>
 
-            <th>
-              Balance
-            </th>
+    Share information about your
+    current project or accomplishment.
 
-          </tr>
+  </p>
 
-        </thead>
+  <a
+    href="#"
+    class="read-more"
+  >
+    Read More →
+  </a>
 
+</div>
 
-        <tbody>
+</article>
 
-          <tr>
 
-            <td>
-              MM/DD/2026
-            </td>
+</div>
 
-            <td>
-              Sample Entry
-            </td>
+</section>
 
-            <td class="income">
-              ₱0.00
-            </td>
 
-            <td class="expense">
-              ₱0.00
-            </td>
 
-            <td>
-              ₱0.00
-            </td>
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
 
-          </tr>
+<section id="projects">
 
 
-          <tr>
+<div class="section-title">
 
-            <td>
-              MM/DD/2026
-            </td>
+  <small>
+    WHAT WE DO
+  </small>
 
-            <td>
-              Sample Entry
-            </td>
+  <h2>
+    Projects & Programs
+  </h2>
 
-            <td class="income">
-              ₱0.00
-            </td>
+  <p>
+    Our initiatives are designed to
+    serve and empower learners.
+  </p>
 
-            <td class="expense">
-              ₱0.00
-            </td>
+</div>
 
-            <td>
-              ₱0.00
-            </td>
 
-          </tr>
 
-        </tbody>
+<div class="projects">
 
-      </table>
 
-    </div>
+<div class="project">
 
+  <div class="project-icon">
+    📚
+  </div>
 
-    <div class="notice">
+  <h3>
+    Project 01
+  </h3>
 
-      <strong>
-        Transparency Reminder:
-      </strong>
+  <p>
+    Add your project's objective,
+    beneficiaries, and accomplishments.
+  </p>
 
-      Replace all sample figures with
-      verified official records.
+  <span class="status completed">
+    COMPLETED
+  </span>
 
-      Do not publish passwords, private
-      student information, or other
-      sensitive personal information.
+</div>
 
-    </div>
 
-  </section>
 
+<div class="project">
 
-  <!-- REPORTS -->
+  <div class="project-icon">
+    🤝
+  </div>
 
-  <section id="reports">
+  <h3>
+    Project 02
+  </h3>
 
-    <div class="section-heading">
+  <p>
+    Add information about your
+    ongoing SSLG project.
+  </p>
 
-      <h2>
-        📄 Reports & Documents
-      </h2>
+  <span class="status ongoing">
+    ONGOING
+  </span>
 
-      <p>
-        Add links to official reports and documents.
-      </p>
+</div>
 
-    </div>
 
 
-    <div class="cards">
+<div class="project">
 
+  <div class="project-icon">
+    🌱
+  </div>
 
-      <div class="card">
+  <h3>
+    Project 03
+  </h3>
 
-        <div class="card-icon">
-          📑
-        </div>
+  <p>
+    Add an upcoming project and
+    its intended beneficiaries.
+  </p>
 
-        <h3>
-          Accomplishment Reports
-        </h3>
+  <span class="status upcoming">
+    UPCOMING
+  </span>
 
-        <p>
-          Add links to official accomplishment reports.
-        </p>
+</div>
 
-        <!-- Replace # with your PDF link -->
 
-        <a
-          class="document-link"
-          href="#"
-        >
-          Open Report →
-        </a>
+</div>
 
-      </div>
+</section>
 
 
-      <div class="card">
 
-        <div class="card-icon">
-          💵
-        </div>
+<!-- =====================================================
+     REPORTS
+===================================================== -->
 
-        <h3>
-          Financial Reports
-        </h3>
+<section id="reports">
 
-        <p>
-          Add approved financial or liquidation reports.
-        </p>
 
-        <a
-          class="document-link"
-          href="#"
-        >
-          Open Report →
-        </a>
+<div class="section-title">
 
-      </div>
+  <small>
+    DOCUMENTS
+  </small>
 
+  <h2>
+    Accomplishment Reports
+  </h2>
 
-      <div class="card">
+  <p>
+    Access official SSLG reports
+    and supporting documents.
+  </p>
 
-        <div class="card-icon">
-          📝
-        </div>
+</div>
 
-        <h3>
-          Meeting Records
-        </h3>
 
-        <p>
-          Add minutes, resolutions,
-          proposals, and related documents.
-        </p>
 
-        <a
-          class="document-link"
-          href="#"
-        >
-          Open Documents →
-        </a>
+<div class="reports">
 
-      </div>
 
+<div class="report">
 
-    </div>
+  <h3>
+    📑 Accomplishment Report
+  </h3>
 
-  </section>
+  <p>
+    Add your official accomplishment
+    report PDF here.
+  </p>
 
+  <!-- Replace # with PDF link -->
 
-  <!-- OFFICERS -->
+  <a
+    href="#"
+    class="report-button"
+  >
+    READ REPORT
+  </a>
 
-  <section id="officers">
+</div>
 
-    <div class="section-heading">
 
-      <h2>
-        👥 SSLG Officers
-      </h2>
 
-      <p>
-        Replace the placeholders with the
-        official SSLG officers.
-      </p>
+<div class="report">
 
-    </div>
+  <h3>
+    📝 Meeting Records
+  </h3>
 
+  <p>
+    Add approved meeting minutes,
+    resolutions, or related records.
+  </p>
 
-    <div class="cards">
+  <a
+    href="#"
+    class="report-button"
+  >
+    EXPLORE
+  </a>
 
+</div>
 
-      <div class="card officer">
 
-        <div class="officer-photo">
-          👤
-        </div>
 
-        <span class="position">
-          PRESIDENT
-        </span>
+<div class="report">
 
-        <h3>
-          Officer Name
-        </h3>
+  <h3>
+    📊 Project Reports
+  </h3>
 
-        <p>
-          Replace with official name.
-        </p>
+  <p>
+    Add project documentation
+    and accomplishment records.
+  </p>
 
-      </div>
+  <a
+    href="#"
+    class="report-button"
+  >
+    VIEW REPORTS
+  </a>
 
+</div>
 
-      <div class="card officer">
 
-        <div class="officer-photo">
-          👤
-        </div>
+</div>
 
-        <span class="position">
-          VICE PRESIDENT
-        </span>
+</section>
 
-        <h3>
-          Officer Name
-        </h3>
 
-        <p>
-          Replace with official name.
-        </p>
 
-      </div>
+<!-- =====================================================
+     TRANSPARENCY
+===================================================== -->
 
+<section
+  id="transparency"
+  class="transparency"
+>
 
-      <div class="card officer">
 
-        <div class="officer-photo">
-          👤
-        </div>
+<div class="section-title">
 
-        <span class="position">
-          SECRETARY
-        </span>
+  <small>
+    OPEN GOVERNANCE
+  </small>
 
-        <h3>
-          Officer Name
-        </h3>
+  <h2>
+    Transparency
+  </h2>
 
-        <p>
-          Replace with official name.
-        </p>
+  <p>
+    Providing accessible information
+    about SSLG activities and finances.
+  </p>
 
-      </div>
+</div>
 
 
-      <div class="card officer">
 
-        <div class="officer-photo">
-          👤
-        </div>
+<div class="table-wrapper">
 
-        <span class="position">
-          TREASURER
-        </span>
 
-        <h3>
-          Officer Name
-        </h3>
+<table>
 
-        <p>
-          Replace with official name.
-        </p>
 
-      </div>
+<thead>
 
+<tr>
 
-    </div>
+  <th>
+    DATE
+  </th>
 
-  </section>
+  <th>
+    ACTIVITY / DESCRIPTION
+  </th>
 
+  <th>
+    INCOME
+  </th>
 
-  <!-- ACTIVITIES -->
+  <th>
+    EXPENSE
+  </th>
 
-  <section id="activities">
+  <th>
+    BALANCE
+  </th>
 
-    <div class="section-heading">
+</tr>
 
-      <h2>
-        📅 Activities & Events
-      </h2>
+</thead>
 
-      <p>
-        Upcoming and completed SSLG activities.
-      </p>
 
-    </div>
 
+<tbody>
 
-    <div class="cards">
 
+<tr>
 
-      <div class="card">
+  <td>
+    MM/DD/2026
+  </td>
 
-        <span class="post-date">
-          MM/DD/2026
-        </span>
+  <td>
+    Sample Entry
+  </td>
 
-        <h3>
-          Upcoming Activity
-        </h3>
+  <td class="income">
+    ₱0.00
+  </td>
 
-        <p>
-          Add the activity name,
-          location, time, participants,
-          and purpose.
-        </p>
+  <td class="expense">
+    ₱0.00
+  </td>
 
-        <span class="status planned">
-          UPCOMING
-        </span>
+  <td>
+    ₱0.00
+  </td>
 
-      </div>
+</tr>
 
 
-      <div class="card">
+</tbody>
 
-        <span class="post-date">
-          MM/DD/2026
-        </span>
+</table>
 
-        <h3>
-          Completed Activity
-        </h3>
+</div>
 
-        <p>
-          Add the activity accomplishment
-          and supporting information.
-        </p>
 
-        <span class="status completed">
-          COMPLETED
-        </span>
 
-      </div>
+<div class="notice">
 
+  <strong>
+    Transparency Reminder:
+  </strong>
 
-    </div>
+  All financial information should be
+  verified and approved before publication.
+  Do not publish private student information,
+  passwords, or other sensitive data.
 
-  </section>
+</div>
 
+</section>
 
-  <!-- GALLERY -->
 
-  <section id="gallery">
 
-    <div class="section-heading">
+<!-- =====================================================
+     GALLERY
+===================================================== -->
 
-      <h2>
-        📸 Photo Gallery
-      </h2>
+<section id="gallery">
 
-      <p>
-        Add approved photos from SSLG
-        activities and projects.
-      </p>
 
-    </div>
+<div class="section-title">
 
+  <small>
+    OUR MEMORIES
+  </small>
 
-    <div class="gallery">
+  <h2>
+    SSLG Gallery
+  </h2>
 
+  <p>
+    Moments from our activities,
+    programs, and projects.
+  </p>
 
-      <div class="gallery-item">
+</div>
 
-        <div class="gallery-placeholder">
-          🖼️
-        </div>
 
-        <div class="gallery-caption">
 
-          <h3>
-            Activity Photo
-          </h3>
+<div class="gallery">
 
-          <p>
-            Add an approved photo
-            and caption.
-          </p>
 
-        </div>
+<div class="gallery-item">
 
-      </div>
+  <div class="gallery-photo">
 
+    🖼️
 
-      <div class="gallery-item">
+    <!--
+    Replace with:
 
-        <div class="gallery-placeholder">
-          🖼️
-        </div>
+    <img
+      src="activity1.jpg"
+      alt="SSLG Activity"
+    >
 
-        <div class="gallery-caption">
+    -->
 
-          <h3>
-            Project Photo
-          </h3>
+  </div>
 
-          <p>
-            Add an approved photo
-            and caption.
-          </p>
+  <div class="gallery-caption">
 
-        </div>
+    <h3>
+      SSLG Activity
+    </h3>
 
-      </div>
+    <p>
+      Add your photo caption here.
+    </p>
 
+  </div>
 
-      <div class="gallery-item">
+</div>
 
-        <div class="gallery-placeholder">
-          🖼️
-        </div>
 
-        <div class="gallery-caption">
 
-          <h3>
-            School Activity
-          </h3>
+<div class="gallery-item">
 
-          <p>
-            Add an approved photo
-            and caption.
-          </p>
+  <div class="gallery-photo">
+    🖼️
+  </div>
 
-        </div>
+  <div class="gallery-caption">
 
-      </div>
+    <h3>
+      School Program
+    </h3>
 
+    <p>
+      Add your photo caption here.
+    </p>
 
-    </div>
+  </div>
 
-  </section>
+</div>
 
 
-  <!-- CONTACT -->
 
-  <section id="contact">
+<div class="gallery-item">
 
-    <div class="contact-box">
+  <div class="gallery-photo">
+    🖼️
+  </div>
 
-      <h2>
-        📬 Contact & Feedback
-      </h2>
+  <div class="gallery-caption">
 
-      <p>
-        Have a question about an SSLG
-        project, report, or activity?
-      </p>
+    <h3>
+      Project Implementation
+    </h3>
 
-      <p>
-        <strong>School:</strong>
-        Calumpit National High School
-      </p>
+    <p>
+      Add your photo caption here.
+    </p>
 
-      <p>
-        <strong>SSLG:</strong>
-        Add official contact information
-      </p>
+  </div>
 
-      <p>
-        <strong>Email:</strong>
-        Add an official school/organization email
-      </p>
+</div>
 
-    </div>
 
-  </section>
+
+<div class="gallery-item">
+
+  <div class="gallery-photo">
+    🖼️
+  </div>
+
+  <div class="gallery-caption">
+
+    <h3>
+      Student Leadership
+    </h3>
+
+    <p>
+      Add your photo caption here.
+    </p>
+
+  </div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<div class="contact">
+
+
+<div class="contact-inner">
+
+
+<h2>
+  Connect With Your SSLG
+</h2>
+
+
+<p>
+
+  Have questions, suggestions,
+  or concerns? Reach out through
+  our official school-approved
+  communication channels.
+
+</p>
+
+
+
+<p>
+
+  <strong>
+    Calumpit National High School
+  </strong>
+
+</p>
+
+
+
+<p>
+  SSLG • School Year 2026–2027
+</p>
+
+
+
+<a
+  href="#"
+  class="contact-button"
+>
+  CONTACT SSLG
+</a>
+
+
+</div>
+
+</div>
+
+
 
 </main>
 
 
-<!-- FOOTER -->
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
-  <p>
-    <strong>
-      SSLG Transparency Portal
-    </strong>
-  </p>
 
-  <p>
-    Calumpit National High School
-    • School Year 2026–2027
-  </p>
+<p>
 
-  <p>
-    Information should be verified
-    before publication.
-  </p>
+  <strong>
+    SUPREME SECONDARY LEARNER GOVERNMENT
+  </strong>
+
+</p>
+
+
+<p>
+  Calumpit National High School
+</p>
+
+
+<p>
+  School Year 2026–2027
+</p>
+
+
+<p>
+  Official SSLG Transparency Portal
+</p>
+
 
 </footer>
 
-
-<!-- =========================
-     SEARCH SCRIPT
-========================== -->
-
-<script>
-
-function searchPosts() {
-
-  const search =
-    document
-      .getElementById("postSearch")
-      .value
-      .toLowerCase();
-
-  const posts =
-    document.querySelectorAll(".post");
-
-  posts.forEach(function(post) {
-
-    const text =
-      post.innerText.toLowerCase();
-
-    if (text.includes(search)) {
-
-      post.style.display = "block";
-
-    } else {
-
-      post.style.display = "none";
-
-    }
-
-  });
-
-}
-
-</script>
 
 </body>
 </html>
