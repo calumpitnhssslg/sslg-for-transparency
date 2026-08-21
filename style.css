@@ -25,8 +25,10 @@ body.home {
     --glow1: rgba(231, 189, 104, 0.35);
     --glow2: rgba(139, 30, 50, 0.50);
     --glow3: rgba(110, 20, 40, 0.35);
+
     --hero1: #9b2845;
     --hero2: #c49a45;
+
     --accent: #e7bd68;
 }
 
@@ -34,8 +36,10 @@ body.about {
     --glow1: rgba(190, 75, 105, 0.38);
     --glow2: rgba(110, 20, 45, 0.50);
     --glow3: rgba(150, 45, 75, 0.35);
+
     --hero1: #a83f68;
     --hero2: #702040;
+
     --accent: #e09aaa;
 }
 
@@ -43,8 +47,10 @@ body.officers {
     --glow1: rgba(125, 75, 150, 0.35);
     --glow2: rgba(95, 20, 65, 0.50);
     --glow3: rgba(135, 45, 105, 0.30);
+
     --hero1: #75468e;
     --hero2: #842d68;
+
     --accent: #d1a4e5;
 }
 
@@ -52,8 +58,10 @@ body.projects {
     --glow1: rgba(210, 50, 65, 0.38);
     --glow2: rgba(120, 15, 30, 0.55);
     --glow3: rgba(170, 35, 45, 0.35);
+
     --hero1: #c52f43;
     --hero2: #8f1728;
+
     --accent: #f08080;
 }
 
@@ -61,8 +69,10 @@ body.announcements {
     --glow1: rgba(205, 110, 50, 0.38);
     --glow2: rgba(120, 25, 30, 0.50);
     --glow3: rgba(180, 65, 40, 0.35);
+
     --hero1: #b85c35;
     --hero2: #9a302d;
+
     --accent: #e5a66b;
 }
 
@@ -70,8 +80,10 @@ body.transparency {
     --glow1: rgba(190, 145, 60, 0.38);
     --glow2: rgba(100, 20, 30, 0.55);
     --glow3: rgba(150, 90, 40, 0.35);
+
     --hero1: #a98235;
     --hero2: #7d202c;
+
     --accent: #e0bd72;
 }
 
@@ -370,11 +382,16 @@ nav a.active {
 }
 
 
-/* ACTUAL SSLG LOGO */
+/* =========================================================
+   ACTUAL SSLG LOGO
+   ========================================================= */
 
 .emblem img {
-    width: 105px;
-    height: 105px;
+    width: 145px !important;
+    height: 145px !important;
+
+    max-width: 145px !important;
+    max-height: 145px !important;
 
     object-fit: contain;
 
@@ -394,7 +411,9 @@ nav a.active {
 }
 
 
-/* FIRST GLOWING RING */
+/* =========================================================
+   GLOWING RINGS
+   ========================================================= */
 
 .emblem::before {
     content: "";
@@ -418,9 +437,6 @@ nav a.active {
         logoRing 5s linear infinite;
 }
 
-
-/* SECOND GLOWING RING */
-
 .emblem::after {
     content: "";
 
@@ -440,7 +456,9 @@ nav a.active {
 }
 
 
-/* LOGO GLOW */
+/* =========================================================
+   LOGO ANIMATION
+   ========================================================= */
 
 @keyframes logoGlow {
 
@@ -449,9 +467,14 @@ nav a.active {
         transform: scale(1);
 
         box-shadow:
-            0 0 10px rgba(231, 189, 104, 0.6),
-            0 0 25px rgba(231, 189, 104, 0.4),
-            0 0 45px rgba(231, 189, 104, 0.25);
+            0 0 10px
+            rgba(231, 189, 104, 0.6),
+
+            0 0 25px
+            rgba(231, 189, 104, 0.4),
+
+            0 0 45px
+            rgba(231, 189, 104, 0.25);
     }
 
     50% {
@@ -459,9 +482,14 @@ nav a.active {
         transform: scale(1.03);
 
         box-shadow:
-            0 0 15px rgba(231, 189, 104, 0.9),
-            0 0 35px rgba(231, 189, 104, 0.65),
-            0 0 65px rgba(231, 189, 104, 0.4);
+            0 0 15px
+            rgba(231, 189, 104, 0.9),
+
+            0 0 35px
+            rgba(231, 189, 104, 0.65),
+
+            0 0 65px
+            rgba(231, 189, 104, 0.4);
     }
 
     100% {
@@ -469,12 +497,16 @@ nav a.active {
         transform: scale(1);
 
         box-shadow:
-            0 0 10px rgba(231, 189, 104, 0.6),
-            0 0 25px rgba(231, 189, 104, 0.4),
-            0 0 45px rgba(231, 189, 104, 0.25);
+            0 0 10px
+            rgba(231, 189, 104, 0.6),
+
+            0 0 25px
+            rgba(231, 189, 104, 0.4),
+
+            0 0 45px
+            rgba(231, 189, 104, 0.25);
     }
 }
-
 
 @keyframes logoRing {
 
@@ -487,7 +519,6 @@ nav a.active {
     }
 }
 
-
 @keyframes logoRingReverse {
 
     from {
@@ -498,7 +529,6 @@ nav a.active {
         transform: rotate(0deg);
     }
 }
-
 
 .hero-emblem p {
     margin-top: 18px;
@@ -1009,8 +1039,11 @@ footer {
     }
 
     .emblem img {
-        width: 90px;
-        height: 90px;
+        width: 125px !important;
+        height: 125px !important;
+
+        max-width: 125px !important;
+        max-height: 125px !important;
     }
 
     .emblem::before {
