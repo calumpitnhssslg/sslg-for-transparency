@@ -239,7 +239,7 @@ nav a.active {
 
     justify-content: space-between;
 
-    gap: 60px;
+    gap: 70px;
 
     padding: 100px 9%;
 
@@ -338,17 +338,24 @@ nav a.active {
 .hero-emblem {
     text-align: center;
 
-    min-width: 250px;
+    min-width: 310px;
 
     align-self: center;
 
-    /* MOVES LOGO UP */
-    transform: translateY(-20px);
+    transform: translateY(-45px);
+
+    position: relative;
+
+    z-index: 5;
 }
 
+
+/* MAIN GLOW CIRCLE */
+
 .emblem {
-    width: 195px !important;
-    height: 195px !important;
+    width: 230px !important;
+
+    height: 230px !important;
 
     border-radius: 50%;
 
@@ -367,23 +374,24 @@ nav a.active {
     position: relative;
 
     box-shadow:
-        0 0 12px rgba(231, 189, 104, 0.95),
-        0 0 30px rgba(231, 189, 104, 0.75),
-        0 0 60px rgba(231, 189, 104, 0.55),
-        0 0 100px rgba(231, 189, 104, 0.30);
+        0 0 15px rgba(231, 189, 104, 1),
+        0 0 35px rgba(231, 189, 104, 0.85),
+        0 0 70px rgba(231, 189, 104, 0.60),
+        0 0 120px rgba(231, 189, 104, 0.35);
 
     animation: radiantGlow 3.5s ease-in-out infinite;
 }
 
 
 /* =========================================================
-   SSLG LOGO IMAGE
+   LARGE SSLG LOGO
    ========================================================= */
 
 .hero-emblem .emblem img {
-    width: 220px !important;
 
-    height: 220px !important;
+    width: 255px !important;
+
+    height: 255px !important;
 
     max-width: none !important;
 
@@ -393,50 +401,51 @@ nav a.active {
 
     position: relative;
 
-    z-index: 5;
+    z-index: 10;
 
     display: block;
 
     filter:
         drop-shadow(
-            0 0 7px
-            rgba(255, 220, 130, 0.95)
+            0 0 8px
+            rgba(255, 220, 130, 1)
         )
         drop-shadow(
-            0 0 18px
-            rgba(231, 189, 104, 0.8)
+            0 0 20px
+            rgba(231, 189, 104, 0.85)
         )
         drop-shadow(
-            0 0 35px
-            rgba(231, 189, 104, 0.45)
+            0 0 40px
+            rgba(231, 189, 104, 0.50)
         );
 }
 
 
 /* =========================================================
-   RADIANT OUTER RINGS
+   OUTER GLOW RINGS
    ========================================================= */
 
 .emblem::before {
+
     content: "";
 
     position: absolute;
 
-    width: 225px;
+    width: 265px;
 
-    height: 225px;
+    height: 265px;
 
     border-radius: 50%;
 
     border:
         1px solid
-        rgba(231, 189, 104, 0.45);
+        rgba(231, 189, 104, 0.50);
 
     box-shadow:
-        0 0 25px
-        rgba(231, 189, 104, 0.35),
+        0 0 30px
+        rgba(231, 189, 104, 0.40),
 
-        0 0 50px
+        0 0 60px
         rgba(231, 189, 104, 0.20);
 
     animation:
@@ -444,23 +453,24 @@ nav a.active {
 }
 
 .emblem::after {
+
     content: "";
 
     position: absolute;
 
-    width: 255px;
+    width: 300px;
 
-    height: 255px;
+    height: 300px;
 
     border-radius: 50%;
 
     border:
         1px solid
-        rgba(231, 189, 104, 0.22);
+        rgba(231, 189, 104, 0.24);
 
     box-shadow:
-        0 0 35px
-        rgba(231, 189, 104, 0.20);
+        0 0 40px
+        rgba(231, 189, 104, 0.25);
 
     animation:
         logoRingReverse 10s linear infinite;
@@ -468,39 +478,42 @@ nav a.active {
 
 
 /* =========================================================
-   RADIANT GLOW
+   GLOW ANIMATION
    ========================================================= */
 
 @keyframes radiantGlow {
 
     0% {
+
         transform: scale(1);
 
         box-shadow:
-            0 0 12px rgba(231, 189, 104, 0.75),
-            0 0 30px rgba(231, 189, 104, 0.55),
-            0 0 60px rgba(231, 189, 104, 0.35),
-            0 0 90px rgba(231, 189, 104, 0.20);
+            0 0 15px rgba(231, 189, 104, 0.80),
+            0 0 35px rgba(231, 189, 104, 0.60),
+            0 0 70px rgba(231, 189, 104, 0.40),
+            0 0 110px rgba(231, 189, 104, 0.20);
     }
 
     50% {
+
         transform: scale(1.035);
 
         box-shadow:
-            0 0 18px rgba(255, 220, 130, 1),
-            0 0 40px rgba(231, 189, 104, 0.85),
-            0 0 80px rgba(231, 189, 104, 0.60),
-            0 0 125px rgba(231, 189, 104, 0.35);
+            0 0 20px rgba(255, 220, 130, 1),
+            0 0 45px rgba(231, 189, 104, 0.90),
+            0 0 90px rgba(231, 189, 104, 0.65),
+            0 0 140px rgba(231, 189, 104, 0.40);
     }
 
     100% {
+
         transform: scale(1);
 
         box-shadow:
-            0 0 12px rgba(231, 189, 104, 0.75),
-            0 0 30px rgba(231, 189, 104, 0.55),
-            0 0 60px rgba(231, 189, 104, 0.35),
-            0 0 90px rgba(231, 189, 104, 0.20);
+            0 0 15px rgba(231, 189, 104, 0.80),
+            0 0 35px rgba(231, 189, 104, 0.60),
+            0 0 70px rgba(231, 189, 104, 0.40),
+            0 0 110px rgba(231, 189, 104, 0.20);
     }
 }
 
@@ -527,6 +540,7 @@ nav a.active {
 }
 
 .hero-emblem p {
+
     margin-top: 18px;
 
     color: var(--accent);
@@ -544,6 +558,7 @@ nav a.active {
    ========================================================= */
 
 .hero-buttons {
+
     display: flex;
 
     gap: 15px;
@@ -552,6 +567,7 @@ nav a.active {
 }
 
 .button {
+
     display: inline-block;
 
     padding: 14px 25px;
@@ -570,6 +586,7 @@ nav a.active {
 }
 
 .button:hover {
+
     transform: translateY(-3px);
 
     box-shadow:
@@ -578,6 +595,7 @@ nav a.active {
 }
 
 .button.secondary {
+
     background: transparent;
 
     color: white;
@@ -588,6 +606,7 @@ nav a.active {
 }
 
 .button.secondary:hover {
+
     background: white;
 
     color: #3a0711;
@@ -599,6 +618,7 @@ nav a.active {
    ========================================================= */
 
 .welcome {
+
     padding: 120px 10%;
 
     background:
@@ -608,6 +628,7 @@ nav a.active {
 }
 
 .section-label {
+
     color: #7b162b;
 
     font-size: 11px;
@@ -620,6 +641,7 @@ nav a.active {
 }
 
 .welcome h2 {
+
     max-width: 800px;
 
     margin: auto auto 30px;
@@ -633,6 +655,7 @@ nav a.active {
 }
 
 .welcome > p {
+
     max-width: 760px;
 
     margin: auto;
@@ -648,6 +671,7 @@ nav a.active {
    ========================================================= */
 
 .quick-access {
+
     padding: 110px 8%;
 
     background:
@@ -655,10 +679,12 @@ nav a.active {
 }
 
 .section-heading {
+
     margin-bottom: 50px;
 }
 
 .section-heading h2 {
+
     font-size:
         clamp(35px, 5vw, 60px);
 
@@ -668,18 +694,20 @@ nav a.active {
 }
 
 
-/* 4 CARDS IN ONE LINE */
+/* FOUR CARDS IN ONE ROW */
 
 .quick-grid {
+
     display: grid;
 
     grid-template-columns:
-        repeat(4, 1fr);
+        repeat(4, minmax(0, 1fr));
 
     gap: 20px;
 }
 
 .quick-card {
+
     display: block;
 
     padding: 30px;
@@ -705,6 +733,7 @@ nav a.active {
 }
 
 .quick-card:hover {
+
     transform: translateY(-8px);
 
     border-color: var(--accent);
@@ -715,12 +744,14 @@ nav a.active {
 }
 
 .card-icon {
+
     font-size: 34px;
 
     margin-bottom: 20px;
 }
 
 .quick-card h3 {
+
     color: #3a0711;
 
     font-size: 22px;
@@ -729,12 +760,14 @@ nav a.active {
 }
 
 .quick-card p {
+
     color: #666;
 
     font-size: 14px;
 }
 
 .quick-card span {
+
     display: inline-block;
 
     margin-top: 20px;
@@ -747,6 +780,7 @@ nav a.active {
 }
 
 .position {
+
     color: var(--accent) !important;
 
     font-size: 10px !important;
@@ -764,6 +798,7 @@ nav a.active {
    ========================================================= */
 
 .portal-section {
+
     padding: 120px 10%;
 
     text-align: center;
@@ -805,12 +840,14 @@ nav a.active {
 }
 
 .portal-content {
+
     max-width: 800px;
 
     margin: auto;
 }
 
 .portal-content h2 {
+
     font-size:
         clamp(38px, 5vw, 65px);
 
@@ -820,6 +857,7 @@ nav a.active {
 }
 
 .portal-content p:not(.eyebrow) {
+
     color:
         rgba(255, 255, 255, 0.8);
 
@@ -832,12 +870,14 @@ nav a.active {
    ========================================================= */
 
 footer {
+
     background: #26040b;
 
     color: white;
 }
 
 .footer-main {
+
     padding: 70px 8%;
 
     display: flex;
@@ -848,6 +888,7 @@ footer {
 }
 
 .footer-main h3 {
+
     color: var(--accent);
 
     margin-bottom: 15px;
@@ -856,6 +897,7 @@ footer {
 }
 
 .footer-main p {
+
     color:
         rgba(255, 255, 255, 0.65);
 
@@ -863,6 +905,7 @@ footer {
 }
 
 .footer-links {
+
     display: flex;
 
     flex-direction: column;
@@ -871,6 +914,7 @@ footer {
 }
 
 .footer-links h4 {
+
     color: var(--accent);
 
     margin-bottom: 10px;
@@ -881,6 +925,7 @@ footer {
 }
 
 .footer-links a {
+
     color:
         rgba(255, 255, 255, 0.75);
 
@@ -892,10 +937,12 @@ footer {
 }
 
 .footer-links a:hover {
+
     color: var(--accent);
 }
 
 .footer-bottom {
+
     border-top:
         1px solid
         rgba(255, 255, 255, 0.1);
@@ -906,6 +953,7 @@ footer {
 }
 
 .footer-bottom p {
+
     font-size: 12px;
 
     color:
@@ -917,9 +965,54 @@ footer {
    TABLET
    ========================================================= */
 
+@media (max-width: 1100px) {
+
+    .hero {
+
+        gap: 40px;
+
+        padding-left: 6%;
+
+        padding-right: 6%;
+    }
+
+    .hero-emblem {
+
+        min-width: 280px;
+
+        transform: translateY(-30px);
+    }
+
+    .emblem {
+
+        width: 210px !important;
+
+        height: 210px !important;
+    }
+
+    .hero-emblem .emblem img {
+
+        width: 235px !important;
+
+        height: 235px !important;
+    }
+
+    .quick-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   MOBILE / TABLET
+   ========================================================= */
+
 @media (max-width: 900px) {
 
     .navbar {
+
         flex-direction: column;
 
         gap: 20px;
@@ -928,6 +1021,7 @@ footer {
     }
 
     nav {
+
         flex-wrap: wrap;
 
         justify-content: center;
@@ -936,37 +1030,37 @@ footer {
     }
 
     .hero {
+
         flex-direction: column;
 
         text-align: center;
 
         padding: 80px 7%;
 
-        min-height: 600px;
+        min-height: 700px;
     }
 
     .hero-text {
+
         margin-left: auto;
 
         margin-right: auto;
     }
 
     .hero-buttons {
+
         justify-content: center;
     }
 
     .hero-emblem {
-        margin-top: 20px;
+
+        margin-top: 10px;
 
         transform: translateY(-10px);
     }
 
-    .quick-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
     .footer-main {
+
         flex-direction: column;
     }
 }
@@ -979,52 +1073,69 @@ footer {
 @media (max-width: 600px) {
 
     .brand {
+
         text-align: center;
     }
 
     .brand strong {
+
         font-size: 18px;
     }
 
     .brand span {
+
         font-size: 7px;
     }
 
     nav {
+
         gap: 10px;
     }
 
     nav a {
+
         font-size: 11px;
     }
 
     .hero h1 {
+
         font-size: 44px;
     }
 
     .quick-grid {
+
         grid-template-columns: 1fr;
     }
 
     .welcome,
     .quick-access,
     .portal-section {
+
         padding: 80px 7%;
     }
 
 
     /* MOBILE LOGO */
 
-    .hero-emblem .emblem {
-        width: 170px !important;
+    .hero-emblem {
 
-        height: 170px !important;
+        min-width: 100%;
+
+        transform: translateY(-5px);
+    }
+
+    .hero-emblem .emblem {
+
+        width: 175px !important;
+
+        height: 175px !important;
     }
 
     .hero-emblem .emblem img {
-        width: 190px !important;
 
-        height: 190px !important;
+        width: 195px !important;
+
+        height: 195px !important;
 
         max-width: none !important;
 
@@ -1034,19 +1145,17 @@ footer {
     }
 
     .emblem::before {
-        width: 195px;
 
-        height: 195px;
+        width: 200px;
+
+        height: 200px;
     }
 
     .emblem::after {
-        width: 220px;
 
-        height: 220px;
-    }
+        width: 225px;
 
-    .hero-emblem {
-        transform: translateY(-10px);
+        height: 225px;
     }
 }
 ```
