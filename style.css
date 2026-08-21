@@ -7,9 +7,6 @@
 
 html {
     scroll-behavior: smooth;
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
 }
 
 body {
@@ -17,8 +14,6 @@ body {
     color: #3a0711;
     background: #f8f3f3;
     line-height: 1.6;
-    width: 100%;
-    max-width: 100%;
     overflow-x: hidden;
 }
 
@@ -156,7 +151,6 @@ body::before {
 
 .navbar {
     width: 100%;
-    max-width: 100%;
 
     padding: 22px 7%;
 
@@ -208,8 +202,6 @@ nav {
     align-items: center;
 
     gap: 25px;
-
-    max-width: 100%;
 }
 
 nav a {
@@ -236,9 +228,6 @@ nav a.active {
 
 .hero {
     min-height: 620px;
-
-    width: 100%;
-    max-width: 100%;
 
     position: relative;
 
@@ -303,7 +292,6 @@ nav a.active {
 
 .hero-content {
     max-width: 720px;
-    min-width: 0;
 }
 
 .eyebrow {
@@ -352,20 +340,15 @@ nav a.active {
 
     min-width: 250px;
 
-    flex-shrink: 1;
-
     align-self: center;
 
-    transform: translateY(-25px);
-
-    position: relative;
-
-    z-index: 5;
+    /* MOVES LOGO UP */
+    transform: translateY(-20px);
 }
 
 .emblem {
-    width: 205px !important;
-    height: 205px !important;
+    width: 195px !important;
+    height: 195px !important;
 
     border-radius: 50%;
 
@@ -379,17 +362,17 @@ nav a.active {
 
     border: 3px solid var(--accent);
 
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.035);
 
     position: relative;
 
     box-shadow:
-        0 0 12px rgba(231, 189, 104, 0.9),
-        0 0 30px rgba(231, 189, 104, 0.7),
-        0 0 60px rgba(231, 189, 104, 0.45),
-        0 0 100px rgba(231, 189, 104, 0.20);
+        0 0 12px rgba(231, 189, 104, 0.95),
+        0 0 30px rgba(231, 189, 104, 0.75),
+        0 0 60px rgba(231, 189, 104, 0.55),
+        0 0 100px rgba(231, 189, 104, 0.30);
 
-    animation: logoGlow 3s ease-in-out infinite;
+    animation: radiantGlow 3.5s ease-in-out infinite;
 }
 
 
@@ -398,10 +381,12 @@ nav a.active {
    ========================================================= */
 
 .hero-emblem .emblem img {
-    width: 225px !important;
-    height: 225px !important;
+    width: 220px !important;
+
+    height: 220px !important;
 
     max-width: none !important;
+
     max-height: none !important;
 
     object-fit: contain !important;
@@ -414,22 +399,22 @@ nav a.active {
 
     filter:
         drop-shadow(
-            0 0 8px
-            rgba(231, 189, 104, 0.95)
+            0 0 7px
+            rgba(255, 220, 130, 0.95)
         )
         drop-shadow(
-            0 0 20px
-            rgba(231, 189, 104, 0.70)
+            0 0 18px
+            rgba(231, 189, 104, 0.8)
         )
         drop-shadow(
             0 0 35px
-            rgba(231, 189, 104, 0.35)
+            rgba(231, 189, 104, 0.45)
         );
 }
 
 
 /* =========================================================
-   OUTER GLOWING RINGS
+   RADIANT OUTER RINGS
    ========================================================= */
 
 .emblem::before {
@@ -437,8 +422,9 @@ nav a.active {
 
     position: absolute;
 
-    width: 235px;
-    height: 235px;
+    width: 225px;
+
+    height: 225px;
 
     border-radius: 50%;
 
@@ -448,10 +434,13 @@ nav a.active {
 
     box-shadow:
         0 0 25px
-        rgba(231, 189, 104, 0.35);
+        rgba(231, 189, 104, 0.35),
+
+        0 0 50px
+        rgba(231, 189, 104, 0.20);
 
     animation:
-        logoRing 5s linear infinite;
+        logoRing 6s linear infinite;
 }
 
 .emblem::after {
@@ -459,58 +448,59 @@ nav a.active {
 
     position: absolute;
 
-    width: 265px;
-    height: 265px;
+    width: 255px;
+
+    height: 255px;
 
     border-radius: 50%;
 
     border:
         1px solid
-        rgba(231, 189, 104, 0.20);
+        rgba(231, 189, 104, 0.22);
 
     box-shadow:
         0 0 35px
-        rgba(231, 189, 104, 0.18);
+        rgba(231, 189, 104, 0.20);
 
     animation:
-        logoRingReverse 8s linear infinite;
+        logoRingReverse 10s linear infinite;
 }
 
 
 /* =========================================================
-   LOGO GLOW
+   RADIANT GLOW
    ========================================================= */
 
-@keyframes logoGlow {
+@keyframes radiantGlow {
 
     0% {
         transform: scale(1);
 
         box-shadow:
-            0 0 12px rgba(231, 189, 104, 0.7),
-            0 0 30px rgba(231, 189, 104, 0.5),
-            0 0 60px rgba(231, 189, 104, 0.3),
-            0 0 90px rgba(231, 189, 104, 0.15);
+            0 0 12px rgba(231, 189, 104, 0.75),
+            0 0 30px rgba(231, 189, 104, 0.55),
+            0 0 60px rgba(231, 189, 104, 0.35),
+            0 0 90px rgba(231, 189, 104, 0.20);
     }
 
     50% {
-        transform: scale(1.03);
+        transform: scale(1.035);
 
         box-shadow:
-            0 0 18px rgba(231, 189, 104, 1),
-            0 0 40px rgba(231, 189, 104, 0.8),
-            0 0 75px rgba(231, 189, 104, 0.5),
-            0 0 120px rgba(231, 189, 104, 0.25);
+            0 0 18px rgba(255, 220, 130, 1),
+            0 0 40px rgba(231, 189, 104, 0.85),
+            0 0 80px rgba(231, 189, 104, 0.60),
+            0 0 125px rgba(231, 189, 104, 0.35);
     }
 
     100% {
         transform: scale(1);
 
         box-shadow:
-            0 0 12px rgba(231, 189, 104, 0.7),
-            0 0 30px rgba(231, 189, 104, 0.5),
-            0 0 60px rgba(231, 189, 104, 0.3),
-            0 0 90px rgba(231, 189, 104, 0.15);
+            0 0 12px rgba(231, 189, 104, 0.75),
+            0 0 30px rgba(231, 189, 104, 0.55),
+            0 0 60px rgba(231, 189, 104, 0.35),
+            0 0 90px rgba(231, 189, 104, 0.20);
     }
 }
 
@@ -609,8 +599,6 @@ nav a.active {
    ========================================================= */
 
 .welcome {
-    width: 100%;
-
     padding: 120px 10%;
 
     background:
@@ -656,12 +644,10 @@ nav a.active {
 
 
 /* =========================================================
-   QUICK ACCESS / CARDS
+   QUICK ACCESS / ABOUT CARDS
    ========================================================= */
 
 .quick-access {
-    width: 100%;
-
     padding: 110px 8%;
 
     background:
@@ -682,48 +668,23 @@ nav a.active {
 }
 
 
-/* =========================================================
-   DEFAULT CARD LAYOUT
-   ALL OTHER PAGES = 3 CARDS PER ROW
-   ========================================================= */
+/* 4 CARDS IN ONE LINE */
 
 .quick-grid {
     display: grid;
 
     grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    gap: 25px;
-
-    width: 100%;
-}
-
-
-/* =========================================================
-   ABOUT PAGE ONLY
-   4 ABOUT CARDS IN ONE ROW
-   ========================================================= */
-
-body.about .quick-grid {
-    grid-template-columns:
-        repeat(4, minmax(0, 1fr));
+        repeat(4, 1fr);
 
     gap: 20px;
 }
 
-
-/* =========================================================
-   CARD
-   ========================================================= */
-
 .quick-card {
     display: block;
 
-    padding: 35px;
+    padding: 30px;
 
     min-height: 260px;
-
-    min-width: 0;
 
     background:
         rgba(255, 255, 255, 0.96);
@@ -762,7 +723,7 @@ body.about .quick-grid {
 .quick-card h3 {
     color: #3a0711;
 
-    font-size: 24px;
+    font-size: 22px;
 
     margin-bottom: 12px;
 }
@@ -770,7 +731,7 @@ body.about .quick-grid {
 .quick-card p {
     color: #666;
 
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .quick-card span {
@@ -803,8 +764,6 @@ body.about .quick-grid {
    ========================================================= */
 
 .portal-section {
-    width: 100%;
-
     padding: 120px 10%;
 
     text-align: center;
@@ -873,8 +832,6 @@ body.about .quick-grid {
    ========================================================= */
 
 footer {
-    width: 100%;
-
     background: #26040b;
 
     color: white;
@@ -957,53 +914,12 @@ footer {
 
 
 /* =========================================================
-   LAPTOP / SMALL DESKTOP
-   ========================================================= */
-
-@media (max-width: 1100px) {
-
-    .hero {
-        gap: 35px;
-
-        padding-left: 6%;
-        padding-right: 6%;
-    }
-
-    .hero-content {
-        max-width: 650px;
-    }
-
-    .hero h1 {
-        font-size: clamp(42px, 6vw, 70px);
-    }
-
-
-    /* OTHER PAGES: 2 COLUMNS */
-
-    .quick-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-
-
-    /* ABOUT: ALSO 2 COLUMNS ON SMALLER SCREENS */
-
-    body.about .quick-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-}
-
-
-/* =========================================================
    TABLET
    ========================================================= */
 
 @media (max-width: 900px) {
 
     .navbar {
-        width: 100%;
-
         flex-direction: column;
 
         gap: 20px;
@@ -1012,8 +928,6 @@ footer {
     }
 
     nav {
-        width: 100%;
-
         flex-wrap: wrap;
 
         justify-content: center;
@@ -1022,31 +936,16 @@ footer {
     }
 
     .hero {
-        width: 100%;
-
         flex-direction: column;
 
         text-align: center;
 
-        padding:
-            80px
-            6%
-            100px;
+        padding: 80px 7%;
 
-        min-height: auto;
-
-        gap: 30px;
-    }
-
-    .hero-content {
-        width: 100%;
-
-        max-width: 720px;
+        min-height: 600px;
     }
 
     .hero-text {
-        width: 100%;
-
         margin-left: auto;
 
         margin-right: auto;
@@ -1057,32 +956,14 @@ footer {
     }
 
     .hero-emblem {
-        width: 100%;
+        margin-top: 20px;
 
-        min-width: 0;
-
-        margin-top: 10px;
-
-        transform: translateY(-5px);
+        transform: translateY(-10px);
     }
-
-    .quick-access {
-        padding-left: 6%;
-        padding-right: 6%;
-    }
-
-    /* ALL PAGES: 2 COLUMNS */
 
     .quick-grid {
         grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-
-    /* ABOUT: 2 COLUMNS */
-
-    body.about .quick-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+            repeat(2, 1fr);
     }
 
     .footer-main {
@@ -1117,55 +998,33 @@ footer {
         font-size: 11px;
     }
 
-    .hero {
-        padding:
-            65px
-            5%
-            90px;
-
-        gap: 35px;
-    }
-
     .hero h1 {
-        font-size: clamp(36px, 11vw, 48px);
-
-        letter-spacing: -1px;
+        font-size: 44px;
     }
 
-    .hero-text {
-        font-size: 16px;
+    .quick-grid {
+        grid-template-columns: 1fr;
     }
 
-    .hero-buttons {
-        width: 100%;
-
-        justify-content: center;
+    .welcome,
+    .quick-access,
+    .portal-section {
+        padding: 80px 7%;
     }
 
-    .button {
-        max-width: 100%;
-    }
 
-    .hero-emblem {
-        width: 100%;
-
-        min-width: 0;
-
-        margin: 0 auto;
-
-        transform: none;
-    }
+    /* MOBILE LOGO */
 
     .hero-emblem .emblem {
-        width: 165px !important;
+        width: 170px !important;
 
-        height: 165px !important;
+        height: 170px !important;
     }
 
     .hero-emblem .emblem img {
-        width: 185px !important;
+        width: 190px !important;
 
-        height: 185px !important;
+        height: 190px !important;
 
         max-width: none !important;
 
@@ -1175,111 +1034,19 @@ footer {
     }
 
     .emblem::before {
-        width: 190px;
-
-        height: 190px;
-    }
-
-    .emblem::after {
-        width: 215px;
-
-        height: 215px;
-    }
-
-    .welcome,
-    .quick-access,
-    .portal-section {
-        width: 100%;
-
-        padding-left: 6%;
-        padding-right: 6%;
-    }
-
-
-    /* ALL PAGES: 1 COLUMN ON PHONE */
-
-    .quick-grid {
-        grid-template-columns: 1fr;
-        width: 100%;
-    }
-
-
-    /* ABOUT: ALSO 1 COLUMN ON PHONE */
-
-    body.about .quick-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .quick-card {
-        width: 100%;
-
-        min-width: 0;
-    }
-
-    .footer-main {
-        width: 100%;
-
-        padding-left: 6%;
-        padding-right: 6%;
-    }
-}
-
-
-/* =========================================================
-   VERY SMALL PHONES
-   ========================================================= */
-
-@media (max-width: 380px) {
-
-    .hero {
-        padding-left: 4%;
-        padding-right: 4%;
-    }
-
-    .hero-emblem .emblem {
-        width: 145px !important;
-
-        height: 145px !important;
-    }
-
-    .hero-emblem .emblem img {
-        width: 165px !important;
-
-        height: 165px !important;
-    }
-
-    .emblem::before {
-        width: 170px;
-
-        height: 170px;
-    }
-
-    .emblem::after {
         width: 195px;
 
         height: 195px;
     }
 
-    nav a {
-        font-size: 10px;
+    .emblem::after {
+        width: 220px;
+
+        height: 220px;
     }
-}
 
-
-/* =========================================================
-   FINAL SCREEN-SIZE PROTECTION
-   ========================================================= */
-
-img,
-video,
-iframe {
-    max-width: 100%;
-}
-
-.quick-card,
-.hero-content,
-.hero-emblem,
-.portal-content {
-    overflow-wrap: break-word;
+    .hero-emblem {
+        transform: translateY(-10px);
+    }
 }
 ```
