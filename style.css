@@ -7,6 +7,9 @@
 
 html {
     scroll-behavior: smooth;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -14,6 +17,8 @@ body {
     color: #3a0711;
     background: #f8f3f3;
     line-height: 1.6;
+    width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
 }
 
@@ -151,6 +156,7 @@ body::before {
 
 .navbar {
     width: 100%;
+    max-width: 100%;
 
     padding: 22px 7%;
 
@@ -202,6 +208,8 @@ nav {
     align-items: center;
 
     gap: 25px;
+
+    max-width: 100%;
 }
 
 nav a {
@@ -228,6 +236,9 @@ nav a.active {
 
 .hero {
     min-height: 620px;
+
+    width: 100%;
+    max-width: 100%;
 
     position: relative;
 
@@ -292,6 +303,7 @@ nav a.active {
 
 .hero-content {
     max-width: 720px;
+    min-width: 0;
 }
 
 .eyebrow {
@@ -340,6 +352,8 @@ nav a.active {
 
     min-width: 250px;
 
+    flex-shrink: 1;
+
     align-self: center;
 
     transform: translateY(-25px);
@@ -351,7 +365,6 @@ nav a.active {
 
 .emblem {
     width: 205px !important;
-
     height: 205px !important;
 
     border-radius: 50%;
@@ -381,17 +394,14 @@ nav a.active {
 
 
 /* =========================================================
-   LARGE TRANSPARENT SSLG LOGO
+   SSLG LOGO IMAGE
    ========================================================= */
 
 .hero-emblem .emblem img {
-
     width: 225px !important;
-
     height: 225px !important;
 
     max-width: none !important;
-
     max-height: none !important;
 
     object-fit: contain !important;
@@ -423,13 +433,11 @@ nav a.active {
    ========================================================= */
 
 .emblem::before {
-
     content: "";
 
     position: absolute;
 
     width: 235px;
-
     height: 235px;
 
     border-radius: 50%;
@@ -447,13 +455,11 @@ nav a.active {
 }
 
 .emblem::after {
-
     content: "";
 
     position: absolute;
 
     width: 265px;
-
     height: 265px;
 
     border-radius: 50%;
@@ -478,7 +484,6 @@ nav a.active {
 @keyframes logoGlow {
 
     0% {
-
         transform: scale(1);
 
         box-shadow:
@@ -489,7 +494,6 @@ nav a.active {
     }
 
     50% {
-
         transform: scale(1.03);
 
         box-shadow:
@@ -500,7 +504,6 @@ nav a.active {
     }
 
     100% {
-
         transform: scale(1);
 
         box-shadow:
@@ -534,7 +537,6 @@ nav a.active {
 }
 
 .hero-emblem p {
-
     margin-top: 18px;
 
     color: var(--accent);
@@ -552,7 +554,6 @@ nav a.active {
    ========================================================= */
 
 .hero-buttons {
-
     display: flex;
 
     gap: 15px;
@@ -561,7 +562,6 @@ nav a.active {
 }
 
 .button {
-
     display: inline-block;
 
     padding: 14px 25px;
@@ -580,7 +580,6 @@ nav a.active {
 }
 
 .button:hover {
-
     transform: translateY(-3px);
 
     box-shadow:
@@ -589,7 +588,6 @@ nav a.active {
 }
 
 .button.secondary {
-
     background: transparent;
 
     color: white;
@@ -600,7 +598,6 @@ nav a.active {
 }
 
 .button.secondary:hover {
-
     background: white;
 
     color: #3a0711;
@@ -612,6 +609,7 @@ nav a.active {
    ========================================================= */
 
 .welcome {
+    width: 100%;
 
     padding: 120px 10%;
 
@@ -622,7 +620,6 @@ nav a.active {
 }
 
 .section-label {
-
     color: #7b162b;
 
     font-size: 11px;
@@ -635,7 +632,6 @@ nav a.active {
 }
 
 .welcome h2 {
-
     max-width: 800px;
 
     margin: auto auto 30px;
@@ -649,7 +645,6 @@ nav a.active {
 }
 
 .welcome > p {
-
     max-width: 760px;
 
     margin: auto;
@@ -661,10 +656,11 @@ nav a.active {
 
 
 /* =========================================================
-   QUICK ACCESS
+   QUICK ACCESS / CARDS
    ========================================================= */
 
 .quick-access {
+    width: 100%;
 
     padding: 110px 8%;
 
@@ -673,12 +669,10 @@ nav a.active {
 }
 
 .section-heading {
-
     margin-bottom: 50px;
 }
 
 .section-heading h2 {
-
     font-size:
         clamp(35px, 5vw, 60px);
 
@@ -688,39 +682,48 @@ nav a.active {
 }
 
 
-/* NORMAL LAYOUT FOR OTHER PAGES */
+/* =========================================================
+   DEFAULT CARD LAYOUT
+   ALL OTHER PAGES = 3 CARDS PER ROW
+   ========================================================= */
 
 .quick-grid {
-
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(3, minmax(0, 1fr));
 
     gap: 25px;
+
+    width: 100%;
 }
 
 
 /* =========================================================
-   ABOUT PAGE ONLY — 4 CARDS IN ONE ROW
+   ABOUT PAGE ONLY
+   4 ABOUT CARDS IN ONE ROW
    ========================================================= */
 
 body.about .quick-grid {
-
     grid-template-columns:
-        repeat(4, 1fr);
+        repeat(4, minmax(0, 1fr));
 
     gap: 20px;
 }
 
 
-.quick-card {
+/* =========================================================
+   CARD
+   ========================================================= */
 
+.quick-card {
     display: block;
 
     padding: 35px;
 
     min-height: 260px;
+
+    min-width: 0;
 
     background:
         rgba(255, 255, 255, 0.96);
@@ -741,7 +744,6 @@ body.about .quick-grid {
 }
 
 .quick-card:hover {
-
     transform: translateY(-8px);
 
     border-color: var(--accent);
@@ -752,14 +754,12 @@ body.about .quick-grid {
 }
 
 .card-icon {
-
     font-size: 34px;
 
     margin-bottom: 20px;
 }
 
 .quick-card h3 {
-
     color: #3a0711;
 
     font-size: 24px;
@@ -768,14 +768,12 @@ body.about .quick-grid {
 }
 
 .quick-card p {
-
     color: #666;
 
     font-size: 15px;
 }
 
 .quick-card span {
-
     display: inline-block;
 
     margin-top: 20px;
@@ -788,7 +786,6 @@ body.about .quick-grid {
 }
 
 .position {
-
     color: var(--accent) !important;
 
     font-size: 10px !important;
@@ -806,6 +803,7 @@ body.about .quick-grid {
    ========================================================= */
 
 .portal-section {
+    width: 100%;
 
     padding: 120px 10%;
 
@@ -848,14 +846,12 @@ body.about .quick-grid {
 }
 
 .portal-content {
-
     max-width: 800px;
 
     margin: auto;
 }
 
 .portal-content h2 {
-
     font-size:
         clamp(38px, 5vw, 65px);
 
@@ -865,7 +861,6 @@ body.about .quick-grid {
 }
 
 .portal-content p:not(.eyebrow) {
-
     color:
         rgba(255, 255, 255, 0.8);
 
@@ -878,6 +873,7 @@ body.about .quick-grid {
    ========================================================= */
 
 footer {
+    width: 100%;
 
     background: #26040b;
 
@@ -885,7 +881,6 @@ footer {
 }
 
 .footer-main {
-
     padding: 70px 8%;
 
     display: flex;
@@ -896,7 +891,6 @@ footer {
 }
 
 .footer-main h3 {
-
     color: var(--accent);
 
     margin-bottom: 15px;
@@ -905,7 +899,6 @@ footer {
 }
 
 .footer-main p {
-
     color:
         rgba(255, 255, 255, 0.65);
 
@@ -913,7 +906,6 @@ footer {
 }
 
 .footer-links {
-
     display: flex;
 
     flex-direction: column;
@@ -922,7 +914,6 @@ footer {
 }
 
 .footer-links h4 {
-
     color: var(--accent);
 
     margin-bottom: 10px;
@@ -933,7 +924,6 @@ footer {
 }
 
 .footer-links a {
-
     color:
         rgba(255, 255, 255, 0.75);
 
@@ -945,12 +935,10 @@ footer {
 }
 
 .footer-links a:hover {
-
     color: var(--accent);
 }
 
 .footer-bottom {
-
     border-top:
         1px solid
         rgba(255, 255, 255, 0.1);
@@ -961,11 +949,49 @@ footer {
 }
 
 .footer-bottom p {
-
     font-size: 12px;
 
     color:
         rgba(255, 255, 255, 0.5);
+}
+
+
+/* =========================================================
+   LAPTOP / SMALL DESKTOP
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .hero {
+        gap: 35px;
+
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .hero-content {
+        max-width: 650px;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 6vw, 70px);
+    }
+
+
+    /* OTHER PAGES: 2 COLUMNS */
+
+    .quick-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    /* ABOUT: ALSO 2 COLUMNS ON SMALLER SCREENS */
+
+    body.about .quick-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
 }
 
 
@@ -976,6 +1002,7 @@ footer {
 @media (max-width: 900px) {
 
     .navbar {
+        width: 100%;
 
         flex-direction: column;
 
@@ -985,6 +1012,7 @@ footer {
     }
 
     nav {
+        width: 100%;
 
         flex-wrap: wrap;
 
@@ -994,17 +1022,30 @@ footer {
     }
 
     .hero {
+        width: 100%;
 
         flex-direction: column;
 
         text-align: center;
 
-        padding: 80px 7%;
+        padding:
+            80px
+            6%
+            100px;
 
-        min-height: 600px;
+        min-height: auto;
+
+        gap: 30px;
+    }
+
+    .hero-content {
+        width: 100%;
+
+        max-width: 720px;
     }
 
     .hero-text {
+        width: 100%;
 
         margin-left: auto;
 
@@ -1012,37 +1053,39 @@ footer {
     }
 
     .hero-buttons {
-
         justify-content: center;
     }
 
     .hero-emblem {
+        width: 100%;
 
-        margin-top: 20px;
+        min-width: 0;
 
-        transform: translateY(-10px);
+        margin-top: 10px;
+
+        transform: translateY(-5px);
     }
 
-
-    /* ABOUT PAGE — 2 CARDS ON TABLET */
-
-    body.about .quick-grid {
-
-        grid-template-columns:
-            repeat(2, 1fr);
+    .quick-access {
+        padding-left: 6%;
+        padding-right: 6%;
     }
 
-
-    /* OTHER PAGES — KEEP ORIGINAL 2-CARD TABLET LAYOUT */
+    /* ALL PAGES: 2 COLUMNS */
 
     .quick-grid {
-
         grid-template-columns:
-            repeat(2, 1fr);
+            repeat(2, minmax(0, 1fr));
+    }
+
+    /* ABOUT: 2 COLUMNS */
+
+    body.about .quick-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
 
     .footer-main {
-
         flex-direction: column;
     }
 }
@@ -1055,81 +1098,74 @@ footer {
 @media (max-width: 600px) {
 
     .brand {
-
         text-align: center;
     }
 
     .brand strong {
-
         font-size: 18px;
     }
 
     .brand span {
-
         font-size: 7px;
     }
 
     nav {
-
         gap: 10px;
     }
 
     nav a {
-
         font-size: 11px;
     }
 
+    .hero {
+        padding:
+            65px
+            5%
+            90px;
+
+        gap: 35px;
+    }
+
     .hero h1 {
+        font-size: clamp(36px, 11vw, 48px);
 
-        font-size: 44px;
+        letter-spacing: -1px;
     }
 
-
-    /* ALL OTHER PAGES */
-
-    .quick-grid {
-
-        grid-template-columns: 1fr;
+    .hero-text {
+        font-size: 16px;
     }
 
+    .hero-buttons {
+        width: 100%;
 
-    /* ABOUT PAGE */
-
-    body.about .quick-grid {
-
-        grid-template-columns: 1fr;
+        justify-content: center;
     }
 
-
-    .welcome,
-    .quick-access,
-    .portal-section {
-
-        padding: 80px 7%;
+    .button {
+        max-width: 100%;
     }
-
-
-    /* MOBILE LOGO */
 
     .hero-emblem {
+        width: 100%;
 
-        min-width: 100%;
+        min-width: 0;
 
-        transform: translateY(-5px);
+        margin: 0 auto;
+
+        transform: none;
     }
 
     .hero-emblem .emblem {
+        width: 165px !important;
 
-        width: 175px !important;
-
-        height: 175px !important;
+        height: 165px !important;
     }
 
     .hero-emblem .emblem img {
+        width: 185px !important;
 
-        width: 195px !important;
-
-        height: 195px !important;
+        height: 185px !important;
 
         max-width: none !important;
 
@@ -1139,17 +1175,111 @@ footer {
     }
 
     .emblem::before {
+        width: 190px;
 
-        width: 200px;
-
-        height: 200px;
+        height: 190px;
     }
 
     .emblem::after {
+        width: 215px;
 
-        width: 225px;
-
-        height: 225px;
+        height: 215px;
     }
+
+    .welcome,
+    .quick-access,
+    .portal-section {
+        width: 100%;
+
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+
+    /* ALL PAGES: 1 COLUMN ON PHONE */
+
+    .quick-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+
+    /* ABOUT: ALSO 1 COLUMN ON PHONE */
+
+    body.about .quick-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-card {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+    .footer-main {
+        width: 100%;
+
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .hero {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .hero-emblem .emblem {
+        width: 145px !important;
+
+        height: 145px !important;
+    }
+
+    .hero-emblem .emblem img {
+        width: 165px !important;
+
+        height: 165px !important;
+    }
+
+    .emblem::before {
+        width: 170px;
+
+        height: 170px;
+    }
+
+    .emblem::after {
+        width: 195px;
+
+        height: 195px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================================
+   FINAL SCREEN-SIZE PROTECTION
+   ========================================================= */
+
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
+.quick-card,
+.hero-content,
+.hero-emblem,
+.portal-content {
+    overflow-wrap: break-word;
 }
 ```
