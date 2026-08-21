@@ -17,18 +17,16 @@ body {
 }
 
 
-/* =========================
-   PAGE COLORS
-   ========================= */
+/* =========================================================
+   PAGE COLOR THEMES
+   ========================================================= */
 
 body.home {
     --glow1: rgba(231, 189, 104, 0.35);
     --glow2: rgba(139, 30, 50, 0.50);
     --glow3: rgba(110, 20, 40, 0.35);
-
     --hero1: #9b2845;
     --hero2: #c49a45;
-
     --accent: #e7bd68;
 }
 
@@ -36,10 +34,8 @@ body.about {
     --glow1: rgba(190, 75, 105, 0.38);
     --glow2: rgba(110, 20, 45, 0.50);
     --glow3: rgba(150, 45, 75, 0.35);
-
     --hero1: #a83f68;
     --hero2: #702040;
-
     --accent: #e09aaa;
 }
 
@@ -47,10 +43,8 @@ body.officers {
     --glow1: rgba(125, 75, 150, 0.35);
     --glow2: rgba(95, 20, 65, 0.50);
     --glow3: rgba(135, 45, 105, 0.30);
-
     --hero1: #75468e;
     --hero2: #842d68;
-
     --accent: #d1a4e5;
 }
 
@@ -58,10 +52,8 @@ body.projects {
     --glow1: rgba(210, 50, 65, 0.38);
     --glow2: rgba(120, 15, 30, 0.55);
     --glow3: rgba(170, 35, 45, 0.35);
-
     --hero1: #c52f43;
     --hero2: #8f1728;
-
     --accent: #f08080;
 }
 
@@ -69,10 +61,8 @@ body.announcements {
     --glow1: rgba(205, 110, 50, 0.38);
     --glow2: rgba(120, 25, 30, 0.50);
     --glow3: rgba(180, 65, 40, 0.35);
-
     --hero1: #b85c35;
     --hero2: #9a302d;
-
     --accent: #e5a66b;
 }
 
@@ -80,17 +70,15 @@ body.transparency {
     --glow1: rgba(190, 145, 60, 0.38);
     --glow2: rgba(100, 20, 30, 0.55);
     --glow3: rgba(150, 90, 40, 0.35);
-
     --hero1: #a98235;
     --hero2: #7d202c;
-
     --accent: #e0bd72;
 }
 
 
-/* =========================
+/* =========================================================
    MOVING BACKGROUND
-   ========================= */
+   ========================================================= */
 
 body::before {
     content: "";
@@ -156,9 +144,9 @@ body::before {
 }
 
 
-/* =========================
+/* =========================================================
    NAVIGATION
-   ========================= */
+   ========================================================= */
 
 .navbar {
     width: 100%;
@@ -233,9 +221,9 @@ nav a.active {
 }
 
 
-/* =========================
+/* =========================================================
    HERO
-   ========================= */
+   ========================================================= */
 
 .hero {
     min-height: 620px;
@@ -342,9 +330,9 @@ nav a.active {
 }
 
 
-/* =========================
-   LOGO
-   ========================= */
+/* =========================================================
+   SSLG LOGO
+   ========================================================= */
 
 .hero-emblem {
     text-align: center;
@@ -353,14 +341,15 @@ nav a.active {
 }
 
 .emblem {
-    width: 160px;
-    height: 160px;
+    width: 180px;
+    height: 180px;
 
     border-radius: 50%;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     margin: auto;
@@ -376,15 +365,16 @@ nav a.active {
         0 0 25px rgba(231, 189, 104, 0.5),
         0 0 55px rgba(231, 189, 104, 0.35);
 
-    animation: logoGlow 3s ease-in-out infinite;
+    animation:
+        logoGlow 3s ease-in-out infinite;
 }
 
 
-/* ACTUAL LOGO — 70PX */
+/* ACTUAL SSLG LOGO */
 
 .emblem img {
-    width: 70px;
-    height: 70px;
+    width: 105px;
+    height: 105px;
 
     object-fit: contain;
 
@@ -398,21 +388,21 @@ nav a.active {
             rgba(231, 189, 104, 0.8)
         )
         drop-shadow(
-            0 0 18px
+            0 0 20px
             rgba(231, 189, 104, 0.5)
         );
 }
 
 
-/* OUTER RINGS */
+/* FIRST GLOWING RING */
 
 .emblem::before {
     content: "";
 
     position: absolute;
 
-    width: 190px;
-    height: 190px;
+    width: 210px;
+    height: 210px;
 
     border-radius: 50%;
 
@@ -420,16 +410,24 @@ nav a.active {
         1px solid
         rgba(231, 189, 104, 0.35);
 
-    animation: logoRing 5s linear infinite;
+    box-shadow:
+        0 0 25px
+        rgba(231, 189, 104, 0.25);
+
+    animation:
+        logoRing 5s linear infinite;
 }
+
+
+/* SECOND GLOWING RING */
 
 .emblem::after {
     content: "";
 
     position: absolute;
 
-    width: 215px;
-    height: 215px;
+    width: 235px;
+    height: 235px;
 
     border-radius: 50%;
 
@@ -437,13 +435,17 @@ nav a.active {
         1px solid
         rgba(231, 189, 104, 0.15);
 
-    animation: logoRingReverse 8s linear infinite;
+    animation:
+        logoRingReverse 8s linear infinite;
 }
 
+
+/* LOGO GLOW */
 
 @keyframes logoGlow {
 
     0% {
+
         transform: scale(1);
 
         box-shadow:
@@ -453,6 +455,7 @@ nav a.active {
     }
 
     50% {
+
         transform: scale(1.03);
 
         box-shadow:
@@ -462,6 +465,7 @@ nav a.active {
     }
 
     100% {
+
         transform: scale(1);
 
         box-shadow:
@@ -470,6 +474,7 @@ nav a.active {
             0 0 45px rgba(231, 189, 104, 0.25);
     }
 }
+
 
 @keyframes logoRing {
 
@@ -482,6 +487,7 @@ nav a.active {
     }
 }
 
+
 @keyframes logoRingReverse {
 
     from {
@@ -492,6 +498,7 @@ nav a.active {
         transform: rotate(0deg);
     }
 }
+
 
 .hero-emblem p {
     margin-top: 18px;
@@ -506,9 +513,9 @@ nav a.active {
 }
 
 
-/* =========================
+/* =========================================================
    BUTTONS
-   ========================= */
+   ========================================================= */
 
 .hero-buttons {
     display: flex;
@@ -540,7 +547,8 @@ nav a.active {
     transform: translateY(-3px);
 
     box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.2);
+        0 8px 20px
+        rgba(0, 0, 0, 0.2);
 }
 
 .button.secondary {
@@ -560,9 +568,9 @@ nav a.active {
 }
 
 
-/* =========================
+/* =========================================================
    WELCOME
-   ========================= */
+   ========================================================= */
 
 .welcome {
     padding: 120px 10%;
@@ -588,7 +596,8 @@ nav a.active {
 .welcome h2 {
     max-width: 800px;
 
-    margin: auto auto 30px;
+    margin:
+        auto auto 30px;
 
     font-size:
         clamp(36px, 5vw, 65px);
@@ -609,9 +618,9 @@ nav a.active {
 }
 
 
-/* =========================
+/* =========================================================
    QUICK ACCESS
-   ========================= */
+   ========================================================= */
 
 .quick-access {
     padding: 110px 8%;
@@ -668,9 +677,11 @@ nav a.active {
 }
 
 .quick-card:hover {
-    transform: translateY(-8px);
+    transform:
+        translateY(-8px);
 
-    border-color: var(--accent);
+    border-color:
+        var(--accent);
 
     box-shadow:
         0 15px 35px
@@ -722,9 +733,9 @@ nav a.active {
 }
 
 
-/* =========================
+/* =========================================================
    FINAL SECTION
-   ========================= */
+   ========================================================= */
 
 .portal-section {
     padding: 120px 10%;
@@ -734,36 +745,44 @@ nav a.active {
     color: white;
 
     background:
+
         radial-gradient(
             circle at 30% 40%,
             var(--hero1),
             transparent 35%
         ),
+
         radial-gradient(
             circle at 70% 60%,
             var(--hero2),
             transparent 35%
         ),
+
         #3a0711;
 
-    background-size: 180% 180%;
+    background-size:
+        180% 180%;
 
     animation:
-        finalMove 18s ease-in-out infinite;
+        finalMove 18s
+        ease-in-out infinite;
 }
 
 @keyframes finalMove {
 
     0% {
-        background-position: 0% 50%;
+        background-position:
+            0% 50%;
     }
 
     50% {
-        background-position: 100% 50%;
+        background-position:
+            100% 50%;
     }
 
     100% {
-        background-position: 0% 50%;
+        background-position:
+            0% 50%;
     }
 }
 
@@ -790,18 +809,20 @@ nav a.active {
 }
 
 
-/* =========================
+/* =========================================================
    FOOTER
-   ========================= */
+   ========================================================= */
 
 footer {
-    background: #26040b;
+    background:
+        #26040b;
 
     color: white;
 }
 
 .footer-main {
-    padding: 70px 8%;
+    padding:
+        70px 8%;
 
     display: flex;
 
@@ -811,7 +832,8 @@ footer {
 }
 
 .footer-main h3 {
-    color: var(--accent);
+    color:
+        var(--accent);
 
     margin-bottom: 15px;
 
@@ -834,7 +856,8 @@ footer {
 }
 
 .footer-links h4 {
-    color: var(--accent);
+    color:
+        var(--accent);
 
     margin-bottom: 10px;
 
@@ -855,7 +878,8 @@ footer {
 }
 
 .footer-links a:hover {
-    color: var(--accent);
+    color:
+        var(--accent);
 }
 
 .footer-bottom {
@@ -863,7 +887,8 @@ footer {
         1px solid
         rgba(255, 255, 255, 0.1);
 
-    padding: 20px 8%;
+    padding:
+        20px 8%;
 
     text-align: center;
 }
@@ -876,9 +901,9 @@ footer {
 }
 
 
-/* =========================
+/* =========================================================
    TABLET
-   ========================= */
+   ========================================================= */
 
 @media (max-width: 900px) {
 
@@ -903,13 +928,15 @@ footer {
 
         text-align: center;
 
-        padding: 80px 7%;
+        padding:
+            80px 7%;
 
         min-height: 600px;
     }
 
     .hero-text {
         margin-left: auto;
+
         margin-right: auto;
     }
 
@@ -932,9 +959,9 @@ footer {
 }
 
 
-/* =========================
+/* =========================================================
    MOBILE
-   ========================= */
+   ========================================================= */
 
 @media (max-width: 600px) {
 
@@ -969,28 +996,30 @@ footer {
     .welcome,
     .quick-access,
     .portal-section {
-        padding: 80px 7%;
+        padding:
+            80px 7%;
     }
 
-    /* SMALLER MOBILE LOGO */
+
+    /* MOBILE LOGO */
 
     .emblem {
-        width: 140px;
-        height: 140px;
+        width: 155px;
+        height: 155px;
     }
 
     .emblem img {
-        width: 70px;
-        height: 70px;
+        width: 90px;
+        height: 90px;
     }
 
     .emblem::before {
-        width: 165px;
-        height: 165px;
+        width: 180px;
+        height: 180px;
     }
 
     .emblem::after {
-        width: 185px;
-        height: 185px;
+        width: 200px;
+        height: 200px;
     }
 }
