@@ -7,6 +7,11 @@
 <title>SSLG | Calumpit National High School</title>
 
 <style>
+
+/* =====================================================
+   COLORS
+===================================================== */
+
 :root {
   --maroon: #7a1f2b;
   --dark-maroon: #4d111a;
@@ -17,8 +22,13 @@
   --dark: #241719;
   --gray: #6f6264;
   --border: #eadde0;
-  --shadow: 0 10px 30px rgba(70,20,30,.10);
+  --shadow: 0 10px 30px rgba(70, 20, 30, .10);
 }
+
+
+/* =====================================================
+   RESET
+===================================================== */
 
 * {
   margin: 0;
@@ -47,7 +57,11 @@ a {
   color: inherit;
 }
 
-/* TOP BAR */
+
+/* =====================================================
+   TOP BAR
+===================================================== */
+
 .topbar {
   background: var(--dark-maroon);
   color: white;
@@ -56,7 +70,11 @@ a {
   font-size: 13px;
 }
 
-/* NAVIGATION */
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
 header {
   background: white;
   position: sticky;
@@ -69,6 +87,7 @@ header {
   max-width: 1200px;
   margin: auto;
   padding: 16px 22px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -87,17 +106,12 @@ header {
   border-radius: 50%;
   background: var(--maroon);
   color: white;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 900;
-  overflow: hidden;
-}
 
-.logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  font-weight: 900;
 }
 
 .brand-text strong {
@@ -128,15 +142,26 @@ header {
   color: var(--maroon);
 }
 
-/* HERO */
+
+/* =====================================================
+   HERO
+===================================================== */
+
 .hero {
   min-height: 650px;
+
   background:
-    linear-gradient(rgba(77,17,26,.84),rgba(77,17,26,.84)),
+    linear-gradient(
+      rgba(77,17,26,.84),
+      rgba(77,17,26,.84)
+    ),
     url("school-banner.jpg");
+
   background-size: cover;
   background-position: center;
+
   color: white;
+
   display: flex;
   align-items: center;
 }
@@ -152,16 +177,20 @@ header {
   display: inline-block;
   background: rgba(255,255,255,.15);
   border: 1px solid rgba(255,255,255,.3);
+
   padding: 8px 15px;
   border-radius: 50px;
+
   font-size: 13px;
   font-weight: bold;
 }
 
 .hero h1 {
   max-width: 900px;
-  font-size: clamp(40px,7vw,76px);
+
+  font-size: clamp(40px, 7vw, 76px);
   line-height: 1.02;
+
   margin: 20px 0;
 }
 
@@ -177,6 +206,7 @@ header {
 
 .hero-buttons {
   margin-top: 28px;
+
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
@@ -184,11 +214,19 @@ header {
 
 .button {
   display: inline-block;
+
   padding: 13px 20px;
+
   border-radius: 8px;
+
   background: var(--gold);
   color: #3d2d00;
+
   font-weight: 800;
+}
+
+.button:hover {
+  transform: translateY(-2px);
 }
 
 .button-white {
@@ -196,7 +234,11 @@ header {
   color: var(--maroon);
 }
 
-/* GENERAL */
+
+/* =====================================================
+   GENERAL
+===================================================== */
+
 section {
   max-width: 1200px;
   margin: auto;
@@ -226,7 +268,11 @@ section {
   color: var(--gray);
 }
 
-/* WELCOME */
+
+/* =====================================================
+   WELCOME
+===================================================== */
+
 .welcome {
   background: white;
 }
@@ -244,24 +290,35 @@ section {
 
 .motto {
   margin-top: 30px;
+
   color: var(--maroon);
   font-size: 25px;
   font-weight: 900;
 }
 
-/* STATS */
+
+/* =====================================================
+   STATS
+===================================================== */
+
 .stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(190px,1fr));
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(190px, 1fr));
+
   gap: 18px;
 }
 
 .stat {
   background: white;
   border: 1px solid var(--border);
+
   padding: 28px;
   border-radius: 15px;
+
   text-align: center;
+
   box-shadow: var(--shadow);
 }
 
@@ -275,32 +332,49 @@ section {
   color: var(--gray);
 }
 
-/* OFFICERS */
+
+/* =====================================================
+   OFFICERS
+===================================================== */
+
 .officers {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+
   gap: 20px;
 }
 
 .officer {
   background: white;
+
   border: 1px solid var(--border);
   border-radius: 18px;
+
   padding: 25px;
+
   text-align: center;
+
   box-shadow: var(--shadow);
 }
 
 .officer-photo {
   width: 130px;
   height: 130px;
+
   margin: auto auto 18px;
+
   border-radius: 50%;
+
   background: var(--light-maroon);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   overflow: hidden;
+
   font-size: 45px;
 }
 
@@ -327,28 +401,42 @@ section {
   font-size: 14px;
 }
 
-/* ANNOUNCEMENTS */
+
+/* =====================================================
+   ANNOUNCEMENTS
+===================================================== */
+
 .posts {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
   gap: 22px;
 }
 
 .post {
   background: white;
+
   border-radius: 16px;
   overflow: hidden;
+
   border: 1px solid var(--border);
+
   box-shadow: var(--shadow);
 }
 
 .post-image {
   height: 190px;
+
   background: var(--light-maroon);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-size: 50px;
+
   overflow: hidden;
 }
 
@@ -379,27 +467,36 @@ section {
 
 .read-more {
   display: inline-block;
+
   margin-top: 15px;
+
   color: var(--maroon);
   font-weight: 900;
 }
 
-.read-more:hover {
-  color: var(--gold);
-}
 
-/* PROJECTS */
+/* =====================================================
+   PROJECTS
+===================================================== */
+
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));
+
   gap: 20px;
 }
 
 .project {
   background: white;
+
   padding: 25px;
+
   border-radius: 16px;
+
   border: 1px solid var(--border);
+
   box-shadow: var(--shadow);
 }
 
@@ -418,9 +515,13 @@ section {
 
 .status {
   display: inline-block;
+
   margin-top: 15px;
+
   padding: 5px 11px;
+
   border-radius: 50px;
+
   font-size: 11px;
   font-weight: 900;
 }
@@ -440,17 +541,26 @@ section {
   color: var(--maroon);
 }
 
-/* REPORTS */
+
+/* =====================================================
+   REPORTS
+===================================================== */
+
 .reports {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));
+
   gap: 20px;
 }
 
 .report {
   background: var(--maroon);
   color: white;
+
   padding: 30px;
+
   border-radius: 16px;
 }
 
@@ -464,15 +574,24 @@ section {
 
 .report-button {
   display: inline-block;
+
   margin-top: 20px;
+
   background: var(--gold);
   color: #382b00;
+
   padding: 10px 16px;
+
   border-radius: 7px;
+
   font-weight: 900;
 }
 
-/* TRANSPARENCY */
+
+/* =====================================================
+   TRANSPARENCY
+===================================================== */
+
 .transparency {
   background: white;
 }
@@ -484,13 +603,16 @@ section {
 table {
   width: 100%;
   min-width: 700px;
+
   border-collapse: collapse;
 }
 
 th,
 td {
   padding: 14px;
+
   border-bottom: 1px solid var(--border);
+
   text-align: left;
 }
 
@@ -511,34 +633,53 @@ th {
 
 .notice {
   margin-top: 20px;
+
   padding: 18px;
+
   background: #fff7dc;
+
   border-left: 5px solid var(--gold);
+
   border-radius: 8px;
 }
 
-/* GALLERY */
+
+/* =====================================================
+   GALLERY
+===================================================== */
+
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(230px, 1fr));
+
   gap: 18px;
 }
 
 .gallery-item {
   background: white;
+
   border-radius: 15px;
+
   overflow: hidden;
+
   box-shadow: var(--shadow);
+
   border: 1px solid var(--border);
 }
 
 .gallery-photo {
   height: 200px;
+
   background: var(--light-maroon);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-size: 45px;
+
   overflow: hidden;
 }
 
@@ -556,11 +697,21 @@ th {
   color: var(--maroon);
 }
 
-/* CONTACT */
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
 .contact {
   background:
-    linear-gradient(135deg,var(--dark-maroon),var(--maroon));
+    linear-gradient(
+      135deg,
+      var(--dark-maroon),
+      var(--maroon)
+    );
+
   color: white;
+
   max-width: none;
 }
 
@@ -581,19 +732,32 @@ th {
 
 .contact-button {
   display: inline-block;
+
   margin-top: 20px;
+
   padding: 12px 20px;
+
   background: var(--gold);
+
   color: #352900;
+
   border-radius: 8px;
+
   font-weight: 900;
 }
 
-/* FOOTER */
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
 footer {
   background: #2c0a10;
+
   color: #e8d9dc;
+
   text-align: center;
+
   padding: 35px 20px;
 }
 
@@ -606,8 +770,13 @@ footer p {
   font-size: 13px;
 }
 
-/* MOBILE */
-@media(max-width:800px) {
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width: 800px) {
+
   .navbar {
     flex-direction: column;
     align-items: flex-start;
@@ -636,845 +805,1259 @@ footer p {
   .section-title h2 {
     font-size: 30px;
   }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- TOP BAR -->
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
 <div class="topbar">
+
   SUPREME SECONDARY LEARNER GOVERNMENT
   • CALUMPIT NATIONAL HIGH SCHOOL
   • SCHOOL YEAR 2026–2027
+
 </div>
 
-<!-- NAVIGATION -->
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
 <header>
+
 <div class="navbar">
 
+
 <div class="brand">
+
+  <!--
+  IF YOU HAVE A LOGO:
+  Replace the "SSLG" text below with an image.
+  Example:
+
+  <img src="logo.png" class="logo">
+  -->
 
   <div class="logo">
     SSLG
   </div>
 
+
   <div class="brand-text">
-    <strong>Calumpit National High School</strong>
-    <span>Supreme Secondary Learner Government</span>
+
+    <strong>
+      Calumpit National High School
+    </strong>
+
+    <span>
+      Supreme Secondary Learner Government
+    </span>
+
   </div>
 
 </div>
 
+
+
 <nav class="nav-links">
-  <a href="#home">Home</a>
-  <a href="#officers">Officers</a>
-  <a href="#figures">In Figures</a>
-  <a href="#posts">Updates</a>
-  <a href="#projects">Projects</a>
-  <a href="#reports">Reports</a>
-  <a href="#transparency">Transparency</a>
-  <a href="#gallery">Gallery</a>
+
+  <a href="#home">
+    Home
+  </a>
+
+  <a href="#officers">
+    Officers
+  </a>
+
+  <a href="#figures">
+    In Figures
+  </a>
+
+  <a href="#posts">
+    Updates
+  </a>
+
+  <a href="#projects">
+    Projects
+  </a>
+
+  <a href="#reports">
+    Reports
+  </a>
+
+  <a href="#transparency">
+    Transparency
+  </a>
+
+  <a href="#gallery">
+    Gallery
+  </a>
+
 </nav>
 
+
 </div>
+
 </header>
 
-<!-- HERO -->
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
 <main id="home">
+
 
 <div class="hero">
 
+
 <div class="hero-content">
 
+
 <span class="hero-label">
+
   OFFICIAL SSLG WEBSITE
+
 </span>
 
+
+
 <h1>
+
   Welcome to the
-  <span>SSLG</span>
+
+  <span>
+    SSLG
+  </span>
+
   of Calumpit National High School
+
 </h1>
 
+
+
 <p>
+
   The Supreme Secondary Learner Government
   proudly serves as a voice for learners,
   a platform for leadership, and a force
   for positive change in our school community.
+
 </p>
+
+
 
 <div class="hero-buttons">
 
-<a href="#posts" class="button">
-  Explore Our Updates
-</a>
+  <a
+    href="#posts"
+    class="button"
+  >
+    Explore Our Updates
+  </a>
 
-<a href="#officers" class="button button-white">
-  Meet Our Officers
-</a>
+
+  <a
+    href="#officers"
+    class="button button-white"
+  >
+    Meet Our Officers
+  </a>
+
+</div>
+
 
 </div>
 
 </div>
-</div>
 
-<!-- WELCOME -->
+
+
+<!-- =====================================================
+     WELCOME
+===================================================== -->
+
 <section class="welcome">
+
 
 <div class="section-title">
 
-<small>WELCOME</small>
+  <small>
+    WELCOME
+  </small>
 
-<h2>
-  Mabuhay ang Batang Lider!
-</h2>
+  <h2>
+    Mabuhay ang Batang Lider!
+  </h2>
 
 </div>
 
+
+
 <div class="welcome-content">
 
+
 <p>
+
   Welcome to the official website of the
   Supreme Secondary Learner Government
   of Calumpit National High School.
+
 </p>
 
+
 <p>
+
   As the student-led governing body of the school,
   the SSLG strives to represent learners,
   promote student participation, and create
   meaningful programs that contribute to the
   development of the school community.
+
 </p>
 
+
 <p>
+
   Through service, leadership, collaboration,
   and responsibility, we aim to empower every
   learner to become an active and responsible
   member of the school community.
+
 </p>
 
+
+
 <div class="motto">
+
   LEAD • SERVE • INSPIRE
-</div>
 
 </div>
+
+
+</div>
+
 </section>
 
-<!-- IN FIGURES -->
+
+
+<!-- =====================================================
+     IN FIGURES
+===================================================== -->
+
 <section id="figures">
+
 
 <div class="section-title">
 
-<small>SSLG IN FIGURES</small>
+  <small>
+    SSLG IN FIGURES
+  </small>
 
-<h2>
-  Our Legacy of Service & Change
-</h2>
+  <h2>
+    Our Legacy of Service & Change
+  </h2>
 
-<p>
-  Replace these numbers with your verified SSLG accomplishments.
-</p>
+  <p>
+
+    Replace these numbers with your
+    verified SSLG accomplishments.
+
+  </p>
 
 </div>
+
+
 
 <div class="stats">
 
-<div class="stat">
-  <div class="stat-number">00</div>
-  <h3>Projects</h3>
-  <p>Projects implemented</p>
-</div>
 
 <div class="stat">
-  <div class="stat-number">00</div>
-  <h3>Activities</h3>
-  <p>Student activities conducted</p>
+
+  <div class="stat-number">
+    00
+  </div>
+
+  <h3>
+    Projects
+  </h3>
+
+  <p>
+    Projects implemented
+  </p>
+
 </div>
+
+
 
 <div class="stat">
-  <div class="stat-number">00</div>
-  <h3>Learners Reached</h3>
-  <p>Students benefited</p>
+
+  <div class="stat-number">
+    00
+  </div>
+
+  <h3>
+    Activities
+  </h3>
+
+  <p>
+    Student activities conducted
+  </p>
+
 </div>
+
+
 
 <div class="stat">
-  <div class="stat-number">00</div>
-  <h3>Partnerships</h3>
-  <p>Collaborations established</p>
-</div>
+
+  <div class="stat-number">
+    00
+  </div>
+
+  <h3>
+    Learners Reached
+  </h3>
+
+  <p>
+    Students benefited
+  </p>
 
 </div>
+
+
+
+<div class="stat">
+
+  <div class="stat-number">
+    00
+  </div>
+
+  <h3>
+    Partnerships
+  </h3>
+
+  <p>
+    Collaborations established
+  </p>
+
+</div>
+
+
+</div>
+
 </section>
 
-<!-- OFFICERS -->
+
+
+<!-- =====================================================
+     OFFICERS
+===================================================== -->
+
 <section id="officers">
+
 
 <div class="section-title">
 
-<small>OUR LEADERS</small>
+  <small>
+    OUR LEADERS
+  </small>
 
-<h2>
-  SSLG Officers
-</h2>
+  <h2>
+    SSLG Officers
+  </h2>
 
-<p>
-  Meet the student leaders serving
-  the Calumpit National High School community.
-</p>
+  <p>
+
+    Meet the student leaders serving
+    the Calumpit National High School
+    community.
+
+  </p>
 
 </div>
+
+
 
 <div class="officers">
 
-<div class="officer">
 
-<div class="officer-photo">
-  👤
-</div>
-
-<div class="officer-position">
-  PRESIDENT
-</div>
-
-<h3>
-  Officer Name
-</h3>
-
-<p>
-  Replace with official name.
-</p>
-
-</div>
+<!-- OFFICER 1 -->
 
 <div class="officer">
 
-<div class="officer-photo">
-  👤
+  <div class="officer-photo">
+
+    👤
+
+    <!--
+    Replace with:
+
+    <img src="president.jpg"
+    alt="SSLG President">
+
+    -->
+
+  </div>
+
+
+  <div class="officer-position">
+    PRESIDENT
+  </div>
+
+  <h3>
+    Officer Name
+  </h3>
+
+  <p>
+    Replace with official name.
+  </p>
+
 </div>
 
-<div class="officer-position">
-  VICE PRESIDENT
-</div>
 
-<h3>
-  Officer Name
-</h3>
 
-<p>
-  Replace with official name.
-</p>
-
-</div>
+<!-- OFFICER 2 -->
 
 <div class="officer">
 
-<div class="officer-photo">
-  👤
+  <div class="officer-photo">
+    👤
+  </div>
+
+  <div class="officer-position">
+    VICE PRESIDENT
+  </div>
+
+  <h3>
+    Officer Name
+  </h3>
+
+  <p>
+    Replace with official name.
+  </p>
+
 </div>
 
-<div class="officer-position">
-  SECRETARY
-</div>
 
-<h3>
-  Officer Name
-</h3>
 
-<p>
-  Replace with official name.
-</p>
-
-</div>
+<!-- OFFICER 3 -->
 
 <div class="officer">
 
-<div class="officer-photo">
-  👤
+  <div class="officer-photo">
+    👤
+  </div>
+
+  <div class="officer-position">
+    SECRETARY
+  </div>
+
+  <h3>
+    Officer Name
+  </h3>
+
+  <p>
+    Replace with official name.
+  </p>
+
 </div>
 
-<div class="officer-position">
-  TREASURER
-</div>
 
-<h3>
-  Officer Name
-</h3>
 
-<p>
-  Replace with official name.
-</p>
-
-</div>
+<!-- OFFICER 4 -->
 
 <div class="officer">
 
-<div class="officer-photo">
-  👤
+  <div class="officer-photo">
+    👤
+  </div>
+
+  <div class="officer-position">
+    TREASURER
+  </div>
+
+  <h3>
+    Officer Name
+  </h3>
+
+  <p>
+    Replace with official name.
+  </p>
+
 </div>
 
-<div class="officer-position">
-  AUDITOR
-</div>
 
-<h3>
-  Officer Name
-</h3>
 
-<p>
-  Replace with official name.
-</p>
-
-</div>
+<!-- OFFICER 5 -->
 
 <div class="officer">
 
-<div class="officer-photo">
-  👤
-</div>
+  <div class="officer-photo">
+    👤
+  </div>
 
-<div class="officer-position">
-  PUBLIC INFORMATION OFFICER
-</div>
+  <div class="officer-position">
+    AUDITOR
+  </div>
 
-<h3>
-  Officer Name
-</h3>
+  <h3>
+    Officer Name
+  </h3>
 
-<p>
-  Replace with official name.
-</p>
-
-</div>
+  <p>
+    Replace with official name.
+  </p>
 
 </div>
+
+
+
+<!-- OFFICER 6 -->
+
+<div class="officer">
+
+  <div class="officer-photo">
+    👤
+  </div>
+
+  <div class="officer-position">
+    PUBLIC INFORMATION OFFICER
+  </div>
+
+  <h3>
+    Officer Name
+  </h3>
+
+  <p>
+    Replace with official name.
+  </p>
+
+</div>
+
+
+</div>
+
 </section>
 
-<!-- ANNOUNCEMENTS -->
+
+
+<!-- =====================================================
+     ANNOUNCEMENTS
+===================================================== -->
+
 <section id="posts">
+
 
 <div class="section-title">
 
-<small>STAY UPDATED</small>
+  <small>
+    STAY UPDATED
+  </small>
 
-<h2>
-  Announcements & Updates
-</h2>
+  <h2>
+    Announcements & Updates
+  </h2>
 
-<p>
-  Follow the latest SSLG activities,
-  announcements, and accomplishments.
-</p>
+  <p>
+    Follow the latest SSLG activities,
+    announcements, and accomplishments.
+  </p>
 
 </div>
 
+
+
 <div class="posts">
 
-<!-- FACEBOOK ANNOUNCEMENT -->
+
+<!-- POST 1 -->
 
 <article class="post">
+
+
+<div class="post-image">
+
+  📰
+
+</div>
+
+
+<div class="post-content">
+
+  <span class="post-date">
+    AUGUST 2026
+  </span>
+
+  <h3>
+    Welcome to the SSLG Website
+  </h3>
+
+  <p>
+
+    Welcome to the official SSLG online
+    transparency and information portal.
+
+  </p>
+
+  <a
+    href="#"
+    class="read-more"
+  >
+    Read More →
+  </a>
+
+</div>
+
+</article>
+
+
+
+<!-- POST 2 -->
+
+<article class="post">
+
 
 <div class="post-image">
   📢
 </div>
 
-<div class="post-content">
-
-<span class="post-date">
-  AUGUST 2026
-</span>
-
-<h3>
-  SSLG Official Announcement
-</h3>
-
-<p>
-  Read the latest official announcement
-  and information from the Calumpit National
-  High School SSLG.
-</p>
-
-<a
-  href="https://www.facebook.com/share/p/1M2oGx6fux/"
-  class="read-more"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  📘 Read on Facebook →
-</a>
-
-</div>
-</article>
-
-<!-- SECOND ANNOUNCEMENT -->
-
-<article class="post">
-
-<div class="post-image">
-  📰
-</div>
 
 <div class="post-content">
 
-<span class="post-date">
-  ADD DATE
-</span>
+  <span class="post-date">
+    MM/DD/2026
+  </span>
 
-<h3>
-  Your Next Announcement
-</h3>
+  <h3>
+    Activity Announcement
+  </h3>
 
-<p>
-  Add a short description of your next
-  SSLG announcement here.
-</p>
+  <p>
 
-<a
-  href="#"
-  class="read-more"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  📘 Read on Facebook →
-</a>
+    Replace this with your latest
+    official announcement.
+
+  </p>
+
+  <a
+    href="#"
+    class="read-more"
+  >
+    Read More →
+  </a>
 
 </div>
+
 </article>
 
-<!-- THIRD ANNOUNCEMENT -->
+
+
+<!-- POST 3 -->
 
 <article class="post">
+
 
 <div class="post-image">
   📌
 </div>
 
+
 <div class="post-content">
 
-<span class="post-date">
-  ADD DATE
-</span>
+  <span class="post-date">
+    MM/DD/2026
+  </span>
 
-<h3>
-  Latest SSLG Update
-</h3>
+  <h3>
+    SSLG Project Update
+  </h3>
 
-<p>
-  Add information about your latest
-  activity or school announcement.
-</p>
+  <p>
 
-<a
-  href="#"
-  class="read-more"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  📘 Read on Facebook →
-</a>
+    Share information about your
+    current project or accomplishment.
+
+  </p>
+
+  <a
+    href="#"
+    class="read-more"
+  >
+    Read More →
+  </a>
 
 </div>
+
 </article>
 
+
 </div>
+
 </section>
 
-<!-- PROJECTS -->
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
 <section id="projects">
+
 
 <div class="section-title">
 
-<small>WHAT WE DO</small>
+  <small>
+    WHAT WE DO
+  </small>
 
-<h2>
-  Projects & Programs
-</h2>
+  <h2>
+    Projects & Programs
+  </h2>
 
-<p>
-  Our initiatives are designed to
-  serve and empower learners.
-</p>
+  <p>
+    Our initiatives are designed to
+    serve and empower learners.
+  </p>
 
 </div>
+
+
 
 <div class="projects">
 
-<div class="project">
-
-<div class="project-icon">📚</div>
-
-<h3>
-  Project 01
-</h3>
-
-<p>
-  Add your project's objective,
-  beneficiaries, and accomplishments.
-</p>
-
-<span class="status completed">
-  COMPLETED
-</span>
-
-</div>
 
 <div class="project">
 
-<div class="project-icon">🤝</div>
+  <div class="project-icon">
+    📚
+  </div>
 
-<h3>
-  Project 02
-</h3>
+  <h3>
+    Project 01
+  </h3>
 
-<p>
-  Add information about your
-  ongoing SSLG project.
-</p>
+  <p>
+    Add your project's objective,
+    beneficiaries, and accomplishments.
+  </p>
 
-<span class="status ongoing">
-  ONGOING
-</span>
+  <span class="status completed">
+    COMPLETED
+  </span>
 
 </div>
+
+
 
 <div class="project">
 
-<div class="project-icon">🌱</div>
+  <div class="project-icon">
+    🤝
+  </div>
 
-<h3>
-  Project 03
-</h3>
+  <h3>
+    Project 02
+  </h3>
 
-<p>
-  Add an upcoming project and
-  its intended beneficiaries.
-</p>
+  <p>
+    Add information about your
+    ongoing SSLG project.
+  </p>
 
-<span class="status upcoming">
-  UPCOMING
-</span>
+  <span class="status ongoing">
+    ONGOING
+  </span>
 
 </div>
 
+
+
+<div class="project">
+
+  <div class="project-icon">
+    🌱
+  </div>
+
+  <h3>
+    Project 03
+  </h3>
+
+  <p>
+    Add an upcoming project and
+    its intended beneficiaries.
+  </p>
+
+  <span class="status upcoming">
+    UPCOMING
+  </span>
+
 </div>
+
+
+</div>
+
 </section>
 
-<!-- REPORTS -->
+
+
+<!-- =====================================================
+     REPORTS
+===================================================== -->
+
 <section id="reports">
+
 
 <div class="section-title">
 
-<small>DOCUMENTS</small>
+  <small>
+    DOCUMENTS
+  </small>
 
-<h2>
-  Accomplishment Reports
-</h2>
+  <h2>
+    Accomplishment Reports
+  </h2>
 
-<p>
-  Access official SSLG reports
-  and supporting documents.
-</p>
+  <p>
+    Access official SSLG reports
+    and supporting documents.
+  </p>
 
 </div>
+
+
 
 <div class="reports">
 
-<div class="report">
-
-<h3>
-  📑 Accomplishment Report
-</h3>
-
-<p>
-  Add your official accomplishment
-  report PDF here.
-</p>
-
-<a href="#" class="report-button">
-  READ REPORT
-</a>
-
-</div>
 
 <div class="report">
 
-<h3>
-  📝 Meeting Records
-</h3>
+  <h3>
+    📑 Accomplishment Report
+  </h3>
 
-<p>
-  Add approved meeting minutes,
-  resolutions, or related records.
-</p>
+  <p>
+    Add your official accomplishment
+    report PDF here.
+  </p>
 
-<a href="#" class="report-button">
-  EXPLORE
-</a>
+  <!-- Replace # with PDF link -->
+
+  <a
+    href="#"
+    class="report-button"
+  >
+    READ REPORT
+  </a>
 
 </div>
+
+
 
 <div class="report">
 
-<h3>
-  📊 Project Reports
-</h3>
+  <h3>
+    📝 Meeting Records
+  </h3>
 
-<p>
-  Add project documentation
-  and accomplishment records.
-</p>
+  <p>
+    Add approved meeting minutes,
+    resolutions, or related records.
+  </p>
 
-<a href="#" class="report-button">
-  VIEW REPORTS
-</a>
+  <a
+    href="#"
+    class="report-button"
+  >
+    EXPLORE
+  </a>
 
 </div>
 
+
+
+<div class="report">
+
+  <h3>
+    📊 Project Reports
+  </h3>
+
+  <p>
+    Add project documentation
+    and accomplishment records.
+  </p>
+
+  <a
+    href="#"
+    class="report-button"
+  >
+    VIEW REPORTS
+  </a>
+
 </div>
+
+
+</div>
+
 </section>
 
-<!-- TRANSPARENCY -->
-<section id="transparency" class="transparency">
+
+
+<!-- =====================================================
+     TRANSPARENCY
+===================================================== -->
+
+<section
+  id="transparency"
+  class="transparency"
+>
+
 
 <div class="section-title">
 
-<small>OPEN GOVERNANCE</small>
+  <small>
+    OPEN GOVERNANCE
+  </small>
 
-<h2>
-  Transparency
-</h2>
+  <h2>
+    Transparency
+  </h2>
 
-<p>
-  Providing accessible information
-  about SSLG activities and finances.
-</p>
+  <p>
+    Providing accessible information
+    about SSLG activities and finances.
+  </p>
 
 </div>
 
+
+
 <div class="table-wrapper">
 
+
 <table>
+
 
 <thead>
 
 <tr>
-<th>DATE</th>
-<th>ACTIVITY / DESCRIPTION</th>
-<th>INCOME</th>
-<th>EXPENSE</th>
-<th>BALANCE</th>
+
+  <th>
+    DATE
+  </th>
+
+  <th>
+    ACTIVITY / DESCRIPTION
+  </th>
+
+  <th>
+    INCOME
+  </th>
+
+  <th>
+    EXPENSE
+  </th>
+
+  <th>
+    BALANCE
+  </th>
+
 </tr>
 
 </thead>
 
+
+
 <tbody>
+
 
 <tr>
 
-<td>
-  MM/DD/2026
-</td>
+  <td>
+    MM/DD/2026
+  </td>
 
-<td>
-  Sample Entry
-</td>
+  <td>
+    Sample Entry
+  </td>
 
-<td class="income">
-  ₱0.00
-</td>
+  <td class="income">
+    ₱0.00
+  </td>
 
-<td class="expense">
-  ₱0.00
-</td>
+  <td class="expense">
+    ₱0.00
+  </td>
 
-<td>
-  ₱0.00
-</td>
+  <td>
+    ₱0.00
+  </td>
 
 </tr>
 
+
 </tbody>
+
 </table>
 
 </div>
 
+
+
 <div class="notice">
 
-<strong>
-  Transparency Reminder:
-</strong>
+  <strong>
+    Transparency Reminder:
+  </strong>
 
-All financial information should be
-verified and approved before publication.
-Do not publish private student information,
-passwords, or other sensitive data.
+  All financial information should be
+  verified and approved before publication.
+  Do not publish private student information,
+  passwords, or other sensitive data.
 
 </div>
 
 </section>
 
-<!-- GALLERY -->
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
 <section id="gallery">
+
 
 <div class="section-title">
 
-<small>OUR MEMORIES</small>
+  <small>
+    OUR MEMORIES
+  </small>
 
-<h2>
-  SSLG Gallery
-</h2>
+  <h2>
+    SSLG Gallery
+  </h2>
 
-<p>
-  Moments from our activities,
-  programs, and projects.
-</p>
+  <p>
+    Moments from our activities,
+    programs, and projects.
+  </p>
 
 </div>
+
+
 
 <div class="gallery">
 
-<div class="gallery-item">
-
-<div class="gallery-photo">
-  🖼️
-</div>
-
-<div class="gallery-caption">
-
-<h3>
-  SSLG Activity
-</h3>
-
-<p>
-  Add your photo caption here.
-</p>
-
-</div>
-</div>
 
 <div class="gallery-item">
 
-<div class="gallery-photo">
-  🖼️
+  <div class="gallery-photo">
+
+    🖼️
+
+    <!--
+    Replace with:
+
+    <img
+      src="activity1.jpg"
+      alt="SSLG Activity"
+    >
+
+    -->
+
+  </div>
+
+  <div class="gallery-caption">
+
+    <h3>
+      SSLG Activity
+    </h3>
+
+    <p>
+      Add your photo caption here.
+    </p>
+
+  </div>
+
 </div>
 
-<div class="gallery-caption">
 
-<h3>
-  School Program
-</h3>
-
-<p>
-  Add your photo caption here.
-</p>
-
-</div>
-</div>
 
 <div class="gallery-item">
 
-<div class="gallery-photo">
-  🖼️
+  <div class="gallery-photo">
+    🖼️
+  </div>
+
+  <div class="gallery-caption">
+
+    <h3>
+      School Program
+    </h3>
+
+    <p>
+      Add your photo caption here.
+    </p>
+
+  </div>
+
 </div>
 
-<div class="gallery-caption">
 
-<h3>
-  Project Implementation
-</h3>
-
-<p>
-  Add your photo caption here.
-</p>
-
-</div>
-</div>
 
 <div class="gallery-item">
 
-<div class="gallery-photo">
-  🖼️
+  <div class="gallery-photo">
+    🖼️
+  </div>
+
+  <div class="gallery-caption">
+
+    <h3>
+      Project Implementation
+    </h3>
+
+    <p>
+      Add your photo caption here.
+    </p>
+
+  </div>
+
 </div>
 
-<div class="gallery-caption">
 
-<h3>
-  Student Leadership
-</h3>
 
-<p>
-  Add your photo caption here.
-</p>
+<div class="gallery-item">
+
+  <div class="gallery-photo">
+    🖼️
+  </div>
+
+  <div class="gallery-caption">
+
+    <h3>
+      Student Leadership
+    </h3>
+
+    <p>
+      Add your photo caption here.
+    </p>
+
+  </div>
 
 </div>
-</div>
+
 
 </div>
+
 </section>
 
-<!-- CONTACT -->
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
 <div class="contact">
 
+
 <div class="contact-inner">
+
 
 <h2>
   Connect With Your SSLG
 </h2>
 
+
 <p>
+
   Have questions, suggestions,
   or concerns? Reach out through
   our official school-approved
   communication channels.
+
 </p>
 
+
+
 <p>
+
   <strong>
     Calumpit National High School
   </strong>
+
 </p>
+
+
 
 <p>
   SSLG • School Year 2026–2027
 </p>
 
+
+
 <a
-  href="https://www.facebook.com/share/p/1M2oGx6fux/"
+  href="#"
   class="contact-button"
-  target="_blank"
-  rel="noopener noreferrer"
 >
-  📘 VISIT OUR FACEBOOK
+  CONTACT SSLG
 </a>
 
+
 </div>
+
 </div>
+
+
 
 </main>
 
-<!-- FOOTER -->
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
 
+
 <p>
+
   <strong>
     SUPREME SECONDARY LEARNER GOVERNMENT
   </strong>
+
 </p>
+
 
 <p>
   Calumpit National High School
 </p>
 
+
 <p>
   School Year 2026–2027
 </p>
+
 
 <p>
   Official SSLG Transparency Portal
 </p>
 
+
 </footer>
+
 
 </body>
 </html>
