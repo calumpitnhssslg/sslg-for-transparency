@@ -3,11 +3,6 @@
    COMPLETE STYLE SHEET
    ========================================================= */
 
-
-/* =========================
-   RESET
-   ========================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -27,11 +22,9 @@ body {
 }
 
 
-/* =========================
+/* =========================================================
    PAGE COLOR THEMES
-   ========================= */
-
-/* HOME — MAROON + GOLD */
+   ========================================================= */
 
 body.home {
     --glow1: rgba(231, 189, 104, 0.35);
@@ -44,9 +37,6 @@ body.home {
     --accent: #e7bd68;
 }
 
-
-/* ABOUT — BURGUNDY + ROSE */
-
 body.about {
     --glow1: rgba(190, 75, 105, 0.38);
     --glow2: rgba(110, 20, 45, 0.50);
@@ -57,9 +47,6 @@ body.about {
 
     --accent: #e09aaa;
 }
-
-
-/* OFFICERS — MAROON + PLUM */
 
 body.officers {
     --glow1: rgba(125, 75, 150, 0.35);
@@ -72,9 +59,6 @@ body.officers {
     --accent: #d1a4e5;
 }
 
-
-/* PROJECTS — CRIMSON + MAROON */
-
 body.projects {
     --glow1: rgba(210, 50, 65, 0.38);
     --glow2: rgba(120, 15, 30, 0.55);
@@ -86,9 +70,6 @@ body.projects {
     --accent: #f08080;
 }
 
-
-/* ANNOUNCEMENTS — MAROON + COPPER */
-
 body.announcements {
     --glow1: rgba(205, 110, 50, 0.38);
     --glow2: rgba(120, 25, 30, 0.50);
@@ -99,9 +80,6 @@ body.announcements {
 
     --accent: #e5a66b;
 }
-
-
-/* TRANSPARENCY — MAROON + BRONZE */
 
 body.transparency {
     --glow1: rgba(190, 145, 60, 0.38);
@@ -115,9 +93,9 @@ body.transparency {
 }
 
 
-/* =========================
+/* =========================================================
    MOVING BACKGROUND
-   ========================= */
+   ========================================================= */
 
 body::before {
     content: "";
@@ -140,108 +118,80 @@ body::before {
             var(--glow1),
             transparent 25%
         ),
-
         radial-gradient(
             circle at 80% 30%,
             var(--glow2),
             transparent 28%
         ),
-
         radial-gradient(
             circle at 30% 80%,
             var(--glow3),
             transparent 25%
         ),
-
         radial-gradient(
             circle at 80% 80%,
             var(--glow1),
             transparent 30%
         );
 
-    animation:
-        backgroundMove 18s ease-in-out infinite;
+    animation: backgroundMove 18s ease-in-out infinite;
 }
-
 
 @keyframes backgroundMove {
 
     0% {
-        transform:
-            translate(0%, 0%)
-            scale(1);
+        transform: translate(0%, 0%) scale(1);
     }
 
     25% {
-        transform:
-            translate(5%, -4%)
-            scale(1.05);
+        transform: translate(5%, -4%) scale(1.05);
     }
 
     50% {
-        transform:
-            translate(-4%, 5%)
-            scale(1.08);
+        transform: translate(-4%, 5%) scale(1.08);
     }
 
     75% {
-        transform:
-            translate(-5%, -3%)
-            scale(1.04);
+        transform: translate(-5%, -3%) scale(1.04);
     }
 
     100% {
-        transform:
-            translate(0%, 0%)
-            scale(1);
+        transform: translate(0%, 0%) scale(1);
     }
 }
 
 
-/* =========================
+/* =========================================================
    NAVIGATION
-   ========================= */
+   ========================================================= */
 
 .navbar {
-
     width: 100%;
-
-    padding:
-        22px 7%;
+    padding: 22px 7%;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
-    background:
-        rgba(55, 5, 15, 0.97);
+    background: rgba(55, 5, 15, 0.97);
 
     position: sticky;
-
     top: 0;
 
     z-index: 1000;
 
     box-shadow:
-        0 4px 20px
-        rgba(0, 0, 0, 0.18);
+        0 4px 20px rgba(0, 0, 0, 0.18);
 }
 
-
 .brand a {
-
     text-decoration: none;
 
     display: flex;
-
     flex-direction: column;
 }
 
-
 .brand strong {
-
     color: white;
 
     font-size: 21px;
@@ -249,9 +199,7 @@ body::before {
     letter-spacing: 1px;
 }
 
-
 .brand span {
-
     color: var(--accent);
 
     font-size: 9px;
@@ -259,9 +207,7 @@ body::before {
     letter-spacing: 1.5px;
 }
 
-
 nav {
-
     display: flex;
 
     align-items: center;
@@ -269,9 +215,7 @@ nav {
     gap: 25px;
 }
 
-
 nav a {
-
     color: white;
 
     text-decoration: none;
@@ -280,24 +224,20 @@ nav a {
 
     font-weight: 600;
 
-    transition:
-        color 0.3s ease;
+    transition: color 0.3s ease;
 }
-
 
 nav a:hover,
 nav a.active {
-
     color: var(--accent);
 }
 
 
-/* =========================
+/* =========================================================
    HERO
-   ========================= */
+   ========================================================= */
 
 .hero {
-
     min-height: 620px;
 
     position: relative;
@@ -312,77 +252,61 @@ nav a.active {
 
     gap: 60px;
 
-    padding:
-        100px 9%;
+    padding: 100px 9%;
 
     color: white;
 
     background:
-
         radial-gradient(
             circle at 15% 30%,
             var(--hero1),
             transparent 30%
         ),
-
         radial-gradient(
             circle at 85% 70%,
             var(--hero2),
             transparent 30%
         ),
-
         linear-gradient(
             120deg,
             #35070f,
             #5a0f1b
         );
 
-    background-size:
-        200% 200%;
+    background-size: 200% 200%;
 
     animation:
-        heroMove 15s
-        ease-in-out infinite;
+        heroMove 15s ease-in-out infinite;
 }
-
 
 @keyframes heroMove {
 
     0% {
-        background-position:
-            0% 50%;
+        background-position: 0% 50%;
     }
 
     25% {
-        background-position:
-            100% 30%;
+        background-position: 100% 30%;
     }
 
     50% {
-        background-position:
-            100% 80%;
+        background-position: 100% 80%;
     }
 
     75% {
-        background-position:
-            20% 100%;
+        background-position: 20% 100%;
     }
 
     100% {
-        background-position:
-            0% 50%;
+        background-position: 0% 50%;
     }
 }
 
-
 .hero-content {
-
     max-width: 720px;
 }
 
-
 .eyebrow {
-
     color: var(--accent);
 
     font-size: 12px;
@@ -394,17 +318,12 @@ nav a.active {
     margin-bottom: 18px;
 }
 
-
 .eyebrow.dark {
-
     color: #7b162b;
 }
 
-
 .hero h1 {
-
-    font-size:
-        clamp(45px, 6vw, 82px);
+    font-size: clamp(45px, 6vw, 82px);
 
     line-height: 1.03;
 
@@ -413,36 +332,29 @@ nav a.active {
     margin-bottom: 28px;
 }
 
-
 .hero-text {
-
     max-width: 620px;
 
     font-size: 18px;
 
-    color:
-        rgba(255,255,255,0.86);
+    color: rgba(255, 255, 255, 0.86);
 
     margin-bottom: 30px;
 }
 
 
-/* =========================
-   HOME LOGO / EMBLEM
-   ========================= */
+/* =========================================================
+   SSLG LOGO
+   ========================================================= */
 
 .hero-emblem {
-
     text-align: center;
 
     min-width: 220px;
 }
 
-
 .emblem {
-
     width: 190px;
-
     height: 190px;
 
     border-radius: 50%;
@@ -450,146 +362,130 @@ nav a.active {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     margin: auto;
 
-    border:
-        3px solid var(--accent);
+    border: 3px solid var(--accent);
 
-    color:
-        var(--accent);
+    color: var(--accent);
 
-    font-size: 42px;
-
-    font-weight: 900;
-
-    letter-spacing: 3px;
-
-    background:
-        rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
 
     position: relative;
 
     box-shadow:
-
-        0 0 10px
-        rgba(231,189,104,0.7),
-
-        0 0 25px
-        rgba(231,189,104,0.5),
-
-        0 0 55px
-        rgba(231,189,104,0.35);
+        0 0 10px rgba(231, 189, 104, 0.7),
+        0 0 25px rgba(231, 189, 104, 0.5),
+        0 0 55px rgba(231, 189, 104, 0.35);
 
     animation:
-        logoGlow 3s
-        ease-in-out infinite;
+        logoGlow 3s ease-in-out infinite;
 }
 
 
-.emblem::before {
+/* ACTUAL SSLG LOGO */
 
+.emblem img {
+    width: 100px;
+    height: 100px;
+
+    object-fit: contain;
+
+    position: relative;
+
+    z-index: 5;
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(231, 189, 104, 0.8)
+        )
+        drop-shadow(
+            0 0 20px
+            rgba(231, 189, 104, 0.5)
+        );
+}
+
+
+/* INNER GLOW RING */
+
+.emblem::before {
     content: "";
 
     position: absolute;
 
     width: 220px;
-
     height: 220px;
 
     border-radius: 50%;
 
     border:
         1px solid
-        rgba(231,189,104,0.35);
+        rgba(231, 189, 104, 0.35);
 
     box-shadow:
         0 0 25px
-        rgba(231,189,104,0.25);
+        rgba(231, 189, 104, 0.25);
 
     animation:
-        logoRing 5s
-        linear infinite;
+        logoRing 5s linear infinite;
 }
 
 
-.emblem::after {
+/* OUTER RING */
 
+.emblem::after {
     content: "";
 
     position: absolute;
 
     width: 250px;
-
     height: 250px;
 
     border-radius: 50%;
 
     border:
         1px solid
-        rgba(231,189,104,0.15);
+        rgba(231, 189, 104, 0.15);
 
     animation:
-        logoRingReverse 8s
-        linear infinite;
+        logoRingReverse 8s linear infinite;
 }
 
+
+/* LOGO PULSE */
 
 @keyframes logoGlow {
 
     0% {
 
-        transform:
-            scale(1);
+        transform: scale(1);
 
         box-shadow:
-
-            0 0 10px
-            rgba(231,189,104,0.6),
-
-            0 0 25px
-            rgba(231,189,104,0.4),
-
-            0 0 45px
-            rgba(231,189,104,0.25);
+            0 0 10px rgba(231, 189, 104, 0.6),
+            0 0 25px rgba(231, 189, 104, 0.4),
+            0 0 45px rgba(231, 189, 104, 0.25);
     }
-
 
     50% {
 
-        transform:
-            scale(1.04);
+        transform: scale(1.04);
 
         box-shadow:
-
-            0 0 15px
-            rgba(231,189,104,0.9),
-
-            0 0 40px
-            rgba(231,189,104,0.65),
-
-            0 0 75px
-            rgba(231,189,104,0.4);
+            0 0 15px rgba(231, 189, 104, 0.9),
+            0 0 40px rgba(231, 189, 104, 0.65),
+            0 0 75px rgba(231, 189, 104, 0.4);
     }
-
 
     100% {
 
-        transform:
-            scale(1);
+        transform: scale(1);
 
         box-shadow:
-
-            0 0 10px
-            rgba(231,189,104,0.6),
-
-            0 0 25px
-            rgba(231,189,104,0.4),
-
-            0 0 45px
-            rgba(231,189,104,0.25);
+            0 0 10px rgba(231, 189, 104, 0.6),
+            0 0 25px rgba(231, 189, 104, 0.4),
+            0 0 45px rgba(231, 189, 104, 0.25);
     }
 }
 
@@ -597,15 +493,11 @@ nav a.active {
 @keyframes logoRing {
 
     from {
-
-        transform:
-            rotate(0deg);
+        transform: rotate(0deg);
     }
 
     to {
-
-        transform:
-            rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
@@ -613,25 +505,33 @@ nav a.active {
 @keyframes logoRingReverse {
 
     from {
-
-        transform:
-            rotate(360deg);
+        transform: rotate(360deg);
     }
 
     to {
-
-        transform:
-            rotate(0deg);
+        transform: rotate(0deg);
     }
 }
 
 
-/* =========================
+.hero-emblem p {
+    margin-top: 18px;
+
+    color: var(--accent);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
    BUTTONS
-   ========================= */
+   ========================================================= */
 
 .hero-buttons {
-
     display: flex;
 
     gap: 15px;
@@ -639,19 +539,14 @@ nav a.active {
     flex-wrap: wrap;
 }
 
-
 .button {
-
     display: inline-block;
 
-    padding:
-        14px 25px;
+    padding: 14px 25px;
 
-    background:
-        var(--accent);
+    background: var(--accent);
 
-    color:
-        #3a0711;
+    color: #3a0711;
 
     text-decoration: none;
 
@@ -659,64 +554,49 @@ nav a.active {
 
     border-radius: 4px;
 
-    transition:
-        0.3s;
+    transition: 0.3s;
 }
 
-
 .button:hover {
-
-    transform:
-        translateY(-3px);
+    transform: translateY(-3px);
 
     box-shadow:
         0 8px 20px
-        rgba(0,0,0,0.2);
+        rgba(0, 0, 0, 0.2);
 }
 
-
 .button.secondary {
-
-    background:
-        transparent;
+    background: transparent;
 
     color: white;
 
     border:
         1px solid
-        rgba(255,255,255,0.5);
+        rgba(255, 255, 255, 0.5);
 }
-
 
 .button.secondary:hover {
-
     background: white;
 
-    color:
-        #3a0711;
+    color: #3a0711;
 }
 
 
-/* =========================
+/* =========================================================
    WELCOME
-   ========================= */
+   ========================================================= */
 
 .welcome {
-
-    padding:
-        120px 10%;
+    padding: 120px 10%;
 
     background:
-        rgba(255,255,255,0.96);
+        rgba(255, 255, 255, 0.96);
 
     text-align: center;
 }
 
-
 .section-label {
-
-    color:
-        #7b162b;
+    color: #7b162b;
 
     font-size: 11px;
 
@@ -727,26 +607,21 @@ nav a.active {
     margin-bottom: 20px;
 }
 
-
 .welcome h2 {
-
     max-width: 800px;
 
     margin:
         auto auto 30px;
 
     font-size:
-        clamp(36px,5vw,65px);
+        clamp(36px, 5vw, 65px);
 
     line-height: 1.1;
 
-    color:
-        #3a0711;
+    color: #3a0711;
 }
 
-
 .welcome > p {
-
     max-width: 760px;
 
     margin: auto;
@@ -757,51 +632,40 @@ nav a.active {
 }
 
 
-/* =========================
+/* =========================================================
    QUICK ACCESS
-   ========================= */
+   ========================================================= */
 
 .quick-access {
-
-    padding:
-        110px 8%;
+    padding: 110px 8%;
 
     background:
-        rgba(248,243,243,0.96);
+        rgba(248, 243, 243, 0.96);
 }
 
-
 .section-heading {
-
     margin-bottom: 50px;
 }
 
-
 .section-heading h2 {
-
     font-size:
-        clamp(35px,5vw,60px);
+        clamp(35px, 5vw, 60px);
 
     line-height: 1.1;
 
-    color:
-        #3a0711;
+    color: #3a0711;
 }
 
-
 .quick-grid {
-
     display: grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        repeat(3, 1fr);
 
     gap: 25px;
 }
 
-
 .quick-card {
-
     display: block;
 
     padding: 35px;
@@ -809,7 +673,7 @@ nav a.active {
     min-height: 260px;
 
     background:
-        rgba(255,255,255,0.96);
+        rgba(255, 255, 255, 0.96);
 
     border:
         1px solid #eadbdd;
@@ -826,9 +690,7 @@ nav a.active {
         border-color 0.3s ease;
 }
 
-
 .quick-card:hover {
-
     transform:
         translateY(-8px);
 
@@ -837,60 +699,45 @@ nav a.active {
 
     box-shadow:
         0 15px 35px
-        rgba(58,7,17,0.12);
+        rgba(58, 7, 17, 0.12);
 }
 
-
 .card-icon {
-
     font-size: 34px;
 
     margin-bottom: 20px;
 }
 
-
 .quick-card h3 {
-
-    color:
-        #3a0711;
+    color: #3a0711;
 
     font-size: 24px;
 
     margin-bottom: 12px;
 }
 
-
 .quick-card p {
-
-    color:
-        #666;
+    color: #666;
 
     font-size: 15px;
 }
 
-
 .quick-card span {
-
     display: inline-block;
 
     margin-top: 20px;
 
-    color:
-        #7b162b;
+    color: #7b162b;
 
     font-weight: 700;
 
     font-size: 13px;
 }
 
-
 .position {
+    color: var(--accent) !important;
 
-    color:
-        var(--accent) !important;
-
-    font-size:
-        10px !important;
+    font-size: 10px !important;
 
     font-weight: 800;
 
@@ -899,15 +746,12 @@ nav a.active {
     margin-bottom: 8px;
 }
 
-
 .card-link {
-
     display: inline-block;
 
     margin-top: 20px;
 
-    color:
-        #7b162b;
+    color: #7b162b;
 
     font-weight: 700;
 
@@ -915,14 +759,12 @@ nav a.active {
 }
 
 
-/* =========================
-   LOWER SECTION
-   ========================= */
+/* =========================================================
+   FINAL MAROON SECTION
+   ========================================================= */
 
 .portal-section {
-
-    padding:
-        120px 10%;
+    padding: 120px 10%;
 
     text-align: center;
 
@@ -952,7 +794,6 @@ nav a.active {
         ease-in-out infinite;
 }
 
-
 @keyframes finalMove {
 
     0% {
@@ -971,50 +812,41 @@ nav a.active {
     }
 }
 
-
 .portal-content {
-
     max-width: 800px;
 
     margin: auto;
 }
 
-
 .portal-content h2 {
-
     font-size:
-        clamp(38px,5vw,65px);
+        clamp(38px, 5vw, 65px);
 
     line-height: 1.1;
 
     margin-bottom: 25px;
 }
 
-
 .portal-content p:not(.eyebrow) {
-
     color:
-        rgba(255,255,255,0.8);
+        rgba(255, 255, 255, 0.8);
 
     font-size: 17px;
 }
 
 
-/* =========================
+/* =========================================================
    FOOTER
-   ========================= */
+   ========================================================= */
 
 footer {
-
     background:
         #26040b;
 
     color: white;
 }
 
-
 .footer-main {
-
     padding:
         70px 8%;
 
@@ -1025,9 +857,7 @@ footer {
     gap: 50px;
 }
 
-
 .footer-main h3 {
-
     color:
         var(--accent);
 
@@ -1036,18 +866,14 @@ footer {
     letter-spacing: 1px;
 }
 
-
 .footer-main p {
-
     color:
-        rgba(255,255,255,0.65);
+        rgba(255, 255, 255, 0.65);
 
     font-size: 14px;
 }
 
-
 .footer-links {
-
     display: flex;
 
     flex-direction: column;
@@ -1055,9 +881,7 @@ footer {
     gap: 8px;
 }
 
-
 .footer-links h4 {
-
     color:
         var(--accent);
 
@@ -1068,11 +892,9 @@ footer {
     letter-spacing: 2px;
 }
 
-
 .footer-links a {
-
     color:
-        rgba(255,255,255,0.75);
+        rgba(255, 255, 255, 0.75);
 
     text-decoration: none;
 
@@ -1081,19 +903,15 @@ footer {
     transition: 0.3s;
 }
 
-
 .footer-links a:hover {
-
     color:
         var(--accent);
 }
 
-
 .footer-bottom {
-
     border-top:
         1px solid
-        rgba(255,255,255,0.1);
+        rgba(255, 255, 255, 0.1);
 
     padding:
         20px 8%;
@@ -1101,24 +919,21 @@ footer {
     text-align: center;
 }
 
-
 .footer-bottom p {
-
     font-size: 12px;
 
     color:
-        rgba(255,255,255,0.5);
+        rgba(255, 255, 255, 0.5);
 }
 
 
-/* =========================
-   MOBILE
-   ========================= */
+/* =========================================================
+   TABLET
+   ========================================================= */
 
 @media (max-width: 900px) {
 
     .navbar {
-
         flex-direction: column;
 
         gap: 20px;
@@ -1126,9 +941,7 @@ footer {
         padding: 20px;
     }
 
-
     nav {
-
         flex-wrap: wrap;
 
         justify-content: center;
@@ -1136,9 +949,7 @@ footer {
         gap: 15px;
     }
 
-
     .hero {
-
         flex-direction: column;
 
         text-align: center;
@@ -1149,101 +960,80 @@ footer {
         min-height: 600px;
     }
 
-
     .hero-text {
-
         margin-left: auto;
 
         margin-right: auto;
     }
 
-
     .hero-buttons {
-
         justify-content: center;
     }
 
-
     .hero-emblem {
-
         margin-top: 20px;
     }
 
-
     .quick-grid {
-
         grid-template-columns:
-            repeat(2,1fr);
+            repeat(2, 1fr);
     }
 
-
     .footer-main {
-
         flex-direction: column;
     }
 }
 
 
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
 @media (max-width: 600px) {
 
     .brand {
-
         text-align: center;
     }
 
-
     .brand strong {
-
         font-size: 18px;
     }
 
-
     .brand span {
-
         font-size: 7px;
     }
 
-
     nav {
-
         gap: 10px;
     }
 
-
     nav a {
-
         font-size: 11px;
     }
 
-
     .hero h1 {
-
         font-size: 44px;
     }
 
-
     .quick-grid {
-
         grid-template-columns: 1fr;
     }
-
 
     .welcome,
     .quick-access,
     .portal-section {
-
         padding:
             80px 7%;
     }
 
-
     .emblem {
-
         width: 150px;
-
         height: 150px;
+    }
 
-        font-size: 34px;
+    .emblem img {
+        width: 100px;
+        height: 100px;
     }
 
 }
