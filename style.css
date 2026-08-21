@@ -634,7 +634,7 @@ nav a.active {
 
 
 /* =========================================================
-   QUICK ACCESS
+   QUICK ACCESS / ABOUT CARDS
    ========================================================= */
 
 .quick-access {
@@ -657,19 +657,22 @@ nav a.active {
     color: #3a0711;
 }
 
+
+/* 4 CARDS IN ONE LINE ON DESKTOP */
+
 .quick-grid {
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(4, 1fr);
 
-    gap: 25px;
+    gap: 20px;
 }
 
 .quick-card {
     display: block;
 
-    padding: 35px;
+    padding: 30px;
 
     min-height: 260px;
 
@@ -710,7 +713,7 @@ nav a.active {
 .quick-card h3 {
     color: #3a0711;
 
-    font-size: 24px;
+    font-size: 22px;
 
     margin-bottom: 12px;
 }
@@ -718,7 +721,7 @@ nav a.active {
 .quick-card p {
     color: #666;
 
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .quick-card span {
@@ -946,6 +949,9 @@ footer {
         margin-top: 20px;
     }
 
+
+    /* 2 CARDS PER ROW ON TABLET */
+
     .quick-grid {
         grid-template-columns:
             repeat(2, 1fr);
@@ -986,6 +992,9 @@ footer {
     .hero h1 {
         font-size: 44px;
     }
+
+
+    /* 1 CARD PER ROW ON MOBILE */
 
     .quick-grid {
         grid-template-columns: 1fr;
