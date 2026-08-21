@@ -1,3 +1,4 @@
+```css
 * {
     margin: 0;
     padding: 0;
@@ -331,13 +332,18 @@ nav a.active {
 
 
 /* =========================================================
-   SSLG LOGO + RADIANT GLOW
+   SSLG LOGO
    ========================================================= */
 
 .hero-emblem {
     text-align: center;
 
     min-width: 250px;
+
+    align-self: center;
+
+    /* MOVES LOGO UP */
+    transform: translateY(-20px);
 }
 
 .emblem {
@@ -371,14 +377,16 @@ nav a.active {
 
 
 /* =========================================================
-   SSLG LOGO
+   SSLG LOGO IMAGE
    ========================================================= */
 
 .hero-emblem .emblem img {
     width: 220px !important;
+
     height: 220px !important;
 
     max-width: none !important;
+
     max-height: none !important;
 
     object-fit: contain !important;
@@ -415,6 +423,7 @@ nav a.active {
     position: absolute;
 
     width: 225px;
+
     height: 225px;
 
     border-radius: 50%;
@@ -440,6 +449,7 @@ nav a.active {
     position: absolute;
 
     width: 255px;
+
     height: 255px;
 
     border-radius: 50%;
@@ -458,7 +468,7 @@ nav a.active {
 
 
 /* =========================================================
-   RADIANT GLOW ANIMATION
+   RADIANT GLOW
    ========================================================= */
 
 @keyframes radiantGlow {
@@ -658,7 +668,7 @@ nav a.active {
 }
 
 
-/* 4 CARDS IN ONE LINE ON DESKTOP */
+/* 4 CARDS IN ONE LINE */
 
 .quick-grid {
     display: grid;
@@ -947,10 +957,9 @@ footer {
 
     .hero-emblem {
         margin-top: 20px;
+
+        transform: translateY(-10px);
     }
-
-
-    /* 2 CARDS PER ROW ON TABLET */
 
     .quick-grid {
         grid-template-columns:
@@ -993,9 +1002,6 @@ footer {
         font-size: 44px;
     }
 
-
-    /* 1 CARD PER ROW ON MOBILE */
-
     .quick-grid {
         grid-template-columns: 1fr;
     }
@@ -1011,14 +1017,17 @@ footer {
 
     .hero-emblem .emblem {
         width: 170px !important;
+
         height: 170px !important;
     }
 
     .hero-emblem .emblem img {
         width: 190px !important;
+
         height: 190px !important;
 
         max-width: none !important;
+
         max-height: none !important;
 
         object-fit: contain !important;
@@ -1026,11 +1035,18 @@ footer {
 
     .emblem::before {
         width: 195px;
+
         height: 195px;
     }
 
     .emblem::after {
         width: 220px;
+
         height: 220px;
     }
+
+    .hero-emblem {
+        transform: translateY(-10px);
+    }
 }
+```
