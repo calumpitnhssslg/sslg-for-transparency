@@ -1,4 +1,4 @@
-/* style.css — cleaned and fixed */
+/* style.css */
 
 * {
     margin: 0;
@@ -28,7 +28,6 @@ body {
     outline: 0;
     overflow-x: hidden;
 }
-
 
 /* =========================================================
    PAGE COLOR THEMES
@@ -88,7 +87,6 @@ body.transparency {
     --accent: #e0bd72;
 }
 
-
 /* =========================================================
    MOVING BACKGROUND
    ========================================================= */
@@ -133,7 +131,6 @@ body::before {
         transform: translate(0%, 0%) scale(1);
     }
 }
-
 
 /* =========================================================
    NAVIGATION
@@ -194,7 +191,6 @@ nav a:hover,
 nav a.active {
     color: var(--accent);
 }
-
 
 /* =========================================================
    HERO
@@ -278,7 +274,6 @@ nav a.active {
     color: rgba(255, 255, 255, 0.86);
     margin-bottom: 30px;
 }
-
 
 /* =========================================================
    SSLG LOGO / EMBLEM
@@ -437,7 +432,6 @@ nav a.active {
     font-weight: 700;
 }
 
-
 /* =========================================================
    BUTTONS
    ========================================================= */
@@ -483,7 +477,6 @@ nav a.active {
     background: white;
     color: #3a0711;
 }
-
 
 /* =========================================================
    WELCOME
@@ -532,7 +525,6 @@ nav a.active {
     color: #666;
 }
 
-
 /* =========================================================
    QUICK ACCESS & CARDS
    ========================================================= */
@@ -575,9 +567,8 @@ body.about .quick-grid {
     gap: 20px;
 }
 
-
 /* =========================================================
-   IMAGE CARDS
+   CARDS
    ========================================================= */
 
 .quick-card {
@@ -615,9 +606,8 @@ body.about .quick-grid {
         0 15px 35px rgba(58, 7, 17, 0.12);
 }
 
-
 /* =========================================================
-   HOME PAGE IMAGE CARDS
+   HOME IMAGE CARDS
    ========================================================= */
 
 .card-image {
@@ -642,6 +632,33 @@ body.about .quick-grid {
     transform: scale(1.06);
 }
 
+/* =========================================================
+   OFFICER IMAGE
+   ========================================================= */
+
+/*
+   Officer photos are square.
+   The image uses CONTAIN so the entire
+   720x720 picture can be seen without cropping.
+*/
+
+.officer-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    background: #f8f3f3;
+}
+
+.officer-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
 
 /* =========================================================
    CARD CONTENT
@@ -696,41 +713,6 @@ body.about .quick-grid {
 
     margin-bottom: 8px;
 }
-
-
-/* =========================================================
-   OFFICER PROFILE IMAGE
-   ========================================================= */
-
-/*
-   Mark's image is 720 x 720.
-
-   The image is displayed at 220 x 220.
-   object-fit: contain keeps the ENTIRE image visible.
-*/
-
-.officer-image {
-    width: 100%;
-    height: 220px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-
-    background: #f8f3f3;
-}
-
-.officer-image img {
-    width: 220px;
-    height: 220px;
-
-    object-fit: contain;
-
-    display: block;
-}
-
 
 /* =========================================================
    FINAL SECTION
@@ -795,7 +777,6 @@ body.about .quick-grid {
 
     font-size: 17px;
 }
-
 
 /* =========================================================
    FOOTER
@@ -880,7 +861,6 @@ footer {
     color: rgba(255, 255, 255, 0.5);
 }
 
-
 /* =========================================================
    RESPONSIVE: TABLET / MOBILE
    ========================================================= */
@@ -897,7 +877,6 @@ footer {
             repeat(2, minmax(0, 1fr));
     }
 }
-
 
 @media (max-width: 900px) {
 
@@ -978,17 +957,7 @@ footer {
     .footer-main {
         flex-direction: column;
     }
-
-    .officer-image {
-        height: 220px;
-    }
-
-    .officer-image img {
-        width: 220px;
-        height: 220px;
-    }
 }
-
 
 @media (max-width: 600px) {
 
@@ -1026,7 +995,6 @@ footer {
         padding: 80px 7%;
     }
 
-
     /* Mobile logo sizing */
 
     .hero-emblem {
@@ -1053,7 +1021,6 @@ footer {
         height: 210px;
     }
 
-
     /* Mobile home image cards */
 
     .card-image {
@@ -1064,21 +1031,15 @@ footer {
         padding: 22px;
     }
 
-
-    /* Mobile officer photo */
+    /* Mobile officer images */
 
     .officer-image {
-        height: 220px;
+        aspect-ratio: 1 / 1;
     }
 
     .officer-image img {
-        width: 220px;
-        height: 220px;
         object-fit: contain;
     }
 }
 
-
-/* =========================================================
-   END OF STYLESHEET
-   ========================================================= */
+/* end of stylesheet */
