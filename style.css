@@ -568,6 +568,23 @@ body.about .quick-grid {
 }
 
 /* =========================================================
+   OFFICERS PAGE - SPECIFIC CARD SIZING
+   ========================================================= */
+
+body.officers .quick-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 15px;
+}
+
+body.officers .quick-card {
+    max-width: 100%;
+}
+
+body.officers .card-image {
+    height: 200px;
+}
+
+/* =========================================================
    IMAGE CARDS
    ========================================================= */
 
@@ -856,6 +873,10 @@ footer {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
     }
+
+    body.officers .quick-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
 }
 
 @media (max-width: 900px) {
@@ -934,6 +955,10 @@ footer {
             repeat(2, 1fr);
     }
 
+    body.officers .quick-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
     .footer-main {
         flex-direction: column;
     }
@@ -969,6 +994,10 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    body.officers .quick-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .welcome,
     .quick-access,
     .portal-section {
@@ -1000,16 +1029,4 @@ footer {
         width: 210px;
         height: 210px;
     }
-
-    /* Mobile image cards */
-
-    .card-image {
-        height: 160px;
-    }
-
-    .card-content {
-        padding: 22px;
-    }
 }
-
-/* end of stylesheet */
