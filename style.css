@@ -1,4 +1,6 @@
-/* style.css — cleaned and fixed */
+/* =========================================================
+   GLOBAL
+   ========================================================= */
 
 * {
     margin: 0;
@@ -10,8 +12,6 @@ html {
     scroll-behavior: smooth;
     width: 100%;
     min-height: 100%;
-    margin: 0;
-    padding: 0;
     overflow-x: hidden;
 }
 
@@ -24,8 +24,6 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    border: 0;
-    outline: 0;
     overflow-x: hidden;
 }
 
@@ -141,7 +139,6 @@ body::before {
 
 .navbar {
     width: 100%;
-    max-width: 100%;
     padding: 22px 7%;
 
     display: flex;
@@ -179,7 +176,6 @@ nav {
     display: flex;
     align-items: center;
     gap: 25px;
-    max-width: 100%;
 }
 
 nav a {
@@ -203,7 +199,6 @@ nav a.active {
 .hero {
     min-height: 620px;
     width: 100%;
-    max-width: 100%;
 
     position: relative;
     overflow: hidden;
@@ -281,22 +276,17 @@ nav a.active {
 
 
 /* =========================================================
-   SSLG LOGO / EMBLEM
+   HERO EMBLEM
    ========================================================= */
 
 .hero-emblem {
     text-align: center;
-
     min-width: 300px;
     max-width: 100%;
-
     flex-shrink: 0;
-
     align-self: center;
-
     position: relative;
     z-index: 5;
-
     transform: translateY(-35px);
 }
 
@@ -329,15 +319,11 @@ nav a.active {
 .hero-emblem .emblem img {
     width: 255px !important;
     height: 255px !important;
-
     max-width: none !important;
     max-height: none !important;
-
     object-fit: contain !important;
-
     position: relative;
     z-index: 5;
-
     display: block;
 
     filter:
@@ -347,63 +333,36 @@ nav a.active {
 
 .emblem::before {
     content: "";
-
     position: absolute;
-
     width: 270px;
     height: 270px;
-
     border-radius: 50%;
-
     border: 1px solid rgba(231, 189, 104, 0.4);
-
-    box-shadow:
-        0 0 25px rgba(231, 189, 104, 0.3);
-
+    box-shadow: 0 0 25px rgba(231, 189, 104, 0.3);
     animation: logoRing 5s linear infinite;
 }
 
 .emblem::after {
     content: "";
-
     position: absolute;
-
     width: 300px;
     height: 300px;
-
     border-radius: 50%;
-
     border: 1px solid rgba(231, 189, 104, 0.18);
-
     animation: logoRingReverse 8s linear infinite;
 }
 
 @keyframes logoGlow {
     0% {
         transform: scale(1);
-
-        box-shadow:
-            0 0 10px rgba(231, 189, 104, 0.6),
-            0 0 25px rgba(231, 189, 104, 0.4),
-            0 0 45px rgba(231, 189, 104, 0.25);
     }
 
     50% {
         transform: scale(1.03);
-
-        box-shadow:
-            0 0 15px rgba(231, 189, 104, 0.95),
-            0 0 35px rgba(231, 189, 104, 0.7),
-            0 0 65px rgba(231, 189, 104, 0.45);
     }
 
     100% {
         transform: scale(1);
-
-        box-shadow:
-            0 0 10px rgba(231, 189, 104, 0.6),
-            0 0 25px rgba(231, 189, 104, 0.4),
-            0 0 45px rgba(231, 189, 104, 0.25);
     }
 }
 
@@ -429,9 +388,7 @@ nav a.active {
 
 .hero-emblem p {
     margin-top: 25px;
-
     color: var(--accent);
-
     font-size: 10px;
     letter-spacing: 2px;
     font-weight: 700;
@@ -450,32 +407,23 @@ nav a.active {
 
 .button {
     display: inline-block;
-
     padding: 14px 25px;
-
     background: var(--accent);
     color: #3a0711;
-
     text-decoration: none;
-
     font-weight: 700;
-
     border-radius: 4px;
-
     transition: 0.3s;
 }
 
 .button:hover {
     transform: translateY(-3px);
-
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .button.secondary {
     background: transparent;
     color: white;
-
     border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
@@ -491,57 +439,42 @@ nav a.active {
 
 .welcome {
     width: 100%;
-
     padding: 120px 10%;
-
     background: rgba(255, 255, 255, 0.96);
-
     text-align: center;
 }
 
 .section-label {
     color: #7b162b;
-
     font-size: 11px;
     font-weight: 800;
-
     letter-spacing: 3px;
-
     margin-bottom: 20px;
 }
 
 .welcome h2 {
     max-width: 800px;
-
     margin: auto auto 30px;
-
     font-size: clamp(36px, 5vw, 65px);
-
     line-height: 1.1;
-
     color: #3a0711;
 }
 
 .welcome > p {
     max-width: 760px;
-
     margin: auto;
-
     font-size: 17px;
-
     color: #666;
 }
 
 
 /* =========================================================
-   QUICK ACCESS & CARDS
+   QUICK ACCESS
    ========================================================= */
 
 .quick-access {
     width: 100%;
-
     padding: 110px 8%;
-
     background: rgba(248, 243, 243, 0.96);
 }
 
@@ -551,53 +484,41 @@ nav a.active {
 
 .section-heading h2 {
     font-size: clamp(35px, 5vw, 60px);
-
     line-height: 1.1;
-
     color: #3a0711;
 }
 
 .quick-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 25px;
-
     width: 100%;
 }
 
 body.about .quick-grid {
-    grid-template-columns:
-        repeat(4, minmax(0, 1fr));
-
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px;
 }
 
 
 /* =========================================================
-   IMAGE CARDS
+   CARDS
    ========================================================= */
 
 .quick-card {
     display: block;
-
     padding: 0;
-
     min-height: 0;
     min-width: 0;
 
     background: rgba(255, 255, 255, 0.96);
 
     border: 1px solid #eadbdd;
-
     border-radius: 8px;
 
     overflow: hidden;
 
     text-decoration: none;
-
     color: inherit;
 
     transition:
@@ -608,7 +529,6 @@ body.about .quick-grid {
 
 .quick-card:hover {
     transform: translateY(-8px);
-
     border-color: var(--accent);
 
     box-shadow:
@@ -617,29 +537,68 @@ body.about .quick-grid {
 
 
 /* =========================================================
-   HOME PAGE IMAGE CARDS
+   HOME IMAGE CARDS
    ========================================================= */
 
 .card-image {
     width: 100%;
     height: 120px;
-
     overflow: hidden;
 }
 
 .card-image img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.quick-card:hover .card-image img {
+    transform: scale(1.06);
+}
+
+
+/* =========================================================
+   ABOUT PAGE — SINAG / SALIG / LINGKOD / GALING
+   ========================================================= */
+
+/*
+   IMPORTANT:
+   These rules ONLY affect cards on about.html.
+
+   Your images are 1500 x 1500.
+   We use object-fit: contain so the ENTIRE image
+   remains visible and does not get cropped.
+*/
+
+body.about .quick-card .card-image {
+    width: 100%;
+    height: 220px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #f8f3f3;
+}
+
+body.about .quick-card .card-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
 
     display: block;
 
     transition: transform 0.5s ease;
 }
 
-.quick-card:hover .card-image img {
-    transform: scale(1.06);
+body.about .quick-card:hover .card-image img {
+    transform: scale(1.03);
 }
 
 
@@ -657,27 +616,20 @@ body.about .quick-grid {
 
 .card-content h3 {
     color: #3a0711;
-
     font-size: 21px;
-
     margin-bottom: 8px;
 }
 
 .card-content p:not(.position) {
     color: #666;
-
     font-size: 14px;
 }
 
 .card-content span {
     display: inline-block;
-
     margin-top: 15px;
-
     color: #7b162b;
-
     font-weight: 700;
-
     font-size: 13px;
 }
 
@@ -687,13 +639,9 @@ body.about .quick-grid {
 
 .position {
     color: var(--accent) !important;
-
     font-size: 10px !important;
-
     font-weight: 800;
-
     letter-spacing: 2px;
-
     margin-bottom: 8px;
 }
 
@@ -701,13 +649,6 @@ body.about .quick-grid {
 /* =========================================================
    OFFICER PROFILE IMAGE
    ========================================================= */
-
-/*
-   Mark's image is 720 x 720.
-
-   The image is displayed at 220 x 220.
-   object-fit: contain keeps the ENTIRE image visible.
-*/
 
 .officer-image {
     width: 100%;
@@ -733,16 +674,14 @@ body.about .quick-grid {
 
 
 /* =========================================================
-   FINAL SECTION
+   FINAL / PORTAL SECTION
    ========================================================= */
 
 .portal-section {
     width: 100%;
-
     padding: 120px 10%;
 
     text-align: center;
-
     color: white;
 
     background:
@@ -784,15 +723,12 @@ body.about .quick-grid {
 
 .portal-content h2 {
     font-size: clamp(38px, 5vw, 65px);
-
     line-height: 1.1;
-
     margin-bottom: 25px;
 }
 
 .portal-content p:not(.eyebrow) {
     color: rgba(255, 255, 255, 0.8);
-
     font-size: 17px;
 }
 
@@ -803,9 +739,7 @@ body.about .quick-grid {
 
 footer {
     width: 100%;
-
     background: #26040b;
-
     color: white;
 }
 
@@ -813,7 +747,6 @@ footer {
     padding: 70px 8%;
 
     display: flex;
-
     justify-content: space-between;
 
     gap: 50px;
@@ -821,43 +754,32 @@ footer {
 
 .footer-main h3 {
     color: var(--accent);
-
     margin-bottom: 15px;
-
     letter-spacing: 1px;
 }
 
 .footer-main p {
     color: rgba(255, 255, 255, 0.65);
-
     font-size: 14px;
 }
 
 .footer-links {
     display: flex;
-
     flex-direction: column;
-
     gap: 8px;
 }
 
 .footer-links h4 {
     color: var(--accent);
-
     margin-bottom: 10px;
-
     font-size: 12px;
-
     letter-spacing: 2px;
 }
 
 .footer-links a {
     color: rgba(255, 255, 255, 0.75);
-
     text-decoration: none;
-
     font-size: 14px;
-
     transition: 0.3s;
 }
 
@@ -866,70 +788,58 @@ footer {
 }
 
 .footer-bottom {
-    border-top:
-        1px solid rgba(255, 255, 255, 0.1);
-
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding: 20px 8%;
-
     text-align: center;
 }
 
 .footer-bottom p {
     font-size: 12px;
-
     color: rgba(255, 255, 255, 0.5);
 }
 
 
 /* =========================================================
-   RESPONSIVE: TABLET / MOBILE
+   TABLET
    ========================================================= */
 
 @media (max-width: 1100px) {
 
     .quick-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     body.about .quick-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
+
+/* =========================================================
+   MOBILE / TABLET
+   ========================================================= */
 
 @media (max-width: 900px) {
 
     .navbar {
         width: 100%;
-
         flex-direction: column;
-
         gap: 20px;
-
         padding: 20px;
     }
 
     nav {
         width: 100%;
-
         flex-wrap: wrap;
-
         justify-content: center;
-
         gap: 15px;
     }
 
     .hero {
         width: 100%;
-
         flex-direction: column;
-
         text-align: center;
-
         padding: 80px 7%;
-
         min-height: 600px;
     }
 
@@ -944,9 +854,7 @@ footer {
 
     .hero-emblem {
         margin-top: 20px;
-
         transform: none;
-
         min-width: 260px;
     }
 
@@ -971,8 +879,7 @@ footer {
     }
 
     .quick-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .footer-main {
@@ -990,6 +897,10 @@ footer {
 }
 
 
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
 @media (max-width: 600px) {
 
     .brand {
@@ -1005,13 +916,7 @@ footer {
     }
 
     nav {
-        width: 100%;
-
-        flex-direction: column;
-
         gap: 10px;
-
-        align-items: center;
     }
 
     nav a {
@@ -1020,9 +925,7 @@ footer {
 
     .hero {
         min-height: 500px;
-
         padding: 50px 5%;
-
         gap: 20px;
     }
 
@@ -1032,7 +935,6 @@ footer {
 
     .hero h1 {
         font-size: clamp(28px, 7vw, 48px);
-
         line-height: 1.1;
     }
 
@@ -1042,19 +944,16 @@ footer {
 
     .hero-buttons {
         flex-direction: column;
-
         width: 100%;
     }
 
     .button {
         width: 100%;
-
         text-align: center;
     }
 
     .hero-emblem {
         min-width: 200px;
-
         max-width: 100%;
     }
 
@@ -1080,7 +979,6 @@ footer {
 
     .hero-emblem p {
         font-size: 8px;
-
         letter-spacing: 1px;
     }
 
@@ -1090,7 +988,6 @@ footer {
 
     .welcome h2 {
         font-size: clamp(24px, 5vw, 42px);
-
         margin-bottom: 20px;
     }
 
@@ -1100,9 +997,7 @@ footer {
 
     .section-label {
         font-size: 9px;
-
         letter-spacing: 2px;
-
         margin-bottom: 15px;
     }
 
@@ -1112,26 +1007,37 @@ footer {
 
     .section-heading h2 {
         font-size: clamp(24px, 5vw, 42px);
-
         margin-bottom: 35px;
     }
 
     .quick-grid {
-        grid-template-columns:
-            repeat(1, 1fr);
-
+        grid-template-columns: 1fr;
         gap: 15px;
     }
 
+    /* About page stays 2 columns on mobile */
     body.about .quick-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
     }
 
+    /* Normal Home image cards */
     .card-image {
         height: 100px;
+    }
+
+    /*
+       About images:
+       still show the WHOLE 1500x1500 image
+    */
+    body.about .quick-card .card-image {
+        height: 140px;
+    }
+
+    body.about .quick-card .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
 
     .card-content {
@@ -1140,7 +1046,6 @@ footer {
 
     .card-content h3 {
         font-size: 16px;
-
         margin-bottom: 6px;
     }
 
@@ -1150,13 +1055,11 @@ footer {
 
     .card-content span {
         font-size: 11px;
-
         margin-top: 10px;
     }
 
     .position {
         font-size: 8px !important;
-
         margin-bottom: 6px;
     }
 
@@ -1166,7 +1069,6 @@ footer {
 
     .portal-content h2 {
         font-size: clamp(24px, 5vw, 42px);
-
         margin-bottom: 18px;
     }
 
@@ -1176,13 +1078,11 @@ footer {
 
     .footer-main {
         padding: 40px 5%;
-
         gap: 30px;
     }
 
     .footer-main h3 {
         font-size: 16px;
-
         margin-bottom: 10px;
     }
 
@@ -1192,7 +1092,6 @@ footer {
 
     .footer-links h4 {
         font-size: 11px;
-
         margin-bottom: 8px;
     }
 
@@ -1208,3 +1107,8 @@ footer {
         font-size: 10px;
     }
 }
+
+
+/* =========================================================
+   END
+   ========================================================= */
