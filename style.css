@@ -1,4 +1,4 @@
-/* style.css */
+/* style.css — cleaned and fixed */
 
 * {
     margin: 0;
@@ -568,11 +568,12 @@ body.about .quick-grid {
 }
 
 /* =========================================================
-   CARDS
+   IMAGE CARDS
    ========================================================= */
 
 .quick-card {
-    display: block;
+    display: flex;
+    flex-direction: column;
 
     padding: 0;
 
@@ -606,15 +607,15 @@ body.about .quick-grid {
         0 15px 35px rgba(58, 7, 17, 0.12);
 }
 
-/* =========================================================
-   HOME IMAGE CARDS
-   ========================================================= */
+/* Desktop / Laptop image size */
 
 .card-image {
     width: 100%;
     height: 120px;
 
     overflow: hidden;
+
+    flex-shrink: 0;
 }
 
 .card-image img {
@@ -632,40 +633,12 @@ body.about .quick-grid {
     transform: scale(1.06);
 }
 
-/* =========================================================
-   OFFICER IMAGE
-   ========================================================= */
-
-/*
-   Officer photos are square.
-   The image uses CONTAIN so the entire
-   720x720 picture can be seen without cropping.
-*/
-
-.officer-image {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-
-    overflow: hidden;
-
-    background: #f8f3f3;
-}
-
-.officer-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-
-    display: block;
-}
-
-/* =========================================================
-   CARD CONTENT
-   ========================================================= */
-
 .card-content {
     padding: 24px 28px 28px;
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-content .position {
@@ -684,6 +657,8 @@ body.about .quick-grid {
     color: #666;
 
     font-size: 14px;
+
+    flex: 1;
 }
 
 .card-content span {
@@ -696,10 +671,15 @@ body.about .quick-grid {
     font-weight: 700;
 
     font-size: 13px;
+
+    flex-shrink: 0;
 }
 
 .card-icon {
     display: none;
+    height: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .position {
@@ -1021,7 +1001,7 @@ footer {
         height: 210px;
     }
 
-    /* Mobile home image cards */
+    /* Mobile image cards */
 
     .card-image {
         height: 160px;
@@ -1029,16 +1009,6 @@ footer {
 
     .card-content {
         padding: 22px;
-    }
-
-    /* Mobile officer images */
-
-    .officer-image {
-        aspect-ratio: 1 / 1;
-    }
-
-    .officer-image img {
-        object-fit: contain;
     }
 }
 
